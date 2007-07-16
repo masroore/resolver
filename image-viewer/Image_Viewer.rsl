@@ -1,0 +1,138 @@
+<document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.651394422311" splitterOrientation="Horizontal" suspendRecalculations="False">
+    <foldState imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
+    <preConstantsUserCode><![CDATA[
+from Cache import GetCache
+
+from System.IO import Directory, Path
+if __file__ is not None:
+    directory = Path.GetDirectoryName(__file__)
+    Directory.SetCurrentDirectory(directory)
+else:
+    raise Exception('Save file first!')
+
+cache = GetCache(__file__)
+
+sheet = workbook['Sheet1']
+sheet.B1.Value = 1
+sheet.B2.Value = 1
+
+def SetImage(imageName,cache):
+    import clr
+    clr.AddReference('System.Drawing')
+    from System.Drawing import Bitmap
+    image = Bitmap.FromFile(imageName)
+    cache['image'] = image
+    cache['imageName'] = Path.GetFileName(imageName)
+    return image
+
+image = cache.get('image')
+if image is None:
+    imageName = 'lolcat.jpg'
+    image = SetImage(imageName, cache)
+else:
+    imageName = cache['imageName']
+
+def GetImage():
+    try:
+        import clr
+        clr.AddReference('System.Windows.Forms')
+        from System.Windows.Forms import OpenFileDialog, DialogResult, SendKeys
+        dialog = OpenFileDialog()
+        dialog.InitialDirectory = directory
+        
+        result = dialog.ShowDialog()
+        if result == DialogResult.OK:
+            SetImage(dialog.FileName, cache)
+            SendKeys.Send('{F9}')
+    except Exception,e:
+        print e
+
+button = Button(Text="Select Image")
+button.Click += GetImage
+sheet.B7.Value = button
+
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[
+height = sheet.B1.Value
+width = sheet.B2.Value
+
+sheet.B4.Value = imageName
+sheet.B5.Value = image.Height
+sheet.B6.Value = image.Width
+
+xMod = 4
+yMod = 9
+for x in range(image.Width):
+    sheet.Cols[x + xMod].Width = width
+    for y in range(image.Height):
+        if not x:
+            sheet.Rows[y + yMod].Height = height
+        sheet[x + xMod, y + yMod].BackColor = image.GetPixel(x, y)
+
+
+]]></preFormulaeUserCode>
+    <names />
+    <worksheet name="Sheet1" value="" showGrid="False" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <col index="1" width="85">
+        </col>
+        <col index="2" width="83">
+        </col>
+        <cell name="A4" value="Image Name:">
+            <trait name="Bold" value="True" />
+            <trait name="BorderLeft" value="True" />
+        </cell>
+        <cell name="A2" value="Pixel Width:">
+            <trait name="Bold" value="True" />
+            <trait name="BorderLeft" value="True" />
+        </cell>
+        <cell name="A1" value="Pixel Height:">
+            <trait name="Bold" value="True" />
+            <trait name="BorderLeft" value="True" />
+            <trait name="BorderTop" value="True" />
+        </cell>
+        <cell name="A5" value="Image Height:">
+            <trait name="Bold" value="True" />
+            <trait name="BorderLeft" value="True" />
+        </cell>
+        <cell name="B2" value="2">
+            <trait name="BorderRight" value="True" />
+        </cell>
+        <cell name="B1" value="2">
+            <trait name="BorderRight" value="True" />
+            <trait name="BorderTop" value="True" />
+        </cell>
+        <cell name="A6" value="Image Width:">
+            <trait name="Bold" value="True" />
+            <trait name="BorderLeft" value="True" />
+        </cell>
+        <cell name="A7">
+            <trait name="BorderBottom" value="True" />
+            <trait name="BorderLeft" value="True" />
+        </cell>
+        <cell name="B7">
+            <trait name="BorderBottom" value="True" />
+            <trait name="BorderRight" value="True" />
+        </cell>
+        <cell name="A3">
+            <trait name="BorderLeft" value="True" />
+        </cell>
+        <cell name="B4">
+            <trait name="BorderRight" value="True" />
+        </cell>
+        <cell name="B5">
+            <trait name="BorderRight" value="True" />
+        </cell>
+        <cell name="B6">
+            <trait name="BorderRight" value="True" />
+        </cell>
+        <cell name="B3">
+            <trait name="BorderRight" value="True" />
+        </cell>
+    </worksheet>
+    <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <worksheet name="Sheet3" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <postFormulaeUserCode><![CDATA[
+]]></postFormulaeUserCode>
+</document>

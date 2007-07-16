@@ -1,0 +1,118 @@
+<document currentResultWorksheet="Sine Wave" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.704918032787" splitterOrientation="Horizontal" suspendRecalculations="False">
+    <foldState imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="False" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
+    <preConstantsUserCode><![CDATA[
+import clr
+clr.AddReference('ZedGraph')
+clr.AddReference('System.Drawing')
+
+from ZedGraph import GraphPane, PointPairList, SymbolType
+from System.Drawing import Bitmap, Color, Graphics, RectangleF
+from System.Drawing.Imaging import ImageFormat
+from System import Math
+
+# Initialise the GraphPane
+title = "Graph Title"
+xAxisTitle = "X Title"
+yAxisTitle = "Y Title"
+pane = GraphPane(RectangleF(0, 0, 480, 320), title, xAxisTitle, yAxisTitle) 
+
+# The ZedGraph data collection class
+ppl = PointPairList()
+
+# A sine-wave with 64 data points
+for x in range(64):
+   x = float(x)
+   y = Math.Sin(x / 10.0)
+   ppl.Add(x, y)
+
+# Create the graph
+pane.AddCurve("Sine Wave", ppl, Color.Blue, SymbolType.Diamond)
+
+# A hack because the axis change needs a real
+# image if we aren't using a control
+bm = Bitmap( 1, 1 )
+g = Graphics.FromImage(bm)
+pane.AxisChange(g)
+
+# Create the ImageWorksheet
+imageSheetName = "Sine Wave"
+workbook.AddImageWorksheet(imageSheetName, pane.GetImage())
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[
+import clr
+clr.AddReference('ZedGraph')
+clr.AddReference('System.Drawing')
+
+from ZedGraph import GraphPane, PointPairList, SymbolType
+from System.Drawing import Bitmap, Color, Graphics, RectangleF
+from System.Drawing.Imaging import ImageFormat
+from System import Math
+
+# Initialise the GraphPane
+title = "Graph Title"
+xAxisTitle = "X Title"
+yAxisTitle = "Y Title"
+pane = GraphPane(RectangleF(0, 0, 480, 320), title, xAxisTitle, yAxisTitle) 
+
+# The ZedGraph data collection class
+ppl = PointPairList()
+
+# A sine-wave with 64 data points
+for x in range(64):
+   x = float(x)
+   y = Math.Sin(x / 10.0)
+   ppl.Add(x, y)
+
+# Create the graph
+pane.AddCurve("Sine Wave", ppl, Color.Blue, SymbolType.Diamond)
+
+# A hack because the axis change needs a real
+# image if we aren't using a control
+bm = Bitmap( 1, 1 )
+g = Graphics.FromImage(bm)
+pane.AxisChange(g)
+
+# Create the ImageWorksheet
+imageSheetName = "Sine Wave"
+workbook.AddImageWorksheet(imageSheetName, pane.GetImage())
+]]></preFormulaeUserCode>
+    <names />
+    <postFormulaeUserCode><![CDATA[
+import clr
+clr.AddReference('ZedGraph')
+clr.AddReference('System.Drawing')
+
+from ZedGraph import GraphPane, PointPairList, SymbolType
+from System.Drawing import Bitmap, Color, Graphics, RectangleF
+from System.Drawing.Imaging import ImageFormat
+from System import Math
+
+# Initialise the GraphPane
+title = "Graph Title"
+xAxisTitle = "X Title"
+yAxisTitle = "Y Title"
+pane = GraphPane(RectangleF(0, 0, 480, 320), title, xAxisTitle, yAxisTitle) 
+
+# The ZedGraph data collection class
+ppl = PointPairList()
+
+# A sine-wave with 64 data points
+for x in range(64):
+   x = float(x)
+   y = Math.Sin(x / 10.0)
+   ppl.Add(x, y)
+
+# Create the graph
+pane.AddCurve("Sine Wave", ppl, Color.Blue, SymbolType.Diamond)
+
+# A hack because the axis change needs a real
+# image if we aren't using a control
+bm = Bitmap( 1, 1 )
+g = Graphics.FromImage(bm)
+pane.AxisChange(g)
+
+# Create the ImageWorksheet
+imageSheetName = "Sine Wave"
+workbook.AddImageWorksheet(imageSheetName, pane.GetImage())
+]]></postFormulaeUserCode>
+</document>

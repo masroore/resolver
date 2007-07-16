@@ -1,0 +1,175 @@
+<document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.75" splitterOrientation="Horizontal" suspendRecalculations="False">
+    <foldState imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
+    <preConstantsUserCode><![CDATA[
+def ColorAlternateRows(cellRange, mainColor=Color.CornflowerBlue, alternateColor=None):
+    for i in range(1, cellRange.MaxRow + 1):
+        thisRow = cellRange.Rows[i]
+        if cellRange.HeaderRow is not None and cellRange.HeaderRow.top == thisRow.top:
+            # Skip header row
+            continue
+
+        if i % 2 and alternateColor is not None:
+            thisRow.BackColor = alternateColor
+        elif not i % 2 and mainColor is not None:
+            thisRow.BackColor = mainColor
+
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[
+]]></preFormulaeUserCode>
+    <names />
+    <worksheet name="Sheet1" value="" showGrid="False" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <cell name="B4" value="Reference">
+        </cell>
+        <cell name="D4" value="Symbol">
+        </cell>
+        <cell name="E4" value="Number">
+        </cell>
+        <cell name="F4" value="Price">
+        </cell>
+        <cell name="G4" value="Direction">
+        </cell>
+        <cell name="B5" value="0001">
+        </cell>
+        <cell name="B6" value="0002">
+        </cell>
+        <cell name="B7" value="0003">
+        </cell>
+        <cell name="B8" value="0004">
+        </cell>
+        <cell name="B9" value="0005">
+        </cell>
+        <cell name="B10" value="0006">
+        </cell>
+        <cell name="B11" value="0007">
+        </cell>
+        <cell name="B12" value="0008">
+        </cell>
+        <cell name="B13" value="0009">
+        </cell>
+        <cell name="B14" value="0010">
+        </cell>
+        <cell name="D5" value="MSFT">
+        </cell>
+        <cell name="C4" value="Customer">
+        </cell>
+        <cell name="C5" value="A37">
+        </cell>
+        <cell name="C6" value="G45">
+        </cell>
+        <cell name="C7" value="D98">
+        </cell>
+        <cell name="C8" value="A01">
+        </cell>
+        <cell name="C9" value="C12">
+        </cell>
+        <cell name="C10" value="X14">
+        </cell>
+        <cell name="C11" value="O39">
+        </cell>
+        <cell name="C12" value="A37">
+        </cell>
+        <cell name="C13" value="C12">
+        </cell>
+        <cell name="C14" value="O39">
+        </cell>
+        <cell name="D6" value="GOOG">
+        </cell>
+        <cell name="D7" value="BSY">
+        </cell>
+        <cell name="D8" value="ETI">
+        </cell>
+        <cell name="D9" value="HNS">
+        </cell>
+        <cell name="D10" value="GOOG">
+        </cell>
+        <cell name="E5" value="237">
+        </cell>
+        <cell name="E6" value="1250">
+        </cell>
+        <cell name="E7" value="658">
+        </cell>
+        <cell name="E8" value="998">
+        </cell>
+        <cell name="E9" value="117">
+        </cell>
+        <cell name="E10" value="4">
+        </cell>
+        <cell name="G5" value="Buy">
+        </cell>
+        <cell name="G6" value="Sell">
+        </cell>
+        <cell name="G7" value="Sell">
+        </cell>
+        <cell name="G8" value="Buy">
+        </cell>
+        <cell name="G9" value="Sell">
+        </cell>
+        <cell name="G10" value="Buy">
+        </cell>
+        <cell name="G11" value="Buy">
+        </cell>
+        <cell name="G12" value="Buy">
+        </cell>
+        <cell name="G13" value="Sell">
+        </cell>
+        <cell name="G14" value="Sell">
+        </cell>
+        <cell name="E11" value="1740">
+        </cell>
+        <cell name="E12" value="345">
+        </cell>
+        <cell name="E13" value="2501">
+        </cell>
+        <cell name="E14" value="1799">
+        </cell>
+        <cell name="D11" value="HNS">
+        </cell>
+        <cell name="D12" value="BSY">
+        </cell>
+        <cell name="D13" value="MSFT">
+        </cell>
+        <cell name="D14" value="MSFT">
+        </cell>
+        <cell name="F5" value="48.10">
+        </cell>
+        <cell name="F6" value="123.50">
+        </cell>
+        <cell name="F7" value="79.5">
+        </cell>
+        <cell name="F8" value="86.12">
+        </cell>
+        <cell name="F9" value="0.56">
+        </cell>
+        <cell name="F10" value="156.20">
+        </cell>
+        <cell name="F11" value="0.80">
+        </cell>
+        <cell name="F12" value="82.45">
+        </cell>
+        <cell name="F13" value="43.00">
+        </cell>
+        <cell name="F14" value="42.99">
+        </cell>
+    </worksheet>
+    <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <worksheet name="Sheet3" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <postFormulaeUserCode><![CDATA[sheet = workbook['Sheet1']
+
+cellRange = CellRange(sheet.B4, sheet.G14)
+cellRange.HeaderRow = cellRange.Rows[1]
+cellRange.HeaderCol = cellRange.Cols[1]
+cellRange.HeaderRow.Bold = True
+cellRange.HeaderCol.Bold = True
+
+cellRange.BorderTop = True
+cellRange.BorderRight = True
+cellRange.HeaderCol.BorderLeft = True
+cellRange.Rows[cellRange.MaxRow].BorderBottom = True
+
+ColorAlternateRows(cellRange)
+    
+
+]]></postFormulaeUserCode>
+</document>

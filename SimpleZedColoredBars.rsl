@@ -1,0 +1,88 @@
+<document currentResultWorksheet="Colored Bar Chart" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.742725880551" splitterOrientation="Horizontal" suspendRecalculations="False">
+    <foldState imports="True" worksheetCreation="False" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
+    <preConstantsUserCode><![CDATA[
+sheet = workbook['Chart Data']
+
+# A CellRange from which we will generate the bar chart
+chartData = CellRange(sheet.B2, sheet.C20)
+chartData.HeaderRow = chartData.Rows[1]
+
+# Formatting the CellRange
+chartData.HeaderRow.Bold = True
+chartData.HeaderRow.BorderTop = True
+chartData.HeaderRow.BorderBottom = True
+
+chartData.Cols[1].BorderLeft = True
+chartData.Cols[1].BorderRight = True
+chartData.Cols[2].BorderRight = True
+
+chartData.HeaderRow[1].Value = 'Bar'
+chartData.HeaderRow[2].Value = 'Value'
+
+# Fill the CellRange with random values
+from random import random
+for y in range(2, chartData.MaxRow+1):
+    chartData['Bar', y].Value = y -1
+    chartData['Value', y].Value = random() * 1000 
+
+
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[
+import clr
+clr.AddReference('ZedGraph')
+clr.AddReference('System.Drawing')
+
+from ZedGraph import GraphPane, PointPairList, Fill, FillType
+from System.Drawing import Bitmap, Color, Graphics, RectangleF
+from System.Drawing.Imaging import ImageFormat
+from System import Array
+
+# Initialise the GraphPane
+title = "Multi-Colored Bar Chart"
+xAxisTitle = "Bar Number"
+yAxisTitle = "Value"
+pane = GraphPane(RectangleF(0, 0, 640, 480), title, xAxisTitle, yAxisTitle)
+
+# The ZedGraph data collection class
+ppl = PointPairList()
+# Fill the PointPairList from the CellRange
+colorStep = 4.0 / (chartData.MaxRow-1)
+for i in range(2, chartData.MaxRow+1):
+    x = int(chartData['Bar', i].Value)
+    y = chartData['Value', i].Value
+
+    z = x * colorStep
+    ppl.Add(x, y, z)
+
+paleBlue = Color.FromArgb(220, 220, 255)
+colorList = [Color.Red, Color.Yellow, Color.Green, Color.Blue, Color.Purple]
+colors = Array[Color](colorList)
+
+# Create the graph
+curve = pane.AddBar("Multi-Colored Bars", ppl, Color.Blue)
+curve.Bar.Fill = Fill(colors)
+curve.Bar.Fill.Type = FillType.GradientByZ
+
+curve.Bar.Fill.RangeMin = 0
+curve.Bar.Fill.RangeMax = 4
+
+# Create background gradients too
+pane.Chart.Fill = Fill(Color.White, paleBlue, 45)
+pane.Fill = Fill(Color.White, paleBlue, 45)
+
+# A hack because the axis change needs a real
+# image if we aren't using a control
+bm = Bitmap(1, 1)
+g = Graphics.FromImage(bm)
+pane.AxisChange(g)
+
+imageSheetName = 'Colored Bar Chart'
+workbook.AddImageWorksheet(imageSheetName, pane.GetImage())
+
+]]></preFormulaeUserCode>
+    <names />
+    <worksheet name="Chart Data" value="" showGrid="False" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <postFormulaeUserCode><![CDATA[
+]]></postFormulaeUserCode>
+</document>

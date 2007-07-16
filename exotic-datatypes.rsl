@@ -1,0 +1,256 @@
+<document currentResultWorksheet="complex" verticalSplitterRatio="0.671561051005" horizontalSplitterRatio="0.75" splitterOrientation="Vertical" suspendRecalculations="False">
+    <foldState imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="True" postFormulaeUserCode="False"/>
+    <preConstantsUserCode><![CDATA[
+class Mag(object):
+    def __init__(self, magnitude, spread):
+        self.mag = magnitude
+        self.spread = spread
+
+    def __add__(self, other):
+        mag = self.mag + other.mag
+        spread = self.spread + other.spread
+        return Mag(mag, spread)
+
+    def __mul__(self, other):
+        mag = self.mag * other.mag
+        spread = (
+            self.spread * other.spread +
+            self.mag * other.spread +
+            self.spread * other.mag
+        )
+        return Mag(mag, spread)
+
+    def __str__(self):
+        return u"%s\u00b1%s" % (self.mag, self.spread)
+
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[from math import pi, e
+from System.Drawing import Color
+sheet = workbook["complex"]
+steps = 64
+centreX, centreY = 17, 13
+sheet.Rows[centreY].BackColor = Color.LightGray
+sheet.Cols[centreX].BackColor = Color.LightGray
+radius = 11.0
+for i in range(steps):
+    f = 4*i/steps
+    sheet[1, i+2].Value = f
+    c = (1j)**f
+    sheet[2, i+2].Value = c
+    sheet[3, i+2].Value = c.real
+    sheet[4, i+2].Value = c.imag
+    x = int(round(c.real * radius)) + centreX
+    y = int(round(c.imag * radius)) + centreY
+    sheet[x, y].BackColor = Color.Gold
+
+]]></preFormulaeUserCode>
+    <names />
+    <worksheet name="tuples" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <col index="1" width="69">
+        </col>
+        <row index="2" height="98">
+        </row>
+        <cell name="A1" value="=(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;)">
+        </cell>
+        <cell name="A2" value="=&apos;\n&apos;.join(A1)">
+        </cell>
+        <cell name="A11" value="8">
+        </cell>
+        <cell name="A10" value="7">
+        </cell>
+        <cell name="A9" value="6">
+        </cell>
+        <cell name="A8" value="5">
+        </cell>
+        <cell name="A7" value="4">
+        </cell>
+        <cell name="A6" value="3">
+        </cell>
+        <cell name="A5" value="2">
+        </cell>
+        <cell name="A4" value="1">
+        </cell>
+        <cell name="A3" value="0">
+        </cell>
+        <cell name="B3" value="=$A$1[A3]">
+        </cell>
+        <cell name="B4" value="=$A$1[A4]">
+        </cell>
+        <cell name="B5" value="=$A$1[A5]">
+        </cell>
+        <cell name="B6" value="=$A$1[A6]">
+        </cell>
+        <cell name="B7" value="=$A$1[A7]">
+        </cell>
+        <cell name="B8" value="=$A$1[A8]">
+        </cell>
+        <cell name="B9" value="=$A$1[A9]">
+        </cell>
+        <cell name="B10" value="=$A$1[A10 % 7]">
+        </cell>
+        <cell name="B11" value="=$A$1[A11 % 7]">
+        </cell>
+    </worksheet>
+    <worksheet name="complex" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <col index="6" width="19">
+        </col>
+        <col index="7" width="19">
+        </col>
+        <col index="8" width="19">
+        </col>
+        <col index="9" width="19">
+        </col>
+        <col index="10" width="19">
+        </col>
+        <col index="11" width="19">
+        </col>
+        <col index="12" width="19">
+        </col>
+        <col index="13" width="19">
+        </col>
+        <col index="14" width="19">
+        </col>
+        <col index="15" width="19">
+        </col>
+        <col index="16" width="19">
+        </col>
+        <col index="17" width="19">
+        </col>
+        <col index="18" width="19">
+        </col>
+        <col index="19" width="19">
+        </col>
+        <col index="20" width="19">
+        </col>
+        <col index="21" width="19">
+        </col>
+        <col index="22" width="19">
+        </col>
+        <col index="23" width="19">
+        </col>
+        <col index="24" width="19">
+        </col>
+        <col index="25" width="19">
+        </col>
+        <col index="26" width="19">
+        </col>
+        <col index="27" width="19">
+        </col>
+        <col index="28" width="19">
+        </col>
+        <col index="29" width="19">
+        </col>
+        <col index="30" width="19">
+        </col>
+        <col index="31" width="19">
+        </col>
+        <col index="1" width="-1">
+            <trait name="DecimalPlaces" value="3" />
+            <trait name="StripZeros" value="False" />
+        </col>
+        <col index="2" width="-1">
+            <trait name="DecimalPlaces" value="3" />
+            <trait name="StripZeros" value="False" />
+        </col>
+        <col index="3" width="-1">
+            <trait name="DecimalPlaces" value="3" />
+            <trait name="StripZeros" value="False" />
+        </col>
+        <col index="4" width="-1">
+            <trait name="DecimalPlaces" value="3" />
+            <trait name="StripZeros" value="False" />
+        </col>
+        <col index="5" width="19">
+        </col>
+        <traitstack name="DecimalPlaces">
+            <item type="col" index="4"/>
+            <item type="col" index="3"/>
+            <item type="col" index="2"/>
+            <item type="col" index="1"/>
+        </traitstack>
+        <traitstack name="StripZeros">
+            <item type="col" index="4"/>
+            <item type="col" index="3"/>
+            <item type="col" index="2"/>
+            <item type="col" index="1"/>
+        </traitstack>
+        <cell name="A1" value="0&lt;=n&lt;4">
+            <trait name="Bold" value="True" />
+        </cell>
+        <cell name="B1" value="j^n">
+            <trait name="Bold" value="True" />
+        </cell>
+        <cell name="C1" value="real">
+            <trait name="Bold" value="True" />
+        </cell>
+        <cell name="D1" value="imag">
+            <trait name="Bold" value="True" />
+        </cell>
+        <cell name="R13" value="--">
+        </cell>
+        <cell name="AC13" value="+1">
+        </cell>
+        <cell name="Q12" value=" |">
+        </cell>
+        <cell name="Q14" value=" |">
+        </cell>
+        <cell name="P13" value="--">
+        </cell>
+        <cell name="Q25" value="-j">
+        </cell>
+        <cell name="E13" value="-j">
+        </cell>
+        <cell name="Q1" value="+j">
+        </cell>
+        <cell name="E1">
+            <trait name="Bold" value="True" />
+            <trait name="DecimalPlaces" value="3" />
+            <trait name="StripZeros" value="False" />
+        </cell>
+    </worksheet>
+    <worksheet name="user class" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <cell name="B2" value="=Mag(10, 1)">
+        </cell>
+        <cell name="B3" value="=Mag(20, 3)">
+        </cell>
+        <cell name="B4" value="=B2+B3">
+            <trait name="Bold" value="True" />
+            <trait name="BorderTop" value="True" />
+        </cell>
+        <cell name="C3" value="+">
+        </cell>
+        <cell name="D2" value="=Mag(10, 1)">
+        </cell>
+        <cell name="D3" value="=Mag(20, 3)">
+        </cell>
+        <cell name="D4" value="=D2*D3">
+            <trait name="Bold" value="True" />
+            <trait name="BorderTop" value="True" />
+        </cell>
+        <cell name="E3" value="*">
+        </cell>
+        <cell name="B7" value="=Mag(10, 1)">
+        </cell>
+        <cell name="B8" value="=Mag(10, 2)">
+        </cell>
+        <cell name="B9" value="=Mag(10, 0.5)">
+        </cell>
+        <cell name="B10" value="=Mag(10, 3)">
+        </cell>
+        <cell name="B11" value="=Mag(10, 2.5)">
+        </cell>
+        <cell name="B12" value="=Mag(10, 1)">
+        </cell>
+        <cell name="B13" value="=SUM(B7:B12)">
+            <trait name="Bold" value="True" />
+            <trait name="BorderTop" value="True" />
+        </cell>
+        <cell name="C12" value="+">
+        </cell>
+        <cell name="D13" value="SUM() doesn&apos;t work for datatypes that have an __add__() method!">
+        </cell>
+    </worksheet>
+    <postFormulaeUserCode><![CDATA[
+
+]]></postFormulaeUserCode>
+</document>

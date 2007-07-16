@@ -1,0 +1,28 @@
+<document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.439909297052" splitterOrientation="Horizontal" suspendRecalculations="False">
+    <foldState imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
+    <preConstantsUserCode><![CDATA[
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[
+]]></preFormulaeUserCode>
+    <names />
+    <worksheet name="Sheet1" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <worksheet name="Sheet3" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <postFormulaeUserCode><![CDATA[print 'Start of recalculation.'
+from random import random
+def RandomColor():
+    return Color.FromArgb(random()*256, random()*256, random()*256)
+sheet1 = workbook['Sheet1']
+for x in range(1, 10):
+    for y in range(1, 6):
+        cellLoc = (x, y)
+        sheet1[cellLoc].BackColor = RandomColor()
+        sheet1[cellLoc].Value = cellLoc
+        sheet1[cellLoc].Bold = True
+        print cellLoc,
+print '\nEnd of recalculation.'
+]]></postFormulaeUserCode>
+</document>

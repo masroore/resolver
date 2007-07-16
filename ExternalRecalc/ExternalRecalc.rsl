@@ -1,0 +1,52 @@
+<document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.622166246851" splitterOrientation="Horizontal" suspendRecalculations="False">
+    <foldState imports="False" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="True" generated="True" postFormulaeUserCode="False"/>
+    <preConstantsUserCode><![CDATA[
+from Cache import GetCache
+
+cache = GetCache(__file__)
+val = cache.setdefault('value', 0)
+val += 1
+cache['value'] = val
+
+from System.IO import File, Path
+
+dataFile = 'data.txt'
+directory = Path.GetDirectoryName(__file__)
+dataFilePath = Path.Combine(directory, dataFile)
+
+rawData = File.ReadAllText(dataFilePath)
+
+sheet = workbook['Sheet1']
+for index, line in enumerate(rawData.splitlines()):
+    # Skip blank lines
+    if not line.strip():
+        continue
+    
+    name, age = line.split()
+    sheet['D', index + 2].Value = name
+    sheet['E', index + 2].Value = int(age)
+
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[
+]]></preFormulaeUserCode>
+    <names />
+    <worksheet name="Sheet1" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <cell name="B1" value="=val">
+        </cell>
+        <cell name="A1" value="Recalcs:">
+            <trait name="Bold" value="True" />
+        </cell>
+        <cell name="E1" value="Age">
+            <trait name="Bold" value="True" />
+        </cell>
+        <cell name="D1" value="Name">
+            <trait name="Bold" value="True" />
+        </cell>
+    </worksheet>
+    <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <worksheet name="Sheet3" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <postFormulaeUserCode><![CDATA[workbook.AddDatabaseTriggerListener('DATA', 'FILE', 'CHANGED')
+]]></postFormulaeUserCode>
+</document>

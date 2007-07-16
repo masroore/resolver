@@ -1,0 +1,100 @@
+<document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.683962264151" splitterOrientation="Horizontal" suspendRecalculations="False">
+    <foldState imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
+    <preConstantsUserCode><![CDATA[import clr
+clr.AddReference('System.Speech')
+
+from System.Speech.Synthesis import SpeechSynthesizer
+
+def convertValue(value):
+    if isinstance(value, float) and int(value) == value:
+        value = int(value)
+    return str(value)
+
+
+def SpeakRange(cellRange):
+    spk = SpeechSynthesizer()
+    
+    headerRow = cellRange.HeaderRow
+    for row in cellRange.Rows:
+        if headerRow and row.top == headerRow.top:
+            continue
+        for pos, cell in enumerate(row):
+            text = ''
+            if headerRow:
+                text = str(headerRow[pos + 1].Value) + ', '
+            
+            text += convertValue(cell.Value)
+            spk.Speak(text)
+            
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[
+]]></preFormulaeUserCode>
+    <names />
+    <worksheet name="Sheet1" value="" showGrid="False" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <col index="5" width="-1">
+            <trait name="Bold" value="True" />
+        </col>
+        <traitstack name="Bold">
+            <item type="col" index="5"/>
+        </traitstack>
+        <cell name="A1" value="Name">
+        </cell>
+        <cell name="B1" value="Country">
+        </cell>
+        <cell name="C1" value="Age">
+        </cell>
+        <cell name="A2" value="Fred">
+        </cell>
+        <cell name="B2" value="Switzerland">
+        </cell>
+        <cell name="C2" value="36">
+        </cell>
+        <cell name="A3" value="Delia">
+        </cell>
+        <cell name="B3" value="Romania">
+        </cell>
+        <cell name="C3" value="28">
+        </cell>
+        <cell name="A4" value="Michael">
+        </cell>
+        <cell name="B4" value="England">
+        </cell>
+        <cell name="C4" value="32">
+        </cell>
+        <cell name="A5" value="Andrzej">
+        </cell>
+        <cell name="B5" value="Poland">
+        </cell>
+        <cell name="C5" value="28">
+        </cell>
+        <cell name="A7">
+            <trait name="Bold" value="True" />
+        </cell>
+    </worksheet>
+    <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <worksheet name="Sheet3" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <postFormulaeUserCode><![CDATA[
+sheet = workbook['Sheet1']
+cellRange = CellRange(sheet.A1, sheet.C5)
+cellRange.HeaderRow = cellRange.Rows[1]
+cellRange.HeaderRow.Bold = True
+
+cellRange.HeaderRow.BorderTop = True
+cellRange.HeaderRow.BorderBottom = True
+
+for col in cellRange.Cols:
+    col.BorderLeft = True
+col.BorderRight = True
+
+def Speak():
+    SpeakRange(cellRange)
+
+button = Button(Text="Speak")
+button.Click += Speak
+sheet.E2.Value = button
+
+
+]]></postFormulaeUserCode>
+</document>
