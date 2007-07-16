@@ -1,0 +1,141 @@
+<document currentResultWorksheet="Sales Pie Chart" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.686930091185" splitterOrientation="Horizontal" suspendRecalculations="False">
+    <foldState imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
+    <preConstantsUserCode><![CDATA[
+sheet = workbook['Resolver Sales']
+
+countries = ['UK', 'USA', 'Germany', 'France', 'Spain', 'Italy', 'Africa', 'Japan']
+# A CellRange from which we will generate the bar chart
+chartData = CellRange(sheet.B2, sheet['C', 2 + len(countries)])
+chartData.HeaderRow = chartData.Rows[1]
+chartData.HeaderRow[1].Value = 'Location'
+chartData.HeaderRow[2].Value = 'Sales $M'
+
+# Formatting the CellRange
+chartData.HeaderRow.Bold = True
+chartData.HeaderRow.BorderTop = True
+chartData.HeaderRow.BorderBottom = True
+
+chartData.Cols['Location'].BorderLeft = True
+chartData.Cols['Location'].BorderRight = True
+chartData.Cols['Sales $M'].BorderRight = True
+
+
+# Fill the CellRange with sales per country
+from random import random
+for index, country in enumerate(countries):
+    row = index + 2
+    chartData['Location', row].Value = country
+    chartData['Sales $M', row].Value = random() * 1000 
+
+
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[
+import clr
+clr.AddReference('ZedGraph')
+clr.AddReference('System.Drawing')
+
+from ZedGraph import (
+    GraphPane, PointPairList, Fill, 
+    FillType, LegendPos, Location, 
+    CoordType, AlignH, AlignV,
+    TextObj
+)
+
+from System.Drawing import (
+    Bitmap, Color, Graphics, 
+    RectangleF, StringAlignment
+)
+
+from System.Drawing.Imaging import ImageFormat
+
+# Initialise the GraphPane
+title = "Resolver Sales by Region\n$ Millions"
+pane = GraphPane()
+pane.Title.Text = title
+pane.Title.FontSpec.IsItalic = True
+pane.Title.FontSpec.Size = 24.0
+pane.Title.FontSpec.Family = "Times New Roman"
+pane.Rect = RectangleF(0, 0, 640, 480)
+
+# Color gradients for the background
+pane.Fill = Fill(Color.White, Color.Goldenrod, 45.0)
+# No gradient for the chart
+pane.Chart.Fill.Type = FillType.None
+
+# Set the legend to an arbitrary location
+pane.Legend.Position = LegendPos.Float
+pane.Legend.Location = Location(0.95, 0.15, CoordType.PaneFraction,
+                                AlignH.Right, AlignV.Top)
+pane.Legend.FontSpec.Size = 10
+pane.Legend.IsHStack = False
+
+def GetRandomColor():
+    return Color.FromArgb(random()*256, random()*256, random()*256)
+
+# Add the Pie Slices
+total = 0
+for i in range(chartData.MaxRow-1):
+    offset = 0
+    label = chartData['Location', i + 2].Value
+    sales = chartData['Sales $M', i + 2].Value
+    if sales < 150:
+        # offset some of the slices
+        offset = 0.2
+    total += sales
+
+    # Create the pie slices
+    segment = pane.AddPieSlice(20, GetRandomColor(), Color.White, 45, offset, label)
+    segment.LabelDetail.FontSpec.FontColor = GetRandomColor()
+
+# Make a text label to highlight the total value
+text = TextObj("Total World Sales\n$%sM" % total,
+               0.18, 0.40, CoordType.PaneFraction)
+text.Location.AlignH = AlignH.Center
+text.Location.AlignV = AlignV.Bottom
+text.FontSpec.Border.IsVisible = False
+text.FontSpec.Fill = Fill(Color.White, Color.FromArgb(255, 100, 100), 45.0)
+text.FontSpec.StringAlignment = StringAlignment.Center
+pane.GraphObjList.Add(text)
+
+# Create a drop shadow for the total value text item
+text2 = TextObj(text)
+text2.FontSpec.Fill = Fill(Color.Black)
+text2.Location.X += 0.008
+text2.Location.Y += 0.01
+pane.GraphObjList.Add(text2)
+
+# A hack because the axis change needs a real
+# image if we aren't using a control
+bm = Bitmap(1, 1)
+g = Graphics.FromImage(bm)
+pane.AxisChange(g)
+
+image = pane.GetImage()
+imageSheetName = 'Sales Pie Chart'
+workbook.AddImageWorksheet(imageSheetName, image)
+
+# Button to save image
+
+]]></preFormulaeUserCode>
+    <names />
+    <worksheet name="Resolver Sales" value="" showGrid="False" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <postFormulaeUserCode><![CDATA[
+b = Button(Text="Save Chart")
+def SaveChart():
+    try:
+        import clr
+        clr.AddReference('System.Windows.Forms')
+        from System.Windows.Forms import DialogResult, SaveFileDialog
+        dialog = SaveFileDialog()
+        dialog.Title = 'Save Chart as Jpg Image'
+        dialog.Filter = 'Jpg Image (*.jpg)|*.JPG;|All files (*.*)|*.*'
+        if dialog.ShowDialog() == DialogResult.OK:
+            image.Save(dialog.FileName, ImageFormat.Jpeg)
+    except Exception, e:
+        print '%s: %s' % e.__class__.__name__, e
+
+b.Click += SaveChart
+sheet.E5.Value = b
+]]></postFormulaeUserCode>
+</document>

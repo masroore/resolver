@@ -1,0 +1,64 @@
+<document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.992424242424" horizontalSplitterRatio="0.592741935484" splitterOrientation="Horizontal" suspendRecalculations="False">
+    <foldState imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="True" generated="True" postFormulaeUserCode="True"/>
+    <preConstantsUserCode><![CDATA[
+import lifeRsl
+from System.IO import Path
+
+# Modify these to change how the grid is created
+height = 13
+width = 36
+startDensity = 0.2
+cellSize = 20
+
+sheet = workbook["Sheet1"]
+
+for col in range(width):
+    sheet.Cols[col+1].Width = cellSize
+for row in range(height):
+    sheet.Rows[row+1].Height = cellSize
+
+g = lifeRsl.getGrid(width, height, startDensity)
+
+# uncomment to resize or reset the grid
+# g.__init__(width, height, startDensity)
+g.nextGeneration()
+
+for x, y in g.liveLocations():
+    sheet[x+1, y+1].BackColor = Color.Green
+
+# --------------------
+
+def RecalcHack():
+    # This really is cheating!
+    import clr
+    clr.AddReference('System.Windows.Forms')
+    from System.Windows.Forms import SendKeys
+    SendKeys.Send('{F9}')
+
+button1 = Button(Text="Recalculate")
+button1.Click += RecalcHack
+sheet[width + 2, 2].Value = button1
+
+def Reset():
+    g.__init__(width, height, startDensity)
+    RecalcHack()
+
+button2 = Button(Text="Reset")
+button2.Click += Reset
+sheet[width + 2, 4].Value = button2
+
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[
+
+
+]]></preFormulaeUserCode>
+    <names />
+    <worksheet name="Sheet1" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <worksheet name="Sheet3" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <postFormulaeUserCode><![CDATA[
+]]></postFormulaeUserCode>
+</document>

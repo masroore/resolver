@@ -1,0 +1,58 @@
+<document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.614845938375" splitterOrientation="Horizontal" suspendRecalculations="False">
+    <foldState imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="True" postFormulaeUserCode="False"/>
+    <preConstantsUserCode><![CDATA[def CellRangeFromDimensions(startCell, width, height):
+    endCell = startCell.Offset(width-1, height-1)
+    return CellRange(startCell, endCell)
+
+def FormatCellRangeBorders(cellRange):
+    cellRange.BorderRight = True
+    cellRange.BorderTop = True
+    cellRange.Cols[1].BorderLeft = True
+    cellRange.Rows[cellRange.MaxRow].BorderBottom = True
+
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[
+]]></preFormulaeUserCode>
+    <names />
+    <worksheet name="Sheet1" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <worksheet name="Sheet3" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <postFormulaeUserCode><![CDATA[sheet = workbook['Sheet1']
+
+data = [
+    ("0001", "A37", "MSFT", 237, 48.1, "Buy"),
+    ("0002", "G45", "GOOG", 1250, 123.5, "Sell"),
+    ("0003", "D98", "BSY", 658, 79.5, "Sell"),
+    ("0004", "A01", "ETI", 998, 86.12, "Buy"),
+    ("0005", "C12", "HNS", 117, 0.56, "Sell"),
+    ("0006", "X14", "GOOG", 4, 156.2, "Buy"),
+    ("0007", "O39", "HNS", 1740, 0.8, "Buy"),
+    ("0008", "A37", "BSY", 345, 82.45, "Buy"),
+    ("0009", "C12", "MSFT", 2501, 43, "Sell"),
+    ("0010", "O39", "MSFT", 1799, 42.99, "Sell"),
+]
+
+cellRange = CellRangeFromDimensions(sheet.A1, len(data[0]), len(data) + 1)
+FormatCellRangeBorders(cellRange)
+
+cellRange.HeaderRow = cellRange.Rows[1]
+cellRange.HeaderRow.Bold = True
+for index, header in enumerate(["Reference", "Customer", "Symbol", "Number", "Price", "Direction"]):
+    cellRange.HeaderRow[index + 1].Value = header
+
+cellRange.HeaderCol = cellRange.Cols[1]
+cellRange.HeaderCol.Bold = True
+
+for index, row in enumerate(data):
+    reference, customer, symbol, number, price, direction = row
+    cellRange.Cols["Reference"][index + 2].Value = reference
+    cellRange.Cols["Customer"][index + 2].Value = customer
+    cellRange.Cols["Symbol"][index + 2].Value = symbol
+    cellRange.Cols["Number"][index + 2].Value = number
+    cellRange.Cols["Price"][index + 2].Value = price
+    cellRange.Cols["Direction"][index + 2].Value = direction
+]]></postFormulaeUserCode>
+</document>

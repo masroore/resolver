@@ -1,0 +1,8 @@
+Michael 32
+William 19
+Giles 45
+Christian 12
+JB 30
+Patrick 75
+Andrzej 28
+Jane    21

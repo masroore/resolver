@@ -1,0 +1,75 @@
+<document currentResultWorksheet="Surface Data Plot" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.729763387298" splitterOrientation="Horizontal" suspendRecalculations="False">
+    <foldState imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
+    <preConstantsUserCode><![CDATA[import sys
+from System.IO import Path
+directory = Path.GetDirectoryName(__file__)
+
+import os
+import plot
+reload(plot)
+from System.Drawing import Image
+
+# You might need to change this for Windows 2000 and Windows NT systems
+fontPath = r'c:\Windows\Fonts'
+
+# Various paths needed by the scripts
+gnuplotPath = Path.Combine(directory, 'gnuplot\\wgnuplot.exe')
+imageDirectory = Path.Combine(directory, 'images')
+scriptPath = Path.Combine(directory, 'surface.gp')
+
+# Generate the path to the next image so that we don't overwrite the ast one
+nextImageNumber = (max( [int(name[7:-4]) for name in os.listdir(imageDirectory)] or [0] )) + 1
+imagePath = Path.Combine(imageDirectory, 'surface%s.png' % nextImageNumber)
+
+# The template for the gnuplot script
+# Experiment with this!
+template = r"""
+set terminal png nocrop enhanced font verdana 12 size 640,480
+set title "Resolver Gnuplot Demo" 
+set xlabel "X axis" 
+set xlabel  offset character -2, -2, 0
+set ylabel "Y axis" 
+set ylabel  offset character 2, -2, 0
+set zlabel "Z axis" 
+set zlabel  offset character 1, 0, 0
+set output '%s'
+set contour both
+set view 45, 30
+set style data lines
+set hidden3d
+splot "-" title "The Data"
+
+    %s
+
+"""
+
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[
+]]></preFormulaeUserCode>
+    <names />
+    <worksheet name="Surface Data" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <postFormulaeUserCode><![CDATA[
+sheet = workbook['Surface Data']
+
+# Generate the data
+from math import sin
+for x in range(1, 50):
+    u = (6.0 / 50) * x - 3
+    for y in range(1, 50):
+        v = (6.0 / 50) * y - 3
+        try:
+            sheet[x, y].Value = sin(u*u + v*v) / (u*u + v*v)
+        except ZeroDivisionError:
+            sheet[x, y].Value = 1
+
+# Produce the image
+data = plot.GenerateGnuplotData(sheet)
+plot.CreateScript(template, scriptPath, data, imagePath)
+plot.LaunchGnuplot(gnuplotPath, scriptPath, fontPath)
+
+# Create the ImageWorksheet
+plotImage = Image.FromFile(imagePath)
+workbook.AddImageWorksheet('Surface Data Plot', plotImage)
+]]></postFormulaeUserCode>
+</document>
