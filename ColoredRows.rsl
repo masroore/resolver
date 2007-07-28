@@ -4,7 +4,7 @@
 def ColorAlternateRows(cellRange, mainColor=Color.CornflowerBlue, alternateColor=None):
     for i in range(1, cellRange.MaxRow + 1):
         thisRow = cellRange.Rows[i]
-        if cellRange.HeaderRow is not None and cellRange.HeaderRow.top == thisRow.top:
+        if cellRange.HeaderRow is not None and cellRange.HeaderRow.Top == thisRow.Top:
             # Skip header row
             continue
 
