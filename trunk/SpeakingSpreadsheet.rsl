@@ -16,7 +16,7 @@ def SpeakRange(cellRange):
     
     headerRow = cellRange.HeaderRow
     for row in cellRange.Rows:
-        if headerRow and row.top == headerRow.top:
+        if headerRow and row.Top == headerRow.Top:
             continue
         for pos, cell in enumerate(row):
             text = ''
