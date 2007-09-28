@@ -49,26 +49,32 @@ for index, (symbol, (total, number)) in enumerate(values.items()):
 ]]></preFormulaeUserCode>
     <names />
     <worksheet name="Totals" value="" showGrid="False" showBounds="True" headerWidth="-1" headerHeight="-1">
+        <trait name="BackColor">
+            <traitentry col="1" row="1" value="named color: PeachPuff" />
+            <traitentry col="3" row="1" value="named color: PeachPuff" />
+            <traitentry col="2" row="1" value="named color: PeachPuff" />
+        </trait>
+        <trait name="Bold">
+            <traitentry col="1" row="1" value="True" />
+            <traitentry col="3" row="1" value="True" />
+            <traitentry col="2" row="1" value="True" />
+        </trait>
+        <trait name="BorderBottom">
+            <traitentry col="1" row="1" value="True" />
+            <traitentry col="3" row="1" value="True" />
+            <traitentry col="2" row="1" value="True" />
+        </trait>
         <col index="2" width="91">
         </col>
         <col index="5" width="105">
         </col>
         <cell name="A1" value="Symbol">
-            <trait name="BackColor" value="named color: PeachPuff" />
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
         </cell>
         <cell name="C6" value="-1326.48">
         </cell>
         <cell name="C1" value="Total">
-            <trait name="BackColor" value="named color: PeachPuff" />
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
         </cell>
         <cell name="B1" value="Transactions">
-            <trait name="BackColor" value="named color: PeachPuff" />
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
         </cell>
         <cell name="A2" value="MSFT">
         </cell>

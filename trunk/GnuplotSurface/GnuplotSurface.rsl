@@ -1,4 +1,4 @@
-<document currentResultWorksheet="Surface Data Plot" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.729763387298" splitterOrientation="Horizontal" suspendRecalculations="False">
+<document currentResultWorksheet="Surface Data" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.729763387298" splitterOrientation="Horizontal" suspendRecalculations="False">
     <foldState imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
     <preConstantsUserCode><![CDATA[import sys
 from System.IO import Path

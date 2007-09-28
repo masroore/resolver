@@ -73,60 +73,70 @@ for x in range(image.Width):
 ]]></preFormulaeUserCode>
     <names />
     <worksheet name="Sheet1" value="" showGrid="False" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <trait name="Bold">
+            <traitentry col="1" row="4" value="True" />
+            <traitentry col="1" row="2" value="True" />
+            <traitentry col="1" row="1" value="True" />
+            <traitentry col="1" row="5" value="True" />
+            <traitentry col="1" row="6" value="True" />
+        </trait>
+        <trait name="BorderBottom">
+            <traitentry col="1" row="7" value="True" />
+            <traitentry col="2" row="7" value="True" />
+        </trait>
+        <trait name="BorderLeft">
+            <traitentry col="1" row="4" value="True" />
+            <traitentry col="1" row="2" value="True" />
+            <traitentry col="1" row="1" value="True" />
+            <traitentry col="1" row="5" value="True" />
+            <traitentry col="1" row="6" value="True" />
+            <traitentry col="1" row="7" value="True" />
+            <traitentry col="1" row="3" value="True" />
+        </trait>
+        <trait name="BorderRight">
+            <traitentry col="2" row="2" value="True" />
+            <traitentry col="2" row="1" value="True" />
+            <traitentry col="2" row="7" value="True" />
+            <traitentry col="2" row="4" value="True" />
+            <traitentry col="2" row="5" value="True" />
+            <traitentry col="2" row="6" value="True" />
+            <traitentry col="2" row="3" value="True" />
+        </trait>
+        <trait name="BorderTop">
+            <traitentry col="1" row="1" value="True" />
+            <traitentry col="2" row="1" value="True" />
+        </trait>
         <col index="1" width="85">
         </col>
         <col index="2" width="83">
         </col>
         <cell name="A4" value="Image Name:">
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="A2" value="Pixel Width:">
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="A1" value="Pixel Height:">
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="A5" value="Image Height:">
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="B2" value="2">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="B1" value="2">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="A6" value="Image Width:">
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="A7">
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="B7">
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="A3">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="B4">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="B5">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="B6">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="B3">
-            <trait name="BorderRight" value="True" />
         </cell>
     </worksheet>
     <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">

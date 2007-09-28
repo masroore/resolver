@@ -1,4 +1,4 @@
-<document currentResultWorksheet="Colored Bar Chart" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.742725880551" splitterOrientation="Horizontal" suspendRecalculations="False">
+<document currentResultWorksheet="Chart Data" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.742725880551" splitterOrientation="Horizontal" suspendRecalculations="False">
     <foldState imports="True" worksheetCreation="False" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
     <preConstantsUserCode><![CDATA[
 sheet = workbook['Chart Data']
