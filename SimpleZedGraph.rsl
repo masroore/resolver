@@ -1,4 +1,4 @@
-<document currentResultWorksheet="Sine Wave" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.704918032787" splitterOrientation="Horizontal" suspendRecalculations="False">
+<document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.704918032787" splitterOrientation="Horizontal" suspendRecalculations="False">
     <foldState imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="False" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
     <preConstantsUserCode><![CDATA[
 import clr
@@ -77,6 +77,12 @@ imageSheetName = "Sine Wave"
 workbook.AddImageWorksheet(imageSheetName, pane.GetImage())
 ]]></preFormulaeUserCode>
     <names />
+    <worksheet name="Sheet1" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <worksheet name="Sheet3" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
     <postFormulaeUserCode><![CDATA[
 import clr
 clr.AddReference('ZedGraph')

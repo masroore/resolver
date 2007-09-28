@@ -31,12 +31,10 @@ def SpeakRange(cellRange):
 ]]></preFormulaeUserCode>
     <names />
     <worksheet name="Sheet1" value="" showGrid="False" showBounds="False" headerWidth="-1" headerHeight="-1">
-        <col index="5" width="-1">
-            <trait name="Bold" value="True" />
-        </col>
-        <traitstack name="Bold">
-            <item type="col" index="5"/>
-        </traitstack>
+        <trait name="Bold">
+            <traitentry col="5" row="0" value="True" />
+            <traitentry col="1" row="7" value="True" />
+        </trait>
         <cell name="A1" value="Name">
         </cell>
         <cell name="B1" value="Country">
@@ -68,7 +66,6 @@ def SpeakRange(cellRange):
         <cell name="C5" value="28">
         </cell>
         <cell name="A7">
-            <trait name="Bold" value="True" />
         </cell>
     </worksheet>
     <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">

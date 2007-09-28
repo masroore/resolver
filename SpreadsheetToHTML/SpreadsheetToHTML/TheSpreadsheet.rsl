@@ -12,332 +12,344 @@ workbook.AddImageWorksheet("Gnuplot Image", image)
 ]]></preFormulaeUserCode>
     <names />
     <worksheet name="Colored Range" value="" showGrid="False" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <trait name="BackColor">
+            <traitentry col="3" row="6" value="named color: CornflowerBlue" />
+            <traitentry col="3" row="8" value="named color: CornflowerBlue" />
+            <traitentry col="3" row="10" value="named color: CornflowerBlue" />
+            <traitentry col="3" row="12" value="named color: CornflowerBlue" />
+            <traitentry col="3" row="14" value="named color: CornflowerBlue" />
+            <traitentry col="4" row="6" value="named color: CornflowerBlue" />
+            <traitentry col="4" row="8" value="named color: CornflowerBlue" />
+            <traitentry col="4" row="10" value="named color: CornflowerBlue" />
+            <traitentry col="4" row="12" value="named color: CornflowerBlue" />
+            <traitentry col="4" row="14" value="named color: CornflowerBlue" />
+            <traitentry col="5" row="6" value="named color: CornflowerBlue" />
+            <traitentry col="5" row="8" value="named color: CornflowerBlue" />
+            <traitentry col="5" row="10" value="named color: CornflowerBlue" />
+            <traitentry col="5" row="12" value="named color: CornflowerBlue" />
+            <traitentry col="5" row="14" value="named color: CornflowerBlue" />
+            <traitentry col="6" row="6" value="named color: CornflowerBlue" />
+            <traitentry col="6" row="8" value="named color: CornflowerBlue" />
+            <traitentry col="6" row="10" value="named color: CornflowerBlue" />
+            <traitentry col="6" row="12" value="named color: CornflowerBlue" />
+            <traitentry col="6" row="14" value="named color: CornflowerBlue" />
+            <traitentry col="7" row="6" value="named color: CornflowerBlue" />
+            <traitentry col="7" row="8" value="named color: CornflowerBlue" />
+            <traitentry col="7" row="10" value="named color: CornflowerBlue" />
+            <traitentry col="7" row="12" value="named color: CornflowerBlue" />
+            <traitentry col="7" row="14" value="named color: CornflowerBlue" />
+            <traitentry col="8" row="6" value="named color: CornflowerBlue" />
+            <traitentry col="8" row="8" value="named color: CornflowerBlue" />
+            <traitentry col="8" row="10" value="named color: CornflowerBlue" />
+            <traitentry col="8" row="12" value="named color: CornflowerBlue" />
+            <traitentry col="8" row="14" value="named color: CornflowerBlue" />
+        </trait>
+        <trait name="Bold">
+            <traitentry col="3" row="5" value="True" />
+            <traitentry col="3" row="6" value="True" />
+            <traitentry col="3" row="7" value="True" />
+            <traitentry col="3" row="8" value="True" />
+            <traitentry col="3" row="9" value="True" />
+            <traitentry col="3" row="10" value="True" />
+            <traitentry col="3" row="11" value="True" />
+            <traitentry col="3" row="12" value="True" />
+            <traitentry col="3" row="13" value="True" />
+            <traitentry col="3" row="14" value="True" />
+            <traitentry col="3" row="15" value="True" />
+            <traitentry col="4" row="5" value="True" />
+            <traitentry col="5" row="5" value="True" />
+            <traitentry col="6" row="5" value="True" />
+            <traitentry col="7" row="5" value="True" />
+            <traitentry col="8" row="5" value="True" />
+        </trait>
+        <trait name="BorderBottom">
+            <traitentry col="3" row="15" value="True" />
+            <traitentry col="4" row="15" value="True" />
+            <traitentry col="5" row="15" value="True" />
+            <traitentry col="6" row="15" value="True" />
+            <traitentry col="7" row="15" value="True" />
+            <traitentry col="8" row="15" value="True" />
+        </trait>
+        <trait name="BorderLeft">
+            <traitentry col="3" row="5" value="True" />
+            <traitentry col="3" row="6" value="True" />
+            <traitentry col="3" row="7" value="True" />
+            <traitentry col="3" row="8" value="True" />
+            <traitentry col="3" row="9" value="True" />
+            <traitentry col="3" row="10" value="True" />
+            <traitentry col="3" row="11" value="True" />
+            <traitentry col="3" row="12" value="True" />
+            <traitentry col="3" row="13" value="True" />
+            <traitentry col="3" row="14" value="True" />
+            <traitentry col="3" row="15" value="True" />
+        </trait>
+        <trait name="BorderRight">
+            <traitentry col="3" row="5" value="True" />
+            <traitentry col="3" row="6" value="True" />
+            <traitentry col="3" row="7" value="True" />
+            <traitentry col="3" row="8" value="True" />
+            <traitentry col="3" row="9" value="True" />
+            <traitentry col="3" row="10" value="True" />
+            <traitentry col="3" row="11" value="True" />
+            <traitentry col="3" row="12" value="True" />
+            <traitentry col="3" row="13" value="True" />
+            <traitentry col="3" row="14" value="True" />
+            <traitentry col="3" row="15" value="True" />
+            <traitentry col="4" row="5" value="True" />
+            <traitentry col="4" row="6" value="True" />
+            <traitentry col="4" row="7" value="True" />
+            <traitentry col="4" row="8" value="True" />
+            <traitentry col="4" row="9" value="True" />
+            <traitentry col="4" row="10" value="True" />
+            <traitentry col="4" row="11" value="True" />
+            <traitentry col="4" row="12" value="True" />
+            <traitentry col="4" row="13" value="True" />
+            <traitentry col="4" row="14" value="True" />
+            <traitentry col="4" row="15" value="True" />
+            <traitentry col="5" row="5" value="True" />
+            <traitentry col="5" row="6" value="True" />
+            <traitentry col="5" row="7" value="True" />
+            <traitentry col="5" row="8" value="True" />
+            <traitentry col="5" row="9" value="True" />
+            <traitentry col="5" row="10" value="True" />
+            <traitentry col="5" row="11" value="True" />
+            <traitentry col="5" row="12" value="True" />
+            <traitentry col="5" row="13" value="True" />
+            <traitentry col="5" row="14" value="True" />
+            <traitentry col="5" row="15" value="True" />
+            <traitentry col="6" row="5" value="True" />
+            <traitentry col="6" row="6" value="True" />
+            <traitentry col="6" row="7" value="True" />
+            <traitentry col="6" row="8" value="True" />
+            <traitentry col="6" row="9" value="True" />
+            <traitentry col="6" row="10" value="True" />
+            <traitentry col="6" row="11" value="True" />
+            <traitentry col="6" row="12" value="True" />
+            <traitentry col="6" row="13" value="True" />
+            <traitentry col="6" row="14" value="True" />
+            <traitentry col="6" row="15" value="True" />
+            <traitentry col="7" row="5" value="True" />
+            <traitentry col="7" row="6" value="True" />
+            <traitentry col="7" row="7" value="True" />
+            <traitentry col="7" row="8" value="True" />
+            <traitentry col="7" row="9" value="True" />
+            <traitentry col="7" row="10" value="True" />
+            <traitentry col="7" row="11" value="True" />
+            <traitentry col="7" row="12" value="True" />
+            <traitentry col="7" row="13" value="True" />
+            <traitentry col="7" row="14" value="True" />
+            <traitentry col="7" row="15" value="True" />
+            <traitentry col="8" row="5" value="True" />
+            <traitentry col="8" row="6" value="True" />
+            <traitentry col="8" row="7" value="True" />
+            <traitentry col="8" row="8" value="True" />
+            <traitentry col="8" row="9" value="True" />
+            <traitentry col="8" row="10" value="True" />
+            <traitentry col="8" row="11" value="True" />
+            <traitentry col="8" row="12" value="True" />
+            <traitentry col="8" row="13" value="True" />
+            <traitentry col="8" row="14" value="True" />
+            <traitentry col="8" row="15" value="True" />
+        </trait>
+        <trait name="BorderTop">
+            <traitentry col="3" row="5" value="True" />
+            <traitentry col="3" row="6" value="True" />
+            <traitentry col="3" row="7" value="True" />
+            <traitentry col="3" row="8" value="True" />
+            <traitentry col="3" row="9" value="True" />
+            <traitentry col="3" row="10" value="True" />
+            <traitentry col="3" row="11" value="True" />
+            <traitentry col="3" row="12" value="True" />
+            <traitentry col="3" row="13" value="True" />
+            <traitentry col="3" row="14" value="True" />
+            <traitentry col="3" row="15" value="True" />
+            <traitentry col="4" row="5" value="True" />
+            <traitentry col="4" row="6" value="True" />
+            <traitentry col="4" row="7" value="True" />
+            <traitentry col="4" row="8" value="True" />
+            <traitentry col="4" row="9" value="True" />
+            <traitentry col="4" row="10" value="True" />
+            <traitentry col="4" row="11" value="True" />
+            <traitentry col="4" row="12" value="True" />
+            <traitentry col="4" row="13" value="True" />
+            <traitentry col="4" row="14" value="True" />
+            <traitentry col="4" row="15" value="True" />
+            <traitentry col="5" row="5" value="True" />
+            <traitentry col="5" row="6" value="True" />
+            <traitentry col="5" row="7" value="True" />
+            <traitentry col="5" row="8" value="True" />
+            <traitentry col="5" row="9" value="True" />
+            <traitentry col="5" row="10" value="True" />
+            <traitentry col="5" row="11" value="True" />
+            <traitentry col="5" row="12" value="True" />
+            <traitentry col="5" row="13" value="True" />
+            <traitentry col="5" row="14" value="True" />
+            <traitentry col="5" row="15" value="True" />
+            <traitentry col="6" row="5" value="True" />
+            <traitentry col="6" row="6" value="True" />
+            <traitentry col="6" row="7" value="True" />
+            <traitentry col="6" row="8" value="True" />
+            <traitentry col="6" row="9" value="True" />
+            <traitentry col="6" row="10" value="True" />
+            <traitentry col="6" row="11" value="True" />
+            <traitentry col="6" row="12" value="True" />
+            <traitentry col="6" row="13" value="True" />
+            <traitentry col="6" row="14" value="True" />
+            <traitentry col="6" row="15" value="True" />
+            <traitentry col="7" row="5" value="True" />
+            <traitentry col="7" row="6" value="True" />
+            <traitentry col="7" row="7" value="True" />
+            <traitentry col="7" row="8" value="True" />
+            <traitentry col="7" row="9" value="True" />
+            <traitentry col="7" row="10" value="True" />
+            <traitentry col="7" row="11" value="True" />
+            <traitentry col="7" row="12" value="True" />
+            <traitentry col="7" row="13" value="True" />
+            <traitentry col="7" row="14" value="True" />
+            <traitentry col="7" row="15" value="True" />
+            <traitentry col="8" row="5" value="True" />
+            <traitentry col="8" row="6" value="True" />
+            <traitentry col="8" row="7" value="True" />
+            <traitentry col="8" row="8" value="True" />
+            <traitentry col="8" row="9" value="True" />
+            <traitentry col="8" row="10" value="True" />
+            <traitentry col="8" row="11" value="True" />
+            <traitentry col="8" row="12" value="True" />
+            <traitentry col="8" row="13" value="True" />
+            <traitentry col="8" row="14" value="True" />
+            <traitentry col="8" row="15" value="True" />
+        </trait>
         <cell name="C5" value="Reference">
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="C6" value="0001">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="C7" value="0002">
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="C8" value="0003">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="C9" value="0004">
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="C10" value="0005">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="C11" value="0006">
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="C12" value="0007">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="C13" value="0008">
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="C14" value="0009">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="C15" value="0010">
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="D5" value="Customer">
-            <trait name="Bold" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="D6" value="A37">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="D7" value="G45">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="D8" value="D98">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="D9" value="A01">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="D10" value="C12">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="D11" value="X14">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="D12" value="O39">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="D13" value="A37">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="D14" value="C12">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="D15" value="O39">
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="E5" value="Symbol">
-            <trait name="Bold" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="E6" value="MSFT">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="E7" value="GOOG">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="E8" value="BSY">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="E9" value="ETI">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="E10" value="HNS">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="E11" value="GOOG">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="E12" value="HNS">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="E13" value="BSY">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="E14" value="MSFT">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="E15" value="MSFT">
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="F5" value="Number">
-            <trait name="Bold" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="F6" value="237">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="F7" value="1250">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="F8" value="658">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="F9" value="998">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="F10" value="117">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="F11" value="4">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="F12" value="1740">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="F13" value="345">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="F14" value="2501">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="F15" value="1799">
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="G5" value="Price">
-            <trait name="Bold" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="G6" value="48.10">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="G7" value="123.50">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="G8" value="79.5">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="G9" value="86.12">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="G10" value="0.56">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="G11" value="156.20">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="G12" value="0.80">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="G13" value="82.45">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="G14" value="43.00">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="G15" value="42.99">
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="H5" value="Direction">
-            <trait name="Bold" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="H6" value="Buy">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="H7" value="Sell">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="H8" value="Sell">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="H9" value="Buy">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="H10" value="Sell">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="H11" value="Buy">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="H12" value="Buy">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="H13" value="Buy">
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="H14" value="Sell">
-            <trait name="BackColor" value="named color: CornflowerBlue" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="H15" value="Sell">
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
     </worksheet>
     <worksheet name="Silly Colors - No Grid" value="" showGrid="False" showBounds="False" headerWidth="-1" headerHeight="-1">

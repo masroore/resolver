@@ -92,6 +92,27 @@ for i in range(steps):
         </cell>
     </worksheet>
     <worksheet name="complex" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <trait name="Bold">
+            <traitentry col="1" row="1" value="True" />
+            <traitentry col="2" row="1" value="True" />
+            <traitentry col="3" row="1" value="True" />
+            <traitentry col="4" row="1" value="True" />
+            <traitentry col="5" row="1" value="True" />
+        </trait>
+        <trait name="DecimalPlaces">
+            <traitentry col="4" row="0" value="3" />
+            <traitentry col="3" row="0" value="3" />
+            <traitentry col="2" row="0" value="3" />
+            <traitentry col="1" row="0" value="3" />
+            <traitentry col="5" row="1" value="3" />
+        </trait>
+        <trait name="StripZeros">
+            <traitentry col="4" row="0" value="False" />
+            <traitentry col="3" row="0" value="False" />
+            <traitentry col="2" row="0" value="False" />
+            <traitentry col="1" row="0" value="False" />
+            <traitentry col="5" row="1" value="False" />
+        </trait>
         <col index="6" width="19">
         </col>
         <col index="7" width="19">
@@ -144,47 +165,15 @@ for i in range(steps):
         </col>
         <col index="31" width="19">
         </col>
-        <col index="1" width="-1">
-            <trait name="DecimalPlaces" value="3" />
-            <trait name="StripZeros" value="False" />
-        </col>
-        <col index="2" width="-1">
-            <trait name="DecimalPlaces" value="3" />
-            <trait name="StripZeros" value="False" />
-        </col>
-        <col index="3" width="-1">
-            <trait name="DecimalPlaces" value="3" />
-            <trait name="StripZeros" value="False" />
-        </col>
-        <col index="4" width="-1">
-            <trait name="DecimalPlaces" value="3" />
-            <trait name="StripZeros" value="False" />
-        </col>
         <col index="5" width="19">
         </col>
-        <traitstack name="DecimalPlaces">
-            <item type="col" index="4"/>
-            <item type="col" index="3"/>
-            <item type="col" index="2"/>
-            <item type="col" index="1"/>
-        </traitstack>
-        <traitstack name="StripZeros">
-            <item type="col" index="4"/>
-            <item type="col" index="3"/>
-            <item type="col" index="2"/>
-            <item type="col" index="1"/>
-        </traitstack>
         <cell name="A1" value="0&lt;=n&lt;4">
-            <trait name="Bold" value="True" />
         </cell>
         <cell name="B1" value="j^n">
-            <trait name="Bold" value="True" />
         </cell>
         <cell name="C1" value="real">
-            <trait name="Bold" value="True" />
         </cell>
         <cell name="D1" value="imag">
-            <trait name="Bold" value="True" />
         </cell>
         <cell name="R13" value="--">
         </cell>
@@ -203,19 +192,24 @@ for i in range(steps):
         <cell name="Q1" value="+j">
         </cell>
         <cell name="E1">
-            <trait name="Bold" value="True" />
-            <trait name="DecimalPlaces" value="3" />
-            <trait name="StripZeros" value="False" />
         </cell>
     </worksheet>
     <worksheet name="user class" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <trait name="Bold">
+            <traitentry col="2" row="4" value="True" />
+            <traitentry col="4" row="4" value="True" />
+            <traitentry col="2" row="13" value="True" />
+        </trait>
+        <trait name="BorderTop">
+            <traitentry col="2" row="4" value="True" />
+            <traitentry col="4" row="4" value="True" />
+            <traitentry col="2" row="13" value="True" />
+        </trait>
         <cell name="B2" value="=Mag(10, 1)">
         </cell>
         <cell name="B3" value="=Mag(20, 3)">
         </cell>
         <cell name="B4" value="=B2+B3">
-            <trait name="Bold" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="C3" value="+">
         </cell>
@@ -224,8 +218,6 @@ for i in range(steps):
         <cell name="D3" value="=Mag(20, 3)">
         </cell>
         <cell name="D4" value="=D2*D3">
-            <trait name="Bold" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="E3" value="*">
         </cell>
@@ -242,8 +234,6 @@ for i in range(steps):
         <cell name="B12" value="=Mag(10, 1)">
         </cell>
         <cell name="B13" value="=SUM(B7:B12)">
-            <trait name="Bold" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="C12" value="+">
         </cell>

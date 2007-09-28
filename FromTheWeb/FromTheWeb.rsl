@@ -50,55 +50,65 @@ for index, (date, rate) in enumerate(data):
 ]]></preFormulaeUserCode>
     <names />
     <worksheet name="Query" value="" showGrid="False" showBounds="True" headerWidth="-1" headerHeight="-1">
+        <trait name="Bold">
+            <traitentry col="1" row="2" value="True" />
+            <traitentry col="1" row="3" value="True" />
+            <traitentry col="1" row="4" value="True" />
+            <traitentry col="1" row="5" value="True" />
+            <traitentry col="1" row="6" value="True" />
+        </trait>
+        <trait name="BorderBottom">
+            <traitentry col="2" row="2" value="True" />
+            <traitentry col="2" row="3" value="True" />
+            <traitentry col="2" row="4" value="True" />
+            <traitentry col="2" row="5" value="True" />
+            <traitentry col="1" row="6" value="True" />
+        </trait>
+        <trait name="BorderLeft">
+            <traitentry col="1" row="2" value="True" />
+            <traitentry col="1" row="3" value="True" />
+            <traitentry col="1" row="4" value="True" />
+            <traitentry col="1" row="5" value="True" />
+            <traitentry col="2" row="2" value="True" />
+            <traitentry col="2" row="3" value="True" />
+            <traitentry col="2" row="4" value="True" />
+            <traitentry col="2" row="5" value="True" />
+            <traitentry col="1" row="6" value="True" />
+            <traitentry col="2" row="6" value="True" />
+        </trait>
+        <trait name="BorderRight">
+            <traitentry col="2" row="2" value="True" />
+            <traitentry col="2" row="3" value="True" />
+            <traitentry col="2" row="4" value="True" />
+            <traitentry col="2" row="5" value="True" />
+        </trait>
+        <trait name="BorderTop">
+            <traitentry col="1" row="2" value="True" />
+            <traitentry col="1" row="3" value="True" />
+            <traitentry col="1" row="4" value="True" />
+            <traitentry col="1" row="5" value="True" />
+            <traitentry col="2" row="2" value="True" />
+            <traitentry col="1" row="6" value="True" />
+        </trait>
         <cell name="A2" value="Start Date">
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="A3" value="End Date">
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="A4" value="Exch1:">
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="A5" value="Exch2:">
-            <trait name="Bold" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="B2" value="01/01/2005">
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="B3" value="22/06/2007">
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="B4" value="GBP">
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="B5" value="USD">
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="A6" value="Full Uri:">
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="B6">
-            <trait name="BorderLeft" value="True" />
         </cell>
     </worksheet>
     <postFormulaeUserCode><![CDATA[
