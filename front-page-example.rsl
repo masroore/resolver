@@ -5,7 +5,7 @@ workbook.AddWorksheet('Transactions')
 workbook.AddWorksheet('Current Prices')
 totals = workbook['Totals']
 ]]></preConstantsUserCode>
-    <preFormulaeUserCode><![CDATA[transactions = CellRange(totals.A4, totals.F13)
+    <preFormulaeUserCode><![CDATA[transactions = CellRange(totals.Cells.A4, totals.Cells.F13)
 ]]></preFormulaeUserCode>
     <names />
     <worksheet name="Totals" value="" showGrid="False" showBounds="True" headerWidth="-1" headerHeight="-1">
@@ -213,8 +213,9 @@ totals = workbook['Totals']
         <trait name="FontSize">
             <traitentry col="1" row="1" value="14.0" />
         </trait>
-        <row index="1" height="40">
-        </row>
+        <trait name="RowHeight">
+            <traitentry col="0" row="1" value="40" />
+        </trait>
         <cell name="A3" value="Reference">
         </cell>
         <cell name="A4" value="0001">
@@ -359,9 +360,9 @@ totals = workbook['Totals']
         </cell>
         <cell name="H6" value="Balance:">
         </cell>
-        <cell name="I4" value="=SUM(row[4].Value * row[5].Value for row in transactions.Rows if row[6].Value == &apos;Buy&apos;)">
+        <cell name="I4" value="=SUM(row[4] * row[5] for row in transactions.Rows if row[6] == &apos;Buy&apos;)">
         </cell>
-        <cell name="I5" value="=SUM(row[4].Value * row[5].Value for row in transactions.Rows if row[6].Value == &apos;Sell&apos;)">
+        <cell name="I5" value="=SUM(row[4] * row[5] for row in transactions.Rows if row[6] == &apos;Sell&apos;)">
         </cell>
         <cell name="I6" value="=I5 - I4">
         </cell>
@@ -369,39 +370,39 @@ totals = workbook['Totals']
     <postFormulaeUserCode><![CDATA[
 b1 = Button(Text="Commit")
 b2 = Button(Text="Delete")
-totals.B15.Value = b1
-totals.D15.Value = b2
+totals.B15 = b1
+totals.D15 = b2
 
-totals.I6.BackColor = Color.LightGreen
+totals.Cells.I6.BackColor = Color.LightGreen
 
 results = {}
 for row in transactions.Rows:
-    symbol = row[3].Value
+    symbol = row[3]
     total, trans = results.get(symbol, (0, 0))
     trans += 1
     mod = 1
-    if row[6].Value == 'Buy':
+    if row[6] == 'Buy':
         mod = -1
-    total += row[4].Value * row[5].Value * mod
+    total += row[4] * row[5] * mod
     results[symbol] = (total, trans)
     print symbol, 'Total:', total, 'Trans:', trans
 
-cellRange = CellRange(totals.H8, totals.H8.Offset(2, len(results)))
+cellRange = CellRange(totals.Cells.H8, totals.Cells.H8.Offset(2, len(results)))
 cellRange.BackColor = Color.PeachPuff
 cellRange.HeaderRow = cellRange.Rows[1]
 cellRange.HeaderRow.Bold = True
 cellRange.HeaderRow.BorderBottom = True
 
-cellRange.HeaderRow[1].Value = 'Symbol'
-cellRange.HeaderRow[2].Value = 'Trans'
-cellRange.HeaderRow[3].Value = 'Total'
+cellRange.HeaderRow[1] = 'Symbol'
+cellRange.HeaderRow[2] = 'Trans'
+cellRange.HeaderRow[3] = 'Total'
 
 for index, (symbol, (total, trans)) in enumerate(results.items()):
     row = cellRange.Rows[index + 2]
-    row[1].Value = symbol
-    row[2].Value = trans
-    row[3].Value = total
-    if row[3].Value < 0:
-        row[3].BackColor = Color.Red
+    row[1] = symbol
+    row[2] = trans
+    row[3] = total
+    if row[3] < 0:
+        row.Cells[3].BackColor = Color.Red
 ]]></postFormulaeUserCode>
 </document>
