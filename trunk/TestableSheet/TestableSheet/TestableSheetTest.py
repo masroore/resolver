@@ -46,7 +46,7 @@ class TestableSheetTest(unittest.TestCase):
         }
         workbook = Spreadsheet()
         workbook.recalculate(Constants=Constants)
-        self.assertEquals(workbook['Sheet1'].C22.Value, 10, "Total Income calculated incorrectly")
+        self.assertEquals(workbook['Sheet1'].C22, 10, "Total Income calculated incorrectly")
 
     
     def testTotalOutgoings(self):
@@ -60,7 +60,7 @@ class TestableSheetTest(unittest.TestCase):
         }
         workbook = Spreadsheet()
         workbook.recalculate(Constants=Constants)
-        self.assertEquals(workbook['Sheet1'].C23.Value, 10, "Total Outgoings calculated incorrectly")
+        self.assertEquals(workbook['Sheet1'].C23, 10, "Total Outgoings calculated incorrectly")
 
     
     def testBalance(self):
@@ -72,7 +72,7 @@ class TestableSheetTest(unittest.TestCase):
         }
         workbook = Spreadsheet()
         workbook.recalculate(Constants=Constants)
-        self.assertEquals(workbook['Sheet1'].C24.Value, 100, "Balance calculated incorrectly")
+        self.assertEquals(workbook['Sheet1'].C24, 100, "Balance calculated incorrectly")
 
     
     def testBalanceBackColor(self):
@@ -84,7 +84,7 @@ class TestableSheetTest(unittest.TestCase):
         }
         workbook = Spreadsheet()
         workbook.recalculate(Constants=PositiveBalance)
-        self.assertNotEquals(workbook['Sheet1'].C24.BackColor, Color.Red, "Incorrect BackColor for positive balance")
+        self.assertNotEquals(workbook['Sheet1'].Cells.C24.BackColor, Color.Red, "Incorrect BackColor for positive balance")
         
         NegativeBalance = {
             'Sheet1': {
@@ -93,7 +93,7 @@ class TestableSheetTest(unittest.TestCase):
             }
         }
         workbook.recalculate(Constants=NegativeBalance)
-        self.assertEquals(workbook['Sheet1'].C24.BackColor, Color.Red, "Incorrect BackColor for negative balance")
+        self.assertEquals(workbook['Sheet1'].Cells.C24.BackColor, Color.Red, "Incorrect BackColor for negative balance")
         
 
 

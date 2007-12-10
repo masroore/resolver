@@ -364,9 +364,10 @@ def FillWithSillyColors(sheet):
     for x in range(1, 10):
         for y in range(1, 6):
             cellLoc = (x, y)
-            sheet[cellLoc].BackColor = RandomColor()
-            sheet[cellLoc].Value = cellLoc
-            sheet[cellLoc].Bold = True
+            cell = sheet.Cells[cellLoc]
+            cell.BackColor = RandomColor()
+            cell.Value = cellLoc
+            cell.Bold = True
             print cellLoc,
     print
 

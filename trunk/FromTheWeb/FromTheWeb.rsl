@@ -1,4 +1,4 @@
-<document currentResultWorksheet="Exchange Rate" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.851282051282" splitterOrientation="Horizontal" suspendRecalculations="False">
+<document currentResultWorksheet="Query" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.851282051282" splitterOrientation="Horizontal" suspendRecalculations="False">
     <foldState imports="True" worksheetCreation="True" preConstantsUserCode="True" constants="True" preFormulaeUserCode="False" generated="True" postFormulaeUserCode="False"/>
     <preConstantsUserCode><![CDATA[
 
@@ -7,20 +7,20 @@
 
 sheet = workbook["Query"]
 
-date1 = sheet.B2.Value
-date2  = sheet.B3.Value
-exch1 = sheet.B4.Value
-exch2 = sheet.B5.Value
+date1 = sheet.B2
+date2  = sheet.B3
+exch1 = sheet.B4
+exch2 = sheet.B5
 
 if not isinstance(date1, Date):
-    sheet.B2.Error = Exception('"%s" is not a date' % date1)
-    raise sheet.B2.Error
+    sheet.Cells.B2.Error = Exception('"%s" is not a date' % date1)
+    raise sheet.Cells.B2.Error
 if not isinstance(date2, Date):
-    sheet.B3.Error = Exception('"%s" is not a date' % date2)
-    raise sheet.B3.Error
+    sheet.Cells.B3.Error = Exception('"%s" is not a date' % date2)
+    raise sheet.Cells.B3.Error
 
 currValues, fullURI = FromTheWeb.GetRealTimeData(date1, date2, exch1, exch2)
-sheet.B6.Value = fullURI
+sheet.B6 = fullURI
 
 def CellRangeFromDimensions(startCell, width, height):
     endCell = startCell.Offset(width-1, height-1)
@@ -37,16 +37,16 @@ dataWorksheet.ShowGrid = False
 
 data = [entry.split(',') for entry in currValues.splitlines() if len(entry.split(',')) == 2]
 
-cellRange = CellRangeFromDimensions(dataWorksheet.A1, 2, len(data) + 1)
+cellRange = CellRangeFromDimensions(dataWorksheet.Cells.A1, 2, len(data) + 1)
 cellRange.HeaderRow = cellRange.Rows[1]
 cellRange.HeaderRow.Bold = True
-cellRange.HeaderRow[1].Value = 'Date'
-cellRange.HeaderRow[2].Value = 'Rate'
+cellRange.HeaderRow[1] = 'Date'
+cellRange.HeaderRow[2] = 'Rate'
 FormatCellRangeBorders(cellRange)
 
 for index, (date, rate) in enumerate(data):
-    cellRange['Date', index + 2].Value = Date(date.replace('.', '/'))
-    cellRange['Rate', index + 2].Value = float(rate)
+    cellRange['Date', index + 2] = Date(date.replace('.', '/'))
+    cellRange['Rate', index + 2] = float(rate)
 ]]></preFormulaeUserCode>
     <names />
     <worksheet name="Query" value="" showGrid="False" showBounds="True" headerWidth="-1" headerHeight="-1">
@@ -111,10 +111,7 @@ for index, (date, rate) in enumerate(data):
         <cell name="B6">
         </cell>
     </worksheet>
-    <postFormulaeUserCode><![CDATA[
-
-
-import clr
+    <postFormulaeUserCode><![CDATA[import clr
 clr.AddReference('ZedGraph')
 clr.AddReference('System.Drawing')
 
@@ -145,16 +142,16 @@ pane.XAxis.Scale.MajorStep = 3.0
 
 line1 = PointPairList()
 for index in range(2, cellRange.MaxRow + 1):
-    date = cellRange['Date', index].Value
-    rate = cellRange['Rate', index].Value
+    date = cellRange['Date', index]
+    rate = cellRange['Rate', index]
     day, month, year = date.DateTime.Day, date.DateTime.Month, date.DateTime.Year
     line1.Add(XDate(year, month, day).XLDate, rate)
 
-firstDate = cellRange['Date', 2].Value
+firstDate = cellRange['Date', 2]
 day, month, year = firstDate.DateTime.Day, firstDate.DateTime.Month, firstDate.DateTime.Year
 pane.XAxis.Scale.Min = XDate(year, month, day).XLDate
 
-lastDate = cellRange['Date', cellRange.MaxRow].Value
+lastDate = cellRange['Date', cellRange.MaxRow]
 day, month, year = lastDate.DateTime.Day, lastDate.DateTime.Month, lastDate.DateTime.Year
 pane.XAxis.Scale.Max = XDate(year, month, day).XLDate
 

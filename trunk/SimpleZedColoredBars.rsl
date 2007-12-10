@@ -4,7 +4,7 @@
 sheet = workbook['Chart Data']
 
 # A CellRange from which we will generate the bar chart
-chartData = CellRange(sheet.B2, sheet.C20)
+chartData = CellRange(sheet.Cells.B2, sheet.Cells.C20)
 chartData.HeaderRow = chartData.Rows[1]
 
 # Formatting the CellRange
@@ -16,14 +16,14 @@ chartData.Cols[1].BorderLeft = True
 chartData.Cols[1].BorderRight = True
 chartData.Cols[2].BorderRight = True
 
-chartData.HeaderRow[1].Value = 'Bar'
-chartData.HeaderRow[2].Value = 'Value'
+chartData.HeaderRow[1] = 'Bar'
+chartData.HeaderRow[2] = 'Value'
 
 # Fill the CellRange with random values
 from random import random
 for y in range(2, chartData.MaxRow+1):
-    chartData['Bar', y].Value = y -1
-    chartData['Value', y].Value = random() * 1000 
+    chartData['Bar', y] = y -1
+    chartData['Value', y] = random() * 1000 
 
 
 ]]></preConstantsUserCode>
@@ -48,8 +48,8 @@ ppl = PointPairList()
 # Fill the PointPairList from the CellRange
 colorStep = 4.0 / (chartData.MaxRow-1)
 for i in range(2, chartData.MaxRow+1):
-    x = int(chartData['Bar', i].Value)
-    y = chartData['Value', i].Value
+    x = int(chartData['Bar', i])
+    y = chartData['Value', i]
 
     z = x * colorStep
     ppl.Add(x, y, z)

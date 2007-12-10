@@ -13,8 +13,8 @@ else:
 cache = GetCache(__file__)
 
 sheet = workbook['Sheet1']
-sheet.B1.Value = 1
-sheet.B2.Value = 1
+sheet.B1 = 1
+sheet.B2 = 1
 
 def SetImage(imageName,cache):
     import clr
@@ -49,25 +49,25 @@ def GetImage():
 
 button = Button(Text="Select Image")
 button.Click += GetImage
-sheet.B7.Value = button
+sheet.B7 = button
 
 ]]></preConstantsUserCode>
     <preFormulaeUserCode><![CDATA[
-height = sheet.B1.Value
-width = sheet.B2.Value
+height = sheet.B1
+width = sheet.B2
 
-sheet.B4.Value = imageName
-sheet.B5.Value = image.Height
-sheet.B6.Value = image.Width
+sheet.B4 = imageName
+sheet.B5 = image.Height
+sheet.B6 = image.Width
 
 xMod = 4
 yMod = 9
 for x in range(image.Width):
-    sheet.Cols[x + xMod].Width = width
+    sheet.Cols[x + xMod].Width = int(width)
     for y in range(image.Height):
         if not x:
-            sheet.Rows[y + yMod].Height = height
-        sheet[x + xMod, y + yMod].BackColor = image.GetPixel(x, y)
+            sheet.Rows[y + yMod].Height = int(height)
+        sheet.Cells[x + xMod, y + yMod].BackColor = image.GetPixel(x, y)
 
 
 ]]></preFormulaeUserCode>
@@ -106,10 +106,10 @@ for x in range(image.Width):
             <traitentry col="1" row="1" value="True" />
             <traitentry col="2" row="1" value="True" />
         </trait>
-        <col index="1" width="85">
-        </col>
-        <col index="2" width="83">
-        </col>
+        <trait name="ColWidth">
+            <traitentry col="1" row="0" value="85" />
+            <traitentry col="2" row="0" value="83" />
+        </trait>
         <cell name="A4" value="Image Name:">
         </cell>
         <cell name="A2" value="Pixel Width:">
@@ -123,20 +123,6 @@ for x in range(image.Width):
         <cell name="B1" value="2">
         </cell>
         <cell name="A6" value="Image Width:">
-        </cell>
-        <cell name="A7">
-        </cell>
-        <cell name="B7">
-        </cell>
-        <cell name="A3">
-        </cell>
-        <cell name="B4">
-        </cell>
-        <cell name="B5">
-        </cell>
-        <cell name="B6">
-        </cell>
-        <cell name="B3">
         </cell>
     </worksheet>
     <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">

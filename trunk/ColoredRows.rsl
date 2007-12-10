@@ -157,7 +157,7 @@ def ColorAlternateRows(cellRange, mainColor=Color.CornflowerBlue, alternateColor
     </worksheet>
     <postFormulaeUserCode><![CDATA[sheet = workbook['Sheet1']
 
-cellRange = CellRange(sheet.B4, sheet.G14)
+cellRange = CellRange(sheet.Cells.B4, sheet.Cells.G14)
 cellRange.HeaderRow = cellRange.Rows[1]
 cellRange.HeaderCol = cellRange.Cols[1]
 cellRange.HeaderRow.Bold = True

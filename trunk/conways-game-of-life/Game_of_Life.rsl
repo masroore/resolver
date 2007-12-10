@@ -24,7 +24,7 @@ g = lifeRsl.getGrid(width, height, startDensity)
 g.nextGeneration()
 
 for x, y in g.liveLocations():
-    sheet[x+1, y+1].BackColor = Color.Green
+    sheet.Cells[x+1, y+1].BackColor = Color.Green
 
 # --------------------
 
@@ -37,7 +37,7 @@ def RecalcHack():
 
 button1 = Button(Text="Recalculate")
 button1.Click += RecalcHack
-sheet[width + 2, 2].Value = button1
+sheet[width + 2, 2] = button1
 
 def Reset():
     g.__init__(width, height, startDensity)
@@ -45,7 +45,7 @@ def Reset():
 
 button2 = Button(Text="Reset")
 button2.Click += Reset
-sheet[width + 2, 4].Value = button2
+sheet[width + 2, 4] = button2
 
 ]]></preConstantsUserCode>
     <preFormulaeUserCode><![CDATA[

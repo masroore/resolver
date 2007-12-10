@@ -18,12 +18,12 @@ def SpeakRange(cellRange):
     for row in cellRange.Rows:
         if headerRow and row.Top == headerRow.Top:
             continue
-        for pos, cell in enumerate(row):
+        for pos, value in enumerate(row):
             text = ''
             if headerRow:
-                text = str(headerRow[pos + 1].Value) + ', '
+                text = str(headerRow[pos + 1]) + ', '
             
-            text += convertValue(cell.Value)
+            text += convertValue(value)
             spk.Speak(text)
             
 ]]></preConstantsUserCode>
@@ -74,7 +74,7 @@ def SpeakRange(cellRange):
     </worksheet>
     <postFormulaeUserCode><![CDATA[
 sheet = workbook['Sheet1']
-cellRange = CellRange(sheet.A1, sheet.C5)
+cellRange = CellRange(sheet.Cells.A1, sheet.Cells.C5)
 cellRange.HeaderRow = cellRange.Rows[1]
 cellRange.HeaderRow.Bold = True
 
@@ -90,8 +90,6 @@ def Speak():
 
 button = Button(Text="Speak")
 button.Click += Speak
-sheet.E2.Value = button
-
-
+sheet.E2 = button
 ]]></postFormulaeUserCode>
 </document>
