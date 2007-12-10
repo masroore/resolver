@@ -35,24 +35,24 @@ data = [
     ("0010", "O39", "MSFT", 1799, 42.99, "Sell"),
 ]
 
-cellRange = CellRangeFromDimensions(sheet.A1, len(data[0]), len(data) + 1)
+cellRange = CellRangeFromDimensions(sheet.Cells.A1, len(data[0]), len(data) + 1)
 FormatCellRangeBorders(cellRange)
 
 cellRange.HeaderRow = cellRange.Rows[1]
 cellRange.HeaderRow.Bold = True
 for index, header in enumerate(["Reference", "Customer", "Symbol", "Number", "Price", "Direction"]):
-    cellRange.HeaderRow[index + 1].Value = header
+    cellRange.HeaderRow[index + 1] = header
 
 cellRange.HeaderCol = cellRange.Cols[1]
 cellRange.HeaderCol.Bold = True
 
 for index, row in enumerate(data):
     reference, customer, symbol, number, price, direction = row
-    cellRange.Cols["Reference"][index + 2].Value = reference
-    cellRange.Cols["Customer"][index + 2].Value = customer
-    cellRange.Cols["Symbol"][index + 2].Value = symbol
-    cellRange.Cols["Number"][index + 2].Value = number
-    cellRange.Cols["Price"][index + 2].Value = price
-    cellRange.Cols["Direction"][index + 2].Value = direction
+    cellRange.Cols["Reference"][index + 2] = reference
+    cellRange.Cols["Customer"][index + 2] = customer
+    cellRange.Cols["Symbol"][index + 2] = symbol
+    cellRange.Cols["Number"][index + 2] = number
+    cellRange.Cols["Price"][index + 2] = price
+    cellRange.Cols["Direction"][index + 2] = direction
 ]]></postFormulaeUserCode>
 </document>

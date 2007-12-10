@@ -6,8 +6,7 @@ def GenerateGnuplotData(sheet):
     for y in range(1, sheet.MaxRow + 1):
         row = []
         for x in range(1, sheet.MaxCol + 1):
-            cell = sheet[x, y]
-            value = cell.Value
+            value = sheet[x, y]
             u = (6.0 / 50) * x - 3
             v = (6.0 / 50) * y - 3
             row.append('%s %s %s' % (u, v, value))

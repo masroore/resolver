@@ -6,19 +6,18 @@
 sheet = workbook['Sheet1']
 
 # Next let's put nice borders down all the entries automatically
-for row in range(4, sheet.MaxRow+1):
+for index in range(4, sheet.MaxRow+1):
     # First the Income table
-    sheet['A', row].BorderLeft = True
-    sheet['B', row].BorderLeft = True
-    sheet['B', row].BorderRight = True
-    sheet['C', row].BorderRight = True
+    sheet.Cells['A', index].BorderLeft = True
+    sheet.Cells['B', index].BorderLeft = True
+    sheet.Cells['B', index].BorderRight = True
+    sheet.Cells['C', index].BorderRight = True
 
     # Next the outgoings column
-    sheet['E', row].BorderLeft = True
-    sheet['F', row].BorderLeft = True
-    sheet['F', row].BorderRight = True
-    sheet['G', row].BorderRight = True
-
+    sheet.Cells['E', index].BorderLeft = True
+    sheet.Cells['F', index].BorderLeft = True
+    sheet.Cells['F', index].BorderRight = True
+    sheet.Cells['G', index].BorderRight = True
 
 ]]></preFormulaeUserCode>
     <names />
@@ -157,12 +156,11 @@ for row in range(4, sheet.MaxRow+1):
             <traitentry col="3" row="1" value="True" />
             <traitentry col="2" row="1" value="True" />
         </trait>
-        <col index="1" width="155">
-        </col>
-        <col index="5" width="173">
-        </col>
-        <col index="9" width="74">
-        </col>
+        <trait name="ColWidth">
+            <traitentry col="1" row="0" value="155" />
+            <traitentry col="5" row="0" value="173" />
+            <traitentry col="9" row="0" value="74" />
+        </trait>
         <cell name="E5" value="Present for Mrs">
         </cell>
         <cell name="G4" value="98.5">
@@ -347,30 +345,6 @@ for row in range(4, sheet.MaxRow+1):
         </cell>
         <cell name="G20" value="1001.37">
         </cell>
-        <cell name="D2">
-        </cell>
-        <cell name="G1">
-        </cell>
-        <cell name="F1">
-        </cell>
-        <cell name="D1">
-        </cell>
-        <cell name="C1">
-        </cell>
-        <cell name="B1">
-        </cell>
-        <cell name="F3">
-        </cell>
-        <cell name="B3">
-        </cell>
-        <cell name="A3">
-        </cell>
-        <cell name="E3">
-        </cell>
-        <cell name="G3">
-        </cell>
-        <cell name="C3">
-        </cell>
     </worksheet>
     <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
     </worksheet>
@@ -381,10 +355,10 @@ for row in range(4, sheet.MaxRow+1):
 # Let's create a CellRange to hold them
 # You can reposition the cell range by changing
 # co-ordinates in cells J1 and J2
-topLeft = sheet.J1.Value, sheet.J2.Value
-bottomRight = sheet.J1.Value+1, sheet.J2.Value+6
-
-results = CellRange(sheet[topLeft], sheet[bottomRight])
+topLeft = sheet.J1, sheet.J2
+bottomRight = sheet.J1 + 1, sheet.J2 + 6
+ 
+results = CellRange(sheet.Cells[topLeft], sheet.Cells[bottomRight])
 
 # We'll make the first column into a header column
 # and apply some formatting
@@ -395,14 +369,14 @@ results.HeaderCol.Bold = True
 results.HeaderRow.Bold = True
 
 # A one dimensional range only needs a single index
-results.HeaderCol[2].Value = 'Income'
-results.HeaderCol[3].Value = 'Outgoings'
-results.HeaderCol[4].Value = 'Balance'
+results.HeaderCol[2] = 'Income'
+results.HeaderCol[3] = 'Outgoings'
+results.HeaderCol[4] = 'Balance'
 
-results.HeaderCol[6].Value = '???? In'
-results.HeaderCol[7].Value = '???? Out'
+results.HeaderCol[6] = '???? In'
+results.HeaderCol[7] = '???? Out'
 
-results.HeaderRow[2].Value = 'Total'
+results.HeaderRow[2] = 'Total'
 
 results.Cols[1].BorderLeft = True
 results.Cols[2].BorderRight = True
@@ -412,36 +386,36 @@ results.Rows[results.MaxRow].BorderBottom = True
 results.DecimalPlaces = 2
 
 
-filterDate = sheet.J3.Value
+filterDate = sheet.J3
 if not isinstance(filterDate, Date):
     error = Exception("Not a valid date")
-    sheet.J3.Error = error
+    sheet.Cells['J3'].Error = error
     raise error
 
 def GetValuesAfterFilterDate(row, dateColumn, valueColumn):
-    value = sheet[valueColumn, row].Value
-    date = sheet[dateColumn, row].Value
+    value = sheet[valueColumn, row]
+    date = sheet[dateColumn, row]
     if not value or date < filterDate:
         return 0
     return value
 
 # Total income
-results['Total', 'Income'].Value = SUM(GetValuesAfterFilterDate(row, 'B', 'C') for row in range(4, sheet.MaxRow+1))
+results['Total', 'Income'] = SUM(GetValuesAfterFilterDate(row, 'B', 'C') for row in range(4, sheet.MaxRow+1))
 
 # Total outgoings
-results['Total', 'Outgoings'].Value = SUM(GetValuesAfterFilterDate(row, 'F', 'G') for row in range(4, sheet.MaxRow+1))
+results['Total', 'Outgoings'] = SUM(GetValuesAfterFilterDate(row, 'F', 'G') for row in range(4, sheet.MaxRow+1))
 
 # Balance
-results['Total', 'Balance'].Value = results['Total', 'Income'].Value - results['Total', 'Outgoings'].Value
-if results['Total', 'Balance'].Value < 0:
-    results['Total', 'Balance'].BackColor = Color.Red
+results['Total', 'Balance'] = results['Total', 'Income'] - results['Total', 'Outgoings']
+if results['Total', 'Balance'] < 0:
+    results.Cells['Total', 'Balance'].BackColor = Color.Red
 
 # ???? In
-unknownIn = SUM(GetValuesAfterFilterDate(row, 'B', 'C') for row in range(4, sheet.MaxRow+1) if sheet['A', row].Value == '????')
-results['Total', '???? In'].Value = unknownIn
+unknownIn = SUM(GetValuesAfterFilterDate(row, 'B', 'C') for row in range(4, sheet.MaxRow+1) if sheet['A', row] == '????')
+results['Total', '???? In'] = unknownIn
 
 # ???? Out
-unknownOut = SUM(GetValuesAfterFilterDate(row, 'F', 'G') for row in range(4, sheet.MaxRow+1) if sheet['E', row].Value == '????')
-results['Total', '???? Out'].Value = unknownOut
+unknownOut = SUM(GetValuesAfterFilterDate(row, 'F', 'G') for row in range(4, sheet.MaxRow+1) if sheet['E', row] == '????')
+results['Total', '???? Out'] = unknownOut
 ]]></postFormulaeUserCode>
 </document>

@@ -7,12 +7,13 @@ from Library.CellRange import CellRange
 from Library.Date import Date
 from Library.Empty import Empty
 from Library.ExternalLinks import GetExternalCell
-from Library.Errors import (CycleError, DatabaseError, FetchingDataWarning, FormulaError,
-                            LogicError, NotFoundError)
+from Library.Errors import (ArrayError, CycleError, DatabaseError, FetchingDataWarning, 
+                            FormulaError, LogicError, NotFoundError)
 from Library.Mappers import MapWorksheets
 from Library.Functions import (Aggregate, AND, AVERAGE, CONCATENATE, CopyRange, COUNTIF,
-                               IF, ISERROR, MAX, MEDIAN, MIN, OR, PI, SQRT,
-                               Stringify, SUM, SUMIF, VALUE, VLOOKUP)
+                               DDE, DEFAULT_PARAMETER, IF, ImplicitConvert, ISERROR, MAX,
+                               MEDIAN, MIN, OR, PI, SQRT, Stringify, SUM, SUMIF, VALUE,
+                               VLOOKUP)
 from Library.BloombergFunctions import BLP, BLPH
 from Library.BloombergAPI import BloombergError
 from Library.Workbook import Workbook
@@ -348,9 +349,10 @@ class Spreadsheet(Workbook):
             for x in range(1, 10):
                 for y in range(1, 6):
                     cellLoc = (x, y)
-                    sheet[cellLoc].BackColor = RandomColor()
-                    sheet[cellLoc].Value = cellLoc
-                    sheet[cellLoc].Bold = True
+                    cell = sheet.Cells[cellLoc]
+                    cell.BackColor = RandomColor()
+                    cell.Value = cellLoc
+                    cell.Bold = True
                     print cellLoc,
             print
         

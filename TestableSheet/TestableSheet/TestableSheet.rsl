@@ -8,401 +8,239 @@ sheet = workbook['Sheet1']
 # Next let's put nice borders down all the entries automatically
 for row in range(4, sheet.MaxRow+1):
     # First the Income table
-    if sheet['A', row].Value is Empty:
+    if sheet['A', row] is Empty:
         break
-    sheet['A', row].BorderLeft = True
-    sheet['B', row].BorderLeft = True
-    sheet['B', row].BorderRight = True
-    sheet['C', row].BorderRight = True
+    sheet.Cells['A', row].BorderLeft = True
+    sheet.Cells['B', row].BorderLeft = True
+    sheet.Cells['B', row].BorderRight = True
+    sheet.Cells['C', row].BorderRight = True
 
 for row in range(4, sheet.MaxRow+1):
     # First the Income table
-    if sheet['E', row].Value is Empty:
+    if sheet['E', row] is Empty:
         break
     # Next the outgoings column
-    sheet['E', row].BorderLeft = True
-    sheet['F', row].BorderLeft = True
-    sheet['F', row].BorderRight = True
-    sheet['G', row].BorderRight = True
+    sheet.Cells['E', row].BorderLeft = True
+    sheet.Cells['F', row].BorderLeft = True
+    sheet.Cells['F', row].BorderRight = True
+    sheet.Cells['G', row].BorderRight = True
 
 
 ]]></preFormulaeUserCode>
     <names />
     <worksheet name="Sheet1" value="" showGrid="False" showBounds="True" headerWidth="-1" headerHeight="-1">
-        <col index="1" width="155">
-        </col>
-        <col index="5" width="173">
-        </col>
-        <col index="9" width="74">
-        </col>
+        <trait name="ColWidth">
+            <traitentry col="1" row="0" value="155" />
+            <traitentry col="5" row="0" value="173" />
+            <traitentry col="9" row="0" value="74" />
+        </trait>
         <cell name="E5" value="Present for Mrs">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="G4" value="98.5">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="F4" value="15/05/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="E4" value="Chocolate">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="G2" value="Amount">
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="F2" value="Date">
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="E2" value="Reason">
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="E1" value="Outgoings">
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="C10" value="450">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="C9" value="225.51">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="C8" value="851.42">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="C6" value="1800.27">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="C5" value="480">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="C4" value="1240.06">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="C2" value="Amount">
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="B10" value="07/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="B9" value="06/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="B8" value="04/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="B6" value="01/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="B5" value="29/05/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="B4" value="27/05/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="B2" value="Date">
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="A10" value="Business May">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="A9" value="????">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="A8" value="Wife&apos;s Wages May">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="A6" value="My Wages May">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="A5" value="Jerry Paid Back Loan">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="A4" value="Winnings from Horses">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="A2" value="Reason">
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="A1" value="Income">
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="A7" value="Cashback on Phone">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="B7" value="03/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="C7" value="45">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="F5" value="15/05/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G5" value="41.23">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="E6" value="????">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="F6" value="18/05/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G6" value="112.45">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="E7" value="Cash ">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="F7" value="25/05/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G7" value="120.00">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="E8" value="Rent">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="F8" value="01/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G8" value="450">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="E9" value="Tescos">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="F9" value="02/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G9" value="27.32">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="E10" value="????">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="F10" value="02/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G10" value="12.45">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="E11" value="Cash ">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="F11" value="04/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G11" value="40.00">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="E12" value="Council Tax">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="F12" value="04/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G12" value="85">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="E13" value="Savings">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="F13" value="05/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G13" value="400">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="E14" value="Phone Bill">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="F14" value="07/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G14" value="27.51">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="F15" value="09/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="E18" value="Tescos">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="E17" value="Cash">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="E16" value="????">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="E15" value="Power Bill">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="C12" value="412.09">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="C11" value="35">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="B12" value="15/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="B11" value="08/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="A12" value="Royalties">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="A11" value="Sale of Camera">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="F16" value="10/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="F17" value="10/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="F18" value="10/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G15" value="81.00">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G16" value="24.32">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G17" value="30">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G18" value="49.51">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="A22" value="Total Income:">
-            <trait name="Bold" value="True" />
         </cell>
         <cell name="E19" value="House Repairs">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="F19" value="11/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G19" value="2940.06">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="E20" value="Car Repairs">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="F20" value="12/06/2007">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G20" value="1001.37">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="C22" value="=SUM(C1:C21)">
         </cell>
         <cell name="A23" value="Total Outgoings:">
-            <trait name="Bold" value="True" />
         </cell>
         <cell name="C23" value="=SUM(G2:G21)">
         </cell>
         <cell name="C24" value="=C22-C23">
-            <trait name="DecimalPlaces" value="2" />
-            <trait name="StripZeros" value="False" />
         </cell>
         <cell name="A24" value="Balance:">
-            <trait name="Bold" value="True" />
         </cell>
         <cell name="G1">
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="F1">
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="D2">
-            <trait name="Bold" value="True" />
         </cell>
         <cell name="D1">
-            <trait name="Bold" value="True" />
         </cell>
         <cell name="C1">
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderRight" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="B1">
-            <trait name="Bold" value="True" />
-            <trait name="BorderBottom" value="True" />
-            <trait name="BorderTop" value="True" />
         </cell>
         <cell name="A3">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="B3">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="E3">
-            <trait name="BorderLeft" value="True" />
         </cell>
         <cell name="F3">
-            <trait name="BorderLeft" value="True" />
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="C3">
-            <trait name="BorderRight" value="True" />
         </cell>
         <cell name="G3">
-            <trait name="BorderRight" value="True" />
         </cell>
     </worksheet>
     <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
@@ -410,7 +248,7 @@ for row in range(4, sheet.MaxRow+1):
     <worksheet name="Sheet3" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
     </worksheet>
     <postFormulaeUserCode><![CDATA[
-if sheet.C24.Value < 0:
-    sheet.C24.BackColor = Color.Red
+if sheet.C24 < 0:
+    sheet.Cells.C24.BackColor = Color.Red
 ]]></postFormulaeUserCode>
 </document>

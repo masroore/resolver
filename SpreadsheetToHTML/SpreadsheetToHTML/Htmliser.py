@@ -120,7 +120,7 @@ def TdFromCell(sheet, col, row):
             width = 70
         w = ' width="%s" ' % width
     
-    cell = sheet[col, row]
+    cell = sheet.Cells[col, row]
     style = h + w
     if cell.BackColor != Color.White:
         style += ' bgcolor="#%02x%02x%02x" ' % (cell.BackColor.R, cell.BackColor.G, cell.BackColor.B) 

@@ -5,10 +5,10 @@ sheet = workbook['Resolver Sales']
 
 countries = ['UK', 'USA', 'Germany', 'France', 'Spain', 'Italy', 'Africa', 'Japan']
 # A CellRange from which we will generate the bar chart
-chartData = CellRange(sheet.B2, sheet['C', 2 + len(countries)])
+chartData = CellRange(sheet.Cells.B2, sheet.Cells['C', 2 + len(countries)])
 chartData.HeaderRow = chartData.Rows[1]
-chartData.HeaderRow[1].Value = 'Location'
-chartData.HeaderRow[2].Value = 'Sales $M'
+chartData.HeaderRow[1] = 'Location'
+chartData.HeaderRow[2] = 'Sales $M'
 
 # Formatting the CellRange
 chartData.HeaderRow.Bold = True
@@ -24,8 +24,8 @@ chartData.Cols['Sales $M'].BorderRight = True
 from random import random
 for index, country in enumerate(countries):
     row = index + 2
-    chartData['Location', row].Value = country
-    chartData['Sales $M', row].Value = random() * 1000 
+    chartData['Location', row] = country
+    chartData['Sales $M', row] = random() * 1000 
 
 
 ]]></preConstantsUserCode>
@@ -76,8 +76,8 @@ def GetRandomColor():
 total = 0
 for i in range(chartData.MaxRow-1):
     offset = 0
-    label = chartData['Location', i + 2].Value
-    sales = chartData['Sales $M', i + 2].Value
+    label = chartData['Location', i + 2]
+    sales = chartData['Sales $M', i + 2]
     if sales < 150:
         # offset some of the slices
         offset = 0.2
@@ -136,6 +136,6 @@ def SaveChart():
         print '%s: %s' % e.__class__.__name__, e
 
 b.Click += SaveChart
-sheet.E5.Value = b
+sheet.E5 = b
 ]]></postFormulaeUserCode>
 </document>

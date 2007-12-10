@@ -17,8 +17,8 @@ gnuplotPath = Path.Combine(directory, 'gnuplot\\wgnuplot.exe')
 imageDirectory = Path.Combine(directory, 'images')
 scriptPath = Path.Combine(directory, 'surface.gp')
 
-# Generate the path to the next image so that we don't overwrite the ast one
-nextImageNumber = (max( [int(name[7:-4]) for name in os.listdir(imageDirectory)] or [0] )) + 1
+# Generate the path to the next image so that we don't overwrite the last one
+nextImageNumber = (max( [int(name[7:-4]) for name in os.listdir(imageDirectory) if not name.startswith('.')] or [0] )) + 1
 imagePath = Path.Combine(imageDirectory, 'surface%s.png' % nextImageNumber)
 
 # The template for the gnuplot script
@@ -59,9 +59,9 @@ for x in range(1, 50):
     for y in range(1, 50):
         v = (6.0 / 50) * y - 3
         try:
-            sheet[x, y].Value = sin(u*u + v*v) / (u*u + v*v)
+            sheet[x, y] = sin(u*u + v*v) / (u*u + v*v)
         except ZeroDivisionError:
-            sheet[x, y].Value = 1
+            sheet[x, y] = 1
 
 # Produce the image
 data = plot.GenerateGnuplotData(sheet)

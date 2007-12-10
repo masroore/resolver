@@ -1,5 +1,5 @@
 <document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.622166246851" splitterOrientation="Horizontal" suspendRecalculations="False">
-    <foldState imports="False" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="True" generated="True" postFormulaeUserCode="False"/>
+    <foldState imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="True" generated="True" postFormulaeUserCode="False"/>
     <preConstantsUserCode><![CDATA[
 from Cache import GetCache
 
@@ -23,8 +23,8 @@ for index, line in enumerate(rawData.splitlines()):
         continue
     
     name, age = line.split()
-    sheet['D', index + 2].Value = name
-    sheet['E', index + 2].Value = int(age)
+    sheet['D', index + 2] = name
+    sheet['E', index + 2] = int(age)
 
 ]]></preConstantsUserCode>
     <preFormulaeUserCode><![CDATA[

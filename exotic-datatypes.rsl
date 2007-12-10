@@ -1,4 +1,4 @@
-<document currentResultWorksheet="complex" verticalSplitterRatio="0.671561051005" horizontalSplitterRatio="0.75" splitterOrientation="Vertical" suspendRecalculations="False">
+<document currentResultWorksheet="user class" verticalSplitterRatio="0.671561051005" horizontalSplitterRatio="0.75" splitterOrientation="Vertical" suspendRecalculations="False">
     <foldState imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="True" postFormulaeUserCode="False"/>
     <preConstantsUserCode><![CDATA[
 class Mag(object):
@@ -34,22 +34,24 @@ sheet.Cols[centreX].BackColor = Color.LightGray
 radius = 11.0
 for i in range(steps):
     f = 4*i/steps
-    sheet[1, i+2].Value = f
+    sheet[1, i+2] = f
     c = (1j)**f
-    sheet[2, i+2].Value = c
-    sheet[3, i+2].Value = c.real
-    sheet[4, i+2].Value = c.imag
+    sheet[2, i+2] = c
+    sheet[3, i+2] = c.real
+    sheet[4, i+2] = c.imag
     x = int(round(c.real * radius)) + centreX
     y = int(round(c.imag * radius)) + centreY
-    sheet[x, y].BackColor = Color.Gold
+    sheet.Cells[x, y].BackColor = Color.Gold
 
 ]]></preFormulaeUserCode>
     <names />
     <worksheet name="tuples" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
-        <col index="1" width="69">
-        </col>
-        <row index="2" height="98">
-        </row>
+        <trait name="ColWidth">
+            <traitentry col="1" row="0" value="69" />
+        </trait>
+        <trait name="RowHeight">
+            <traitentry col="0" row="2" value="98" />
+        </trait>
         <cell name="A1" value="=(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;)">
         </cell>
         <cell name="A2" value="=&apos;\n&apos;.join(A1)">
@@ -99,6 +101,35 @@ for i in range(steps):
             <traitentry col="4" row="1" value="True" />
             <traitentry col="5" row="1" value="True" />
         </trait>
+        <trait name="ColWidth">
+            <traitentry col="6" row="0" value="19" />
+            <traitentry col="7" row="0" value="19" />
+            <traitentry col="8" row="0" value="19" />
+            <traitentry col="9" row="0" value="19" />
+            <traitentry col="10" row="0" value="19" />
+            <traitentry col="11" row="0" value="19" />
+            <traitentry col="12" row="0" value="19" />
+            <traitentry col="13" row="0" value="19" />
+            <traitentry col="14" row="0" value="19" />
+            <traitentry col="15" row="0" value="19" />
+            <traitentry col="16" row="0" value="19" />
+            <traitentry col="17" row="0" value="19" />
+            <traitentry col="18" row="0" value="19" />
+            <traitentry col="19" row="0" value="19" />
+            <traitentry col="20" row="0" value="19" />
+            <traitentry col="21" row="0" value="19" />
+            <traitentry col="22" row="0" value="19" />
+            <traitentry col="23" row="0" value="19" />
+            <traitentry col="24" row="0" value="19" />
+            <traitentry col="25" row="0" value="19" />
+            <traitentry col="26" row="0" value="19" />
+            <traitentry col="27" row="0" value="19" />
+            <traitentry col="28" row="0" value="19" />
+            <traitentry col="29" row="0" value="19" />
+            <traitentry col="30" row="0" value="19" />
+            <traitentry col="31" row="0" value="19" />
+            <traitentry col="5" row="0" value="19" />
+        </trait>
         <trait name="DecimalPlaces">
             <traitentry col="4" row="0" value="3" />
             <traitentry col="3" row="0" value="3" />
@@ -113,60 +144,6 @@ for i in range(steps):
             <traitentry col="1" row="0" value="False" />
             <traitentry col="5" row="1" value="False" />
         </trait>
-        <col index="6" width="19">
-        </col>
-        <col index="7" width="19">
-        </col>
-        <col index="8" width="19">
-        </col>
-        <col index="9" width="19">
-        </col>
-        <col index="10" width="19">
-        </col>
-        <col index="11" width="19">
-        </col>
-        <col index="12" width="19">
-        </col>
-        <col index="13" width="19">
-        </col>
-        <col index="14" width="19">
-        </col>
-        <col index="15" width="19">
-        </col>
-        <col index="16" width="19">
-        </col>
-        <col index="17" width="19">
-        </col>
-        <col index="18" width="19">
-        </col>
-        <col index="19" width="19">
-        </col>
-        <col index="20" width="19">
-        </col>
-        <col index="21" width="19">
-        </col>
-        <col index="22" width="19">
-        </col>
-        <col index="23" width="19">
-        </col>
-        <col index="24" width="19">
-        </col>
-        <col index="25" width="19">
-        </col>
-        <col index="26" width="19">
-        </col>
-        <col index="27" width="19">
-        </col>
-        <col index="28" width="19">
-        </col>
-        <col index="29" width="19">
-        </col>
-        <col index="30" width="19">
-        </col>
-        <col index="31" width="19">
-        </col>
-        <col index="5" width="19">
-        </col>
         <cell name="A1" value="0&lt;=n&lt;4">
         </cell>
         <cell name="B1" value="j^n">
@@ -190,8 +167,6 @@ for i in range(steps):
         <cell name="E13" value="-j">
         </cell>
         <cell name="Q1" value="+j">
-        </cell>
-        <cell name="E1">
         </cell>
     </worksheet>
     <worksheet name="user class" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
@@ -236,8 +211,6 @@ for i in range(steps):
         <cell name="B13" value="=SUM(B7:B12)">
         </cell>
         <cell name="C12" value="+">
-        </cell>
-        <cell name="D13" value="SUM() doesn&apos;t work for datatypes that have an __add__() method!">
         </cell>
     </worksheet>
     <postFormulaeUserCode><![CDATA[
