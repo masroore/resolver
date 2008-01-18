@@ -1,5 +1,37 @@
-<document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.762278978389" splitterOrientation="Horizontal" suspendRecalculations="False">
-    <foldState imports="True" worksheetCreation="False" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
+<!--
+Copyright (c) 2008, Michael Foord
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions 
+are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright 
+      notice, this list of conditions and the following disclaimer 
+      in the documentation and/or other materials provided with the 
+      distribution.
+    * Neither the name of Michael Foord nor the names of its 
+      contributors may be used to endorse or promote products derived 
+      from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER 
+OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.762278978389" splitterOrientation="Horizontal" suspendRecalculations="False" license="BSD Revised" copyrightOwner="Michael Foord">
+    <foldState license="True" imports="True" worksheetCreation="False" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
     <preConstantsUserCode><![CDATA[
 ]]></preConstantsUserCode>
     <preFormulaeUserCode><![CDATA[
@@ -21,6 +53,23 @@ for index in range(4, sheet.MaxRow+1):
 
 ]]></preFormulaeUserCode>
     <names />
+    <viewStates>
+        <viewState worksheet="Sheet1">
+            <currentCell col="1" row="1" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="19" height="36" />
+        </viewState>
+        <viewState worksheet="Sheet2">
+            <currentCell col="1" row="1" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="100" height="100" />
+        </viewState>
+        <viewState worksheet="Sheet3">
+            <currentCell col="1" row="1" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="100" height="100" />
+        </viewState>
+    </viewStates>
     <worksheet name="Sheet1" value="" showGrid="False" showBounds="True" headerWidth="-1" headerHeight="-1">
         <trait name="Bold">
             <traitentry col="7" row="2" value="True" />
@@ -161,189 +210,189 @@ for index in range(4, sheet.MaxRow+1):
             <traitentry col="5" row="0" value="173" />
             <traitentry col="9" row="0" value="74" />
         </trait>
-        <cell name="E5" value="Present for Mrs">
+        <cell name="E5" value="Present for Mrs" type="general">
         </cell>
-        <cell name="G4" value="98.5">
+        <cell name="G4" value="98.5" type="general">
         </cell>
-        <cell name="F4" value="15/05/2007">
+        <cell name="F4" value="05/15/2007" type="date">
         </cell>
-        <cell name="E4" value="Chocolate">
+        <cell name="E4" value="Chocolate" type="general">
         </cell>
-        <cell name="G2" value="Amount">
+        <cell name="G2" value="Amount" type="general">
         </cell>
-        <cell name="F2" value="Date">
+        <cell name="F2" value="Date" type="general">
         </cell>
-        <cell name="E2" value="Reason">
+        <cell name="E2" value="Reason" type="general">
         </cell>
-        <cell name="E1" value="Outgoings">
+        <cell name="E1" value="Outgoings" type="general">
         </cell>
-        <cell name="C10" value="450">
+        <cell name="C10" value="450" type="general">
         </cell>
-        <cell name="C9" value="225.51">
+        <cell name="C9" value="225.51" type="general">
         </cell>
-        <cell name="C8" value="851.42">
+        <cell name="C8" value="851.42" type="general">
         </cell>
-        <cell name="C6" value="1800.27">
+        <cell name="C6" value="1800.27" type="general">
         </cell>
-        <cell name="C5" value="480">
+        <cell name="C5" value="480" type="general">
         </cell>
-        <cell name="C4" value="1240.06">
+        <cell name="C4" value="1240.06" type="general">
         </cell>
-        <cell name="C2" value="Amount">
+        <cell name="C2" value="Amount" type="general">
         </cell>
-        <cell name="B10" value="07/06/2007">
+        <cell name="B10" value="06/07/2007" type="date">
         </cell>
-        <cell name="B9" value="06/06/2007">
+        <cell name="B9" value="06/06/2007" type="date">
         </cell>
-        <cell name="B8" value="04/06/2007">
+        <cell name="B8" value="06/04/2007" type="date">
         </cell>
-        <cell name="B6" value="01/06/2007">
+        <cell name="B6" value="06/01/2007" type="date">
         </cell>
-        <cell name="B5" value="29/05/2007">
+        <cell name="B5" value="05/29/2007" type="date">
         </cell>
-        <cell name="B4" value="27/05/2007">
+        <cell name="B4" value="05/27/2007" type="date">
         </cell>
-        <cell name="B2" value="Date">
+        <cell name="B2" value="Date" type="general">
         </cell>
-        <cell name="A10" value="Business May">
+        <cell name="A10" value="Business May" type="general">
         </cell>
-        <cell name="A9" value="????">
+        <cell name="A9" value="????" type="general">
         </cell>
-        <cell name="A8" value="Wife&apos;s Wages May">
+        <cell name="A8" value="Wife&apos;s Wages May" type="general">
         </cell>
-        <cell name="A6" value="My Wages May">
+        <cell name="A6" value="My Wages May" type="general">
         </cell>
-        <cell name="A5" value="Jerry Paid Back Loan">
+        <cell name="A5" value="Jerry Paid Back Loan" type="general">
         </cell>
-        <cell name="A4" value="Winnings from Horses">
+        <cell name="A4" value="Winnings from Horses" type="general">
         </cell>
-        <cell name="A2" value="Reason">
+        <cell name="A2" value="Reason" type="general">
         </cell>
-        <cell name="A1" value="Income">
+        <cell name="A1" value="Income" type="general">
         </cell>
-        <cell name="A7" value="Cashback on Phone">
+        <cell name="A7" value="Cashback on Phone" type="general">
         </cell>
-        <cell name="B7" value="03/06/2007">
+        <cell name="B7" value="06/03/2007" type="date">
         </cell>
-        <cell name="C7" value="45">
+        <cell name="C7" value="45" type="general">
         </cell>
-        <cell name="F5" value="15/05/2007">
+        <cell name="F5" value="05/15/2007" type="date">
         </cell>
-        <cell name="G5" value="41.23">
+        <cell name="G5" value="41.23" type="general">
         </cell>
-        <cell name="E6" value="????">
+        <cell name="E6" value="????" type="general">
         </cell>
-        <cell name="F6" value="18/05/2007">
+        <cell name="F6" value="05/18/2007" type="date">
         </cell>
-        <cell name="G6" value="112.45">
+        <cell name="G6" value="112.45" type="general">
         </cell>
-        <cell name="E7" value="Cash ">
+        <cell name="E7" value="Cash " type="general">
         </cell>
-        <cell name="F7" value="25/05/2007">
+        <cell name="F7" value="05/25/2007" type="date">
         </cell>
-        <cell name="G7" value="120.00">
+        <cell name="G7" value="120.00" type="general">
         </cell>
-        <cell name="E8" value="Rent">
+        <cell name="E8" value="Rent" type="general">
         </cell>
-        <cell name="F8" value="01/06/2007">
+        <cell name="F8" value="06/01/2007" type="date">
         </cell>
-        <cell name="G8" value="450">
+        <cell name="G8" value="450" type="general">
         </cell>
-        <cell name="E9" value="Tescos">
+        <cell name="E9" value="Tescos" type="general">
         </cell>
-        <cell name="F9" value="02/06/2007">
+        <cell name="F9" value="06/02/2007" type="date">
         </cell>
-        <cell name="G9" value="27.32">
+        <cell name="G9" value="27.32" type="general">
         </cell>
-        <cell name="E10" value="????">
+        <cell name="E10" value="????" type="general">
         </cell>
-        <cell name="F10" value="02/06/2007">
+        <cell name="F10" value="06/02/2007" type="date">
         </cell>
-        <cell name="G10" value="12.45">
+        <cell name="G10" value="12.45" type="general">
         </cell>
-        <cell name="E11" value="Cash ">
+        <cell name="E11" value="Cash " type="general">
         </cell>
-        <cell name="F11" value="04/06/2007">
+        <cell name="F11" value="06/04/2007" type="date">
         </cell>
-        <cell name="G11" value="40.00">
+        <cell name="G11" value="40.00" type="general">
         </cell>
-        <cell name="E12" value="Council Tax">
+        <cell name="E12" value="Council Tax" type="general">
         </cell>
-        <cell name="F12" value="04/06/2007">
+        <cell name="F12" value="06/04/2007" type="date">
         </cell>
-        <cell name="G12" value="85">
+        <cell name="G12" value="85" type="general">
         </cell>
-        <cell name="E13" value="Savings">
+        <cell name="E13" value="Savings" type="general">
         </cell>
-        <cell name="F13" value="05/06/2007">
+        <cell name="F13" value="06/05/2007" type="date">
         </cell>
-        <cell name="G13" value="400">
+        <cell name="G13" value="400" type="general">
         </cell>
-        <cell name="E14" value="Phone Bill">
+        <cell name="E14" value="Phone Bill" type="general">
         </cell>
-        <cell name="F14" value="07/06/2007">
+        <cell name="F14" value="06/07/2007" type="date">
         </cell>
-        <cell name="G14" value="27.51">
+        <cell name="G14" value="27.51" type="general">
         </cell>
-        <cell name="I1" value="Results Col:">
+        <cell name="I1" value="Results Col:" type="general">
         </cell>
-        <cell name="J1" value="9">
+        <cell name="J1" value="9" type="general">
         </cell>
-        <cell name="I2" value="Results Row:">
+        <cell name="I2" value="Results Row:" type="general">
         </cell>
-        <cell name="J2" value="6">
+        <cell name="J2" value="6" type="general">
         </cell>
-        <cell name="F15" value="09/06/2007">
+        <cell name="F15" value="06/09/2007" type="date">
         </cell>
-        <cell name="E18" value="Tescos">
+        <cell name="E18" value="Tescos" type="general">
         </cell>
-        <cell name="E17" value="Cash">
+        <cell name="E17" value="Cash" type="general">
         </cell>
-        <cell name="E16" value="????">
+        <cell name="E16" value="????" type="general">
         </cell>
-        <cell name="E15" value="Power Bill">
+        <cell name="E15" value="Power Bill" type="general">
         </cell>
-        <cell name="C12" value="412.09">
+        <cell name="C12" value="412.09" type="general">
         </cell>
-        <cell name="C11" value="35">
+        <cell name="C11" value="35" type="general">
         </cell>
-        <cell name="B12" value="15/06/2007">
+        <cell name="B12" value="06/15/2007" type="date">
         </cell>
-        <cell name="B11" value="08/06/2007">
+        <cell name="B11" value="06/08/2007" type="date">
         </cell>
-        <cell name="A12" value="Royalties">
+        <cell name="A12" value="Royalties" type="general">
         </cell>
-        <cell name="A11" value="Sale of Camera">
+        <cell name="A11" value="Sale of Camera" type="general">
         </cell>
-        <cell name="I3" value="Start Date:">
+        <cell name="I3" value="Start Date:" type="general">
         </cell>
-        <cell name="F16" value="10/06/2007">
+        <cell name="F16" value="06/10/2007" type="date">
         </cell>
-        <cell name="F17" value="10/06/2007">
+        <cell name="F17" value="06/10/2007" type="date">
         </cell>
-        <cell name="F18" value="10/06/2007">
+        <cell name="F18" value="06/10/2007" type="date">
         </cell>
-        <cell name="G15" value="81.00">
+        <cell name="G15" value="81.00" type="general">
         </cell>
-        <cell name="G16" value="24.32">
+        <cell name="G16" value="24.32" type="general">
         </cell>
-        <cell name="G17" value="30">
+        <cell name="G17" value="30" type="general">
         </cell>
-        <cell name="G18" value="49.51">
+        <cell name="G18" value="49.51" type="general">
         </cell>
-        <cell name="J3" value="01/06/2007">
+        <cell name="J3" value="06/01/2007" type="date">
         </cell>
-        <cell name="E19" value="House Repairs">
+        <cell name="E19" value="House Repairs" type="general">
         </cell>
-        <cell name="F19" value="11/06/2007">
+        <cell name="F19" value="06/11/2007" type="date">
         </cell>
-        <cell name="G19" value="2940.06">
+        <cell name="G19" value="2940.06" type="general">
         </cell>
-        <cell name="E20" value="Car Repairs">
+        <cell name="E20" value="Car Repairs" type="general">
         </cell>
-        <cell name="F20" value="12/06/2007">
+        <cell name="F20" value="06/12/2007" type="date">
         </cell>
-        <cell name="G20" value="1001.37">
+        <cell name="G20" value="1001.37" type="general">
         </cell>
     </worksheet>
     <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">

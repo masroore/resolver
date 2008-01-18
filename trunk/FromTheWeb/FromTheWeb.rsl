@@ -1,5 +1,37 @@
-<document currentResultWorksheet="Query" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.851282051282" splitterOrientation="Horizontal" suspendRecalculations="False">
-    <foldState imports="True" worksheetCreation="True" preConstantsUserCode="True" constants="True" preFormulaeUserCode="False" generated="True" postFormulaeUserCode="False"/>
+<!--
+Copyright (c) 2008, Michael Foord
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions 
+are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright 
+      notice, this list of conditions and the following disclaimer 
+      in the documentation and/or other materials provided with the 
+      distribution.
+    * Neither the name of Michael Foord nor the names of its 
+      contributors may be used to endorse or promote products derived 
+      from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER 
+OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<document currentResultWorksheet="Query" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.851282051282" splitterOrientation="Horizontal" suspendRecalculations="False" license="BSD Revised" copyrightOwner="Michael Foord">
+    <foldState license="True" imports="True" worksheetCreation="True" preConstantsUserCode="True" constants="True" preFormulaeUserCode="False" generated="True" postFormulaeUserCode="False"/>
     <preConstantsUserCode><![CDATA[
 
 ]]></preConstantsUserCode>
@@ -49,6 +81,24 @@ for index, (date, rate) in enumerate(data):
     cellRange['Rate', index + 2] = float(rate)
 ]]></preFormulaeUserCode>
     <names />
+    <viewStates>
+        <viewState worksheet="Query">
+            <currentCell col="7" row="4" />
+            <selection left="7" top="4" right="9" bottom="9" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="24" height="36" />
+        </viewState>
+        <viewState worksheet="Currency Data">
+            <currentCell col="1" row="1" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="100" height="100" />
+        </viewState>
+        <viewState worksheet="Exchange Rate">
+            <currentCell col="1" row="1" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="100" height="100" />
+        </viewState>
+    </viewStates>
     <worksheet name="Query" value="" showGrid="False" showBounds="True" headerWidth="-1" headerHeight="-1">
         <trait name="Bold">
             <traitentry col="1" row="2" value="True" />
@@ -90,25 +140,23 @@ for index, (date, rate) in enumerate(data):
             <traitentry col="2" row="2" value="True" />
             <traitentry col="1" row="6" value="True" />
         </trait>
-        <cell name="A2" value="Start Date">
+        <cell name="A2" value="Start Date" type="general">
         </cell>
-        <cell name="A3" value="End Date">
+        <cell name="A3" value="End Date" type="general">
         </cell>
-        <cell name="A4" value="Exch1:">
+        <cell name="A4" value="Exch1:" type="general">
         </cell>
-        <cell name="A5" value="Exch2:">
+        <cell name="A5" value="Exch2:" type="general">
         </cell>
-        <cell name="B2" value="01/01/2005">
+        <cell name="B2" value="01/01/2005" type="date">
         </cell>
-        <cell name="B3" value="22/06/2007">
+        <cell name="B3" value="06/22/2007" type="date">
         </cell>
-        <cell name="B4" value="GBP">
+        <cell name="B4" value="GBP" type="general">
         </cell>
-        <cell name="B5" value="USD">
+        <cell name="B5" value="USD" type="general">
         </cell>
-        <cell name="A6" value="Full Uri:">
-        </cell>
-        <cell name="B6">
+        <cell name="A6" value="Full Uri:" type="general">
         </cell>
     </worksheet>
     <postFormulaeUserCode><![CDATA[import clr

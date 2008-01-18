@@ -1,5 +1,37 @@
-<document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.75" splitterOrientation="Horizontal" suspendRecalculations="False">
-    <foldState imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
+<!--
+Copyright (c) 2008, Michael Foord
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions 
+are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright 
+      notice, this list of conditions and the following disclaimer 
+      in the documentation and/or other materials provided with the 
+      distribution.
+    * Neither the name of Michael Foord nor the names of its 
+      contributors may be used to endorse or promote products derived 
+      from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER 
+OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.75" splitterOrientation="Horizontal" suspendRecalculations="False" license="BSD Revised" copyrightOwner="Michael Foord">
+    <foldState license="True" imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
     <preConstantsUserCode><![CDATA[
 def ColorAlternateRows(cellRange, mainColor=Color.CornflowerBlue, alternateColor=None):
     for i in range(1, cellRange.MaxRow + 1):
@@ -17,138 +49,155 @@ def ColorAlternateRows(cellRange, mainColor=Color.CornflowerBlue, alternateColor
     <preFormulaeUserCode><![CDATA[
 ]]></preFormulaeUserCode>
     <names />
+    <viewStates>
+        <viewState worksheet="Sheet1">
+            <currentCell col="1" row="1" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="24" height="30" />
+        </viewState>
+        <viewState worksheet="Sheet2">
+            <currentCell col="1" row="1" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="100" height="100" />
+        </viewState>
+        <viewState worksheet="Sheet3">
+            <currentCell col="1" row="1" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="100" height="100" />
+        </viewState>
+    </viewStates>
     <worksheet name="Sheet1" value="" showGrid="False" showBounds="False" headerWidth="-1" headerHeight="-1">
-        <cell name="B4" value="Reference">
+        <cell name="B4" value="Reference" type="general">
         </cell>
-        <cell name="D4" value="Symbol">
+        <cell name="D4" value="Symbol" type="general">
         </cell>
-        <cell name="E4" value="Number">
+        <cell name="E4" value="Number" type="general">
         </cell>
-        <cell name="F4" value="Price">
+        <cell name="F4" value="Price" type="general">
         </cell>
-        <cell name="G4" value="Direction">
+        <cell name="G4" value="Direction" type="general">
         </cell>
-        <cell name="B5" value="0001">
+        <cell name="B5" value="0001" type="general">
         </cell>
-        <cell name="B6" value="0002">
+        <cell name="B6" value="0002" type="general">
         </cell>
-        <cell name="B7" value="0003">
+        <cell name="B7" value="0003" type="general">
         </cell>
-        <cell name="B8" value="0004">
+        <cell name="B8" value="0004" type="general">
         </cell>
-        <cell name="B9" value="0005">
+        <cell name="B9" value="0005" type="general">
         </cell>
-        <cell name="B10" value="0006">
+        <cell name="B10" value="0006" type="general">
         </cell>
-        <cell name="B11" value="0007">
+        <cell name="B11" value="0007" type="general">
         </cell>
-        <cell name="B12" value="0008">
+        <cell name="B12" value="0008" type="general">
         </cell>
-        <cell name="B13" value="0009">
+        <cell name="B13" value="0009" type="general">
         </cell>
-        <cell name="B14" value="0010">
+        <cell name="B14" value="0010" type="general">
         </cell>
-        <cell name="D5" value="MSFT">
+        <cell name="D5" value="MSFT" type="general">
         </cell>
-        <cell name="C4" value="Customer">
+        <cell name="C4" value="Customer" type="general">
         </cell>
-        <cell name="C5" value="A37">
+        <cell name="C5" value="A37" type="general">
         </cell>
-        <cell name="C6" value="G45">
+        <cell name="C6" value="G45" type="general">
         </cell>
-        <cell name="C7" value="D98">
+        <cell name="C7" value="D98" type="general">
         </cell>
-        <cell name="C8" value="A01">
+        <cell name="C8" value="A01" type="general">
         </cell>
-        <cell name="C9" value="C12">
+        <cell name="C9" value="C12" type="general">
         </cell>
-        <cell name="C10" value="X14">
+        <cell name="C10" value="X14" type="general">
         </cell>
-        <cell name="C11" value="O39">
+        <cell name="C11" value="O39" type="general">
         </cell>
-        <cell name="C12" value="A37">
+        <cell name="C12" value="A37" type="general">
         </cell>
-        <cell name="C13" value="C12">
+        <cell name="C13" value="C12" type="general">
         </cell>
-        <cell name="C14" value="O39">
+        <cell name="C14" value="O39" type="general">
         </cell>
-        <cell name="D6" value="GOOG">
+        <cell name="D6" value="GOOG" type="general">
         </cell>
-        <cell name="D7" value="BSY">
+        <cell name="D7" value="BSY" type="general">
         </cell>
-        <cell name="D8" value="ETI">
+        <cell name="D8" value="ETI" type="general">
         </cell>
-        <cell name="D9" value="HNS">
+        <cell name="D9" value="HNS" type="general">
         </cell>
-        <cell name="D10" value="GOOG">
+        <cell name="D10" value="GOOG" type="general">
         </cell>
-        <cell name="E5" value="237">
+        <cell name="E5" value="237" type="general">
         </cell>
-        <cell name="E6" value="1250">
+        <cell name="E6" value="1250" type="general">
         </cell>
-        <cell name="E7" value="658">
+        <cell name="E7" value="658" type="general">
         </cell>
-        <cell name="E8" value="998">
+        <cell name="E8" value="998" type="general">
         </cell>
-        <cell name="E9" value="117">
+        <cell name="E9" value="117" type="general">
         </cell>
-        <cell name="E10" value="4">
+        <cell name="E10" value="4" type="general">
         </cell>
-        <cell name="G5" value="Buy">
+        <cell name="G5" value="Buy" type="general">
         </cell>
-        <cell name="G6" value="Sell">
+        <cell name="G6" value="Sell" type="general">
         </cell>
-        <cell name="G7" value="Sell">
+        <cell name="G7" value="Sell" type="general">
         </cell>
-        <cell name="G8" value="Buy">
+        <cell name="G8" value="Buy" type="general">
         </cell>
-        <cell name="G9" value="Sell">
+        <cell name="G9" value="Sell" type="general">
         </cell>
-        <cell name="G10" value="Buy">
+        <cell name="G10" value="Buy" type="general">
         </cell>
-        <cell name="G11" value="Buy">
+        <cell name="G11" value="Buy" type="general">
         </cell>
-        <cell name="G12" value="Buy">
+        <cell name="G12" value="Buy" type="general">
         </cell>
-        <cell name="G13" value="Sell">
+        <cell name="G13" value="Sell" type="general">
         </cell>
-        <cell name="G14" value="Sell">
+        <cell name="G14" value="Sell" type="general">
         </cell>
-        <cell name="E11" value="1740">
+        <cell name="E11" value="1740" type="general">
         </cell>
-        <cell name="E12" value="345">
+        <cell name="E12" value="345" type="general">
         </cell>
-        <cell name="E13" value="2501">
+        <cell name="E13" value="2501" type="general">
         </cell>
-        <cell name="E14" value="1799">
+        <cell name="E14" value="1799" type="general">
         </cell>
-        <cell name="D11" value="HNS">
+        <cell name="D11" value="HNS" type="general">
         </cell>
-        <cell name="D12" value="BSY">
+        <cell name="D12" value="BSY" type="general">
         </cell>
-        <cell name="D13" value="MSFT">
+        <cell name="D13" value="MSFT" type="general">
         </cell>
-        <cell name="D14" value="MSFT">
+        <cell name="D14" value="MSFT" type="general">
         </cell>
-        <cell name="F5" value="48.10">
+        <cell name="F5" value="48.10" type="general">
         </cell>
-        <cell name="F6" value="123.50">
+        <cell name="F6" value="123.50" type="general">
         </cell>
-        <cell name="F7" value="79.5">
+        <cell name="F7" value="79.5" type="general">
         </cell>
-        <cell name="F8" value="86.12">
+        <cell name="F8" value="86.12" type="general">
         </cell>
-        <cell name="F9" value="0.56">
+        <cell name="F9" value="0.56" type="general">
         </cell>
-        <cell name="F10" value="156.20">
+        <cell name="F10" value="156.20" type="general">
         </cell>
-        <cell name="F11" value="0.80">
+        <cell name="F11" value="0.80" type="general">
         </cell>
-        <cell name="F12" value="82.45">
+        <cell name="F12" value="82.45" type="general">
         </cell>
-        <cell name="F13" value="43.00">
+        <cell name="F13" value="43.00" type="general">
         </cell>
-        <cell name="F14" value="42.99">
+        <cell name="F14" value="42.99" type="general">
         </cell>
     </worksheet>
     <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
