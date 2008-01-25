@@ -1,0 +1,108 @@
+<!--
+Copyright (C) 2008 jkersten
+
+This spreadsheet is licensed under the Creative Commons 
+Attribution-Noncommercial-Share Alike 3.0 Unported license.
+See http://creativecommons.org/licenses/by-nc-sa/3.0/ for details.
+
+-->
+<document currentResultWorksheet="Result Data" verticalSplitterRatio="0.512619669278" horizontalSplitterRatio="0.75" splitterOrientation="Vertical" suspendRecalculations="False" license="Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported" copyrightOwner="jkersten">
+    <foldState license="True" imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="True" postFormulaeUserCode="False"/>
+    <preConstantsUserCode><![CDATA[# ---
+# Persistent Cells for Resolver One
+# By Johannes Kersten and Michael Foord
+# Pre-constants code
+# ---
+
+# --- setup ---
+import os
+import marshal
+sheetname = 'Result Data'
+filename = 'persistent-worksheet.txt'
+filepath = os.path.join(os.path.dirname(__file__), filename) 
+# ---
+
+# ---
+data = []
+if os.path.isfile(filepath):
+    try:
+        savefile = open(filepath, 'rb')
+        try:
+            data = marshal.load(savefile)
+        except Exception, e:
+            print 'Failed to load data. Error:', e
+        savefile.close()
+    except IOError, e:
+        print 'Failed to open file for load.', e
+
+sheet = workbook.AddWorksheet(sheetname)
+for location, value in data:
+    if value is None:
+        value = Empty
+    sheet[location] = value
+# ---
+
+
+# ...
+# rest of your pre-formulae code 
+# ...
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[
+]]></preFormulaeUserCode>
+    <names />
+    <viewStates>
+        <viewState worksheet="Sheet1">
+            <currentCell col="3" row="18" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="12" height="44" />
+        </viewState>
+        <viewState worksheet="Result Data">
+            <currentCell col="1" row="9" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="15" height="28" />
+        </viewState>
+    </viewStates>
+    <worksheet name="Sheet1" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <postFormulaeUserCode><![CDATA[
+# Generate data into worksheet
+# You only need to do this if the data failed to load
+# So you would normally make it conditional
+
+from random import randint
+
+for x in range(1, 10):
+    for y in range(1, 10):
+        sheet[x, y] = sheet[x, y] + randint(1, 10)
+
+
+
+# ...
+# rest of your Post-formulae code
+# ...
+
+# ---
+# "plain save" for Resolver One
+# Post-formulae code
+# ---
+data = []
+sheet = workbook[sheetname]
+for col in range(sheet.MinCol, sheet.MaxCol + 1):
+    for row in range(sheet.MinRow, sheet.MaxRow + 1):
+        val = sheet[col, row]
+        data.append(((col, row), val))
+
+
+try:
+    savefile = open(filepath, 'wb')
+    try:
+        marshal.dump(data, savefile)
+    except Exception, e:
+        print 'Failed to save data. Error:', e
+    savefile.close()
+except IOError, e:
+    print 'Failed to open file for save.', e
+
+# ---
+]]></postFormulaeUserCode>
+</document>
