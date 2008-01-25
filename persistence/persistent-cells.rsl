@@ -1,0 +1,98 @@
+<!--
+Copyright (C) 2008 jkersten
+
+This spreadsheet is licensed under the Creative Commons 
+Attribution-Noncommercial-Share Alike 3.0 Unported license.
+See http://creativecommons.org/licenses/by-nc-sa/3.0/ for details.
+
+-->
+<document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.512619669278" horizontalSplitterRatio="0.75" splitterOrientation="Vertical" suspendRecalculations="False" license="Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported" copyrightOwner="jkersten">
+    <foldState license="True" imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="True" postFormulaeUserCode="False"/>
+    <preConstantsUserCode><![CDATA[# ---
+# Persistent Cells for Resolver One
+# By Johannes Kersten and Michael Foord
+# Pre-constants code
+# ---
+
+# --- setup ---
+import os
+import marshal
+
+sheetname = 'Sheet1'
+memcells = ['A1']     #list of cells you like to save
+filename = 'persistent-cells.txt'
+filepath = os.path.join(os.path.dirname(__file__), filename)
+# ---
+
+# ---
+data = {}
+if os.path.isfile(filepath):
+    try:
+        savefile = open(filepath, 'rb')
+        try:
+            data = marshal.load(savefile)
+        except Exception, e:
+            print 'Failed to load data. Error:', e
+        savefile.close()
+    except IOError, e:
+        print 'Failed to open file for load.', e
+    
+
+for key, value in data.iteritems():
+    if value is None:
+        value = Empty
+    workbook[sheetname][key] = value
+# ---
+
+
+# ...
+# rest of your pre-formulae code 
+# ...
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[
+]]></preFormulaeUserCode>
+    <names />
+    <viewStates>
+        <viewState worksheet="Sheet1">
+            <currentCell col="2" row="3" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="12" height="42" />
+        </viewState>
+    </viewStates>
+    <worksheet name="Sheet1" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <postFormulaeUserCode><![CDATA[
+# some more intresting stuff, such as circular
+# references are possible in post-formulae code
+
+workbook["Sheet1"].Cells["A1"].Value += 1
+
+
+
+# ...
+# rest of your Post-formulae code
+# ...
+
+# ---
+# "plain save" for Resolver One
+# Post-formulae code
+# ---
+backup = {}
+for key in memcells:
+    val = workbook[sheetname][key]
+    if val is Empty:
+        val = None
+    backup[key] = val
+
+try:
+    savefile = open(filepath, 'wb')
+    try:
+        marshal.dump(backup, savefile)
+    except Exception, e:
+        print 'Failed to save data. Error:', e
+    savefile.close()
+except IOError, e:
+    print 'Failed to open file for save.', e
+# ---
+]]></postFormulaeUserCode>
+</document>
