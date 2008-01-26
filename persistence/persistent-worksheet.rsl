@@ -57,9 +57,9 @@ for location, value in data:
             <virtualGridSize width="12" height="44" />
         </viewState>
         <viewState worksheet="Result Data">
-            <currentCell col="1" row="9" />
+            <currentCell col="2" row="11" />
             <scrollPos col="1" row="1" />
-            <virtualGridSize width="15" height="28" />
+            <virtualGridSize width="22" height="64" />
         </viewState>
     </viewStates>
     <worksheet name="Sheet1" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
@@ -90,6 +90,8 @@ sheet = workbook[sheetname]
 for col in range(sheet.MinCol, sheet.MaxCol + 1):
     for row in range(sheet.MinRow, sheet.MaxRow + 1):
         val = sheet[col, row]
+        if val is Empty:
+            val = None
         data.append(((col, row), val))
 
 
