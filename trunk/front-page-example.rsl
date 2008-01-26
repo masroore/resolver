@@ -31,7 +31,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <document currentResultWorksheet="Totals" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.75" splitterOrientation="Horizontal" suspendRecalculations="False" license="BSD Revised" copyrightOwner="Michael Foord">
-    <foldState license="True" imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
+    <foldState license="True" imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="False" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
     <preConstantsUserCode><![CDATA[
 workbook.AddWorksheet('Transactions')
 workbook.AddWorksheet('Current Prices')
@@ -42,9 +42,9 @@ totals = workbook['Totals']
     <names />
     <viewStates>
         <viewState worksheet="Totals">
-            <currentCell col="1" row="1" />
+            <currentCell col="9" row="5" />
             <scrollPos col="1" row="1" />
-            <virtualGridSize width="24" height="29" />
+            <virtualGridSize width="58" height="74" />
         </viewState>
         <viewState worksheet="Transactions">
             <currentCell col="1" row="1" />
@@ -397,7 +397,7 @@ totals = workbook['Totals']
         </cell>
         <cell name="F13" value="Sell" type="general">
         </cell>
-        <cell name="A1" value="Resolver - Rapid Application Development with a Familiar Interface" type="general">
+        <cell name="A1" value="Resolver One - Rapid Application Development with a Familiar Interface" type="general">
         </cell>
         <cell name="H3" value="Trans:" type="general">
         </cell>
