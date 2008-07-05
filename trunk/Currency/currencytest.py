@@ -21,20 +21,37 @@ class CurrencyTest(unittest.TestCase):
 
         
     def testGetUnitClass(self):
-        klass = _GetUnitClass('fish', 'F')
+        klass = _GetUnitClass('Fish', 'F')
         self.assertTrue(issubclass(klass, Currency))
-        self.assertEquals(klass.__name__, 'fish')
+        self.assertEquals(klass.__name__, 'Fish')
         
         instance = klass(0)
         self.assertEquals(str(instance), 'F0')
-        self.assertEquals(repr(instance), '<fish F0>')
+        self.assertEquals(repr(instance), '<Fish F0>')
+
+
+    def testEquality(self):
+        Fish = _GetUnitClass('Fish', 'F')
+        Eggs = _GetUnitClass('Eggs', 'F')
+        f = Fish(0)
+        
+        self.assertEquals(f, Fish(0))
+        
+        self.assertNotEquals(f, Fish(1))
+        self.assertNotEquals(f, Decimal(0))
+        self.assertNotEquals(f, Eggs(0))
+        self.assertNotEquals(f, None)
+        self.assertNotEquals(f, 0)
+        self.assertNotEquals(f, 0.0)
+        self.assertNotEquals(f, long(0))
 
         
     def testAddition(self):
-        Fish = _GetUnitClass('fish', 'F')
-        Eggs = _GetUnitClass('Eggs', 'F')
+        Fish = _GetUnitClass('Fish', 'F')
         
         self.fail('not finished')
+        
+        
         
 if __name__ == '__main__':
     unittest.main()
