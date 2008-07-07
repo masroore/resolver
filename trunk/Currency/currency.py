@@ -23,6 +23,19 @@ class Currency(Decimal):
     
     def __repr__(self):
         return '<%s %s>' % (self.__class__.__name__, str(self))
+
+    
+    def __eq__(self, other):
+        return type(self) == type(other) and Decimal.__eq__(self, other)
+    
+    
+    def __ne__(self, other):
+        return type(self) != type(other) or Decimal.__ne__(self, other)
+    
+    
+    def __add__(self, other, context=None):
+        return type(self) == type(other) and 
+            
         
 
 def _GetUnitClass(name, symbol):

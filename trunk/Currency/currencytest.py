@@ -14,6 +14,7 @@ from currency import (
 
 class CurrencyTest(unittest.TestCase):
     
+    
     def testCurrency(self):
         self.assertTrue(issubclass(Currency, Decimal))
         self.assertEquals(Currency._symbol, None)
@@ -44,12 +45,25 @@ class CurrencyTest(unittest.TestCase):
         self.assertNotEquals(f, 0)
         self.assertNotEquals(f, 0.0)
         self.assertNotEquals(f, long(0))
+        
+        self.assertTrue(f != Decimal(0))
 
         
     def testAddition(self):
         Fish = _GetUnitClass('Fish', 'F')
+        Eggs = _GetUnitClass('Eggs', 'F')
         
-        self.fail('not finished')
+        f = Fish(1)
+        e = Eggs(1)
+        self.assertEquals(f + f, Fish(2))
+        self.assertRaises(TypeError, lambda: f + e)
+        self.assertRaises(TypeError, lambda: f + 1)
+        self.assertRaises(TypeError, lambda: f + 1.0)
+        self.assertRaises(TypeError, lambda: f + Decimal(1))
+        
+        self.assertRaises(TypeError, lambda: 1 + f)
+        self.assertRaises(TypeError, lambda: 1.0 + f)
+        self.assertRaises(TypeError, lambda: Decimal(1) + f)
         
         
         
