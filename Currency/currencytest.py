@@ -7,7 +7,7 @@ from decimal import Decimal
 
 from currency import (
     Currency, Pound,
-    Yen, Euro,
+    Yen, Euro, Matching, 
     Dollar, _GetUnitClass
 )
 
@@ -22,14 +22,39 @@ class CurrencyTest(unittest.TestCase):
 
         
     def testGetUnitClass(self):
-        klass = _GetUnitClass('Fish', 'F')
-        self.assertTrue(issubclass(klass, Currency))
-        self.assertEquals(klass.__name__, 'Fish')
+        Fish = _GetUnitClass('Fish', 'F')
+        self.assertTrue(issubclass(Fish, Currency))
+        self.assertEquals(Fish.__name__, 'Fish')
         
-        instance = klass(0)
+        instance = Fish(0)
         self.assertEquals(str(instance), 'F0')
         self.assertEquals(repr(instance), '<Fish F0>')
-
+        
+    
+    def testMatchingDecorator(self):
+        class A(object):
+            def __init__(self, value):
+                self.value = value
+        
+        @Matching
+        def test(self, other):
+            return 3
+        
+        self.assertEquals(test.__name__, 'test')
+        self.assertRaises(TypeError, test, 1, None)
+        
+        result = test(A(1), A(2))
+        self.assertTrue(isinstance(result, A))
+        self.assertEquals(result.value, 3)
+        
+        
+    def testConstruction(self):
+        Fish = _GetUnitClass('Fish', 'F')
+        
+        f = Fish(0)
+        self.assertEquals(f, Fish(f))
+        self.assertEquals(f, Fish(Decimal(0)))
+        
 
     def testEquality(self):
         Fish = _GetUnitClass('Fish', 'F')

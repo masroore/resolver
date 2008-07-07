@@ -8,6 +8,17 @@ __all__ = [
 ]
 
 
+def Matching(method):
+    def inner(self, other, *args, **keywargs):
+        if not type(other) == type(self):
+            raise TypeError("operation not allowed between %r and %r" % (self, other))
+        result = method(self, other, *args, **keywargs)
+        return self.__class__(result)
+    
+    inner.__name__ = method.__name__
+    return inner
+                        
+
 class Currency(Decimal):
     _symbol = None
     
@@ -26,17 +37,17 @@ class Currency(Decimal):
 
     
     def __eq__(self, other):
-        return type(self) == type(other) and Decimal.__eq__(self, other)
+        return type(self) == type(other) and Decimal.__eq__(Decimal(self), Decimal(other))
     
     
     def __ne__(self, other):
-        return type(self) != type(other) or Decimal.__ne__(self, other)
+        return type(self) != type(other) or Decimal.__ne__(Decimal(self), Decimal(other))
     
-    
+    @Matching
     def __add__(self, other, context=None):
-        return type(self) == type(other) and 
+        return Decimal.__add__(Decimal(self), Decimal(other), context=context)
             
-        
+    __radd__ = __add__
 
 def _GetUnitClass(name, symbol):
     return type(name, (Currency,), {'_symbol': symbol})
