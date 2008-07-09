@@ -1,10 +1,12 @@
 from decimal import Decimal
+# from System import Decimal
 
 __all__ = [
     'Pound',
     'Dollar',
     'Euro',
-    'Yen'
+    'Yen',
+    'GetUnitClass'
 ]
 
 
@@ -19,17 +21,21 @@ def Matching(method):
     return inner
                         
 
-class Currency(Decimal):
+class Currency(object):
     _symbol = None
     
-    def __init__(self, *args, **kwargs):
+    def __new__(cls, value):
+        self = object.__new__(cls)
         if self._symbol is None:
             raise TypeError("Can't instantiate an abstract Currency")
-        super(Currency, self).__init__(*args, **kwargs)
+        if isinstance(value, cls):
+            value = value._value
+        self._value = Decimal(value)
+        return self
         
     
     def __str__(self):
-        return '%s%s' % (self._symbol, Decimal.__str__(self))
+        return '%s%s' % (self._symbol, str(self._value))
         
     
     def __repr__(self):
@@ -37,24 +43,56 @@ class Currency(Decimal):
 
     
     def __eq__(self, other):
-        return type(self) == type(other) and Decimal.__eq__(Decimal(self), Decimal(other))
+        return type(self) == type(other) and self._value == other._value
     
     
     def __ne__(self, other):
-        return type(self) != type(other) or Decimal.__ne__(Decimal(self), Decimal(other))
+        return not self.__eq__(other)
     
     @Matching
-    def __add__(self, other, context=None):
-        return Decimal.__add__(Decimal(self), Decimal(other), context=context)
+    def __add__(self, other):
+        return self._value + other._value
             
     __radd__ = __add__
+    
+    
+    @Matching
+    def __sub__(self, other):
+        return self._value - other._value
+    
+    __rsub__ = __sub__
+    
+    
+    def __mul__(self, other):
+        if isinstance(other, Currency):
+            raise TypeError("Can't multiply %r by %r" % (self, other))
+        return self.__class__(self._value * other)
+    
+    __rmul__ = __mul__
 
-def _GetUnitClass(name, symbol):
+    
+    def __div__(self, other):
+        if isinstance(other, Currency):
+            raise TypeError("Can't divide %r by %r" % (self, other))
+        return self.__class__(self._value / other)
+    
+
+    def __floordiv__(self, other):
+        if isinstance(other, Currency):
+            raise TypeError("Can't floor divide %r by %r" % (self, other))
+        return self.__class__(self._value // other)
+    
+    
+    def __nonzero__(self):
+        return bool(self._value)
+    
+    
+def GetUnitClass(name, symbol):
     return type(name, (Currency,), {'_symbol': symbol})
 
 
-Pound = _GetUnitClass('Pound', '\xa3')
-Dollar = _GetUnitClass('Dollar', '$')
-Euro = _GetUnitClass('Euro', u'\u20ac')
-Yen = _GetUnitClass('Yen', '\xa5')
+Pound = GetUnitClass('Pound', '\xa3')
+Dollar = GetUnitClass('Dollar', '$')
+Euro = GetUnitClass('Euro', u'\u20ac')
+Yen = GetUnitClass('Yen', '\xa5')
 
