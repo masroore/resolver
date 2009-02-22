@@ -19,9 +19,12 @@ sys.path.extend((topLevel, bin))
 # This adds references to all .NET assemblies
 # that Resolver One spreadsheets use
 clr.AddReference('TopLevel')
+import LoadAssemblies
+LoadAssemblies.binDir = bin
+
 import LoadRequiredAssemblies
 
-
+from MarketData import Bloomberg, Thomson
 from Library.Workbook import Workbook
 from Library.ContextDependent import MakeContextDependentFunctions
 
