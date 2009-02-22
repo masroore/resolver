@@ -1,5 +1,5 @@
 <!--
-Copyright (c) 2008, Michael Foord
+Copyright (c) 2009, Michael Foord
 
 All rights reserved.
 
@@ -30,7 +30,7 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
-<document currentResultWorksheet="user class" verticalSplitterRatio="0.671561051005" horizontalSplitterRatio="0.75" splitterOrientation="Vertical" suspendRecalculations="False" license="BSD Revised" copyrightOwner="Michael Foord">
+<document currentResultWorksheet="user class" verticalSplitterRatio="0.579081632653" horizontalSplitterRatio="0.75" splitterOrientation="Vertical" suspendRecalculations="False" license="BSD Revised" copyrightOwner="Michael Foord" resolverVersion="1.4 beta 2" resolverBuild="3996" documentVersion="9">
     <foldState license="True" imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="True" postFormulaeUserCode="False"/>
     <preConstantsUserCode><![CDATA[
 class Mag(object):
@@ -89,35 +89,45 @@ for i in range(steps):
             <virtualGridSize width="100" height="100" />
         </viewState>
         <viewState worksheet="user class">
-            <currentCell col="1" row="1" />
+            <currentCell col="4" row="13" />
             <scrollPos col="1" row="1" />
-            <virtualGridSize width="16" height="44" />
+            <virtualGridSize width="12" height="38" />
         </viewState>
     </viewStates>
     <worksheet name="tuples" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
-        <trait name="ColWidth">
-            <traitentry col="1" row="0" value="69" />
-        </trait>
         <trait name="RowHeight">
             <traitentry col="0" row="2" value="98" />
         </trait>
-        <cell name="A1" value="=(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;)" type="general">
+        <trait name="ColWidth">
+            <traitentry col="1" row="0" value="69" />
+        </trait>
+        <cell name="B7" value="=$A$1[A7]" type="general">
+        </cell>
+        <cell name="B8" value="=$A$1[A8]" type="general">
         </cell>
         <cell name="A2" value="=&apos;\n&apos;.join(A1)" type="general">
         </cell>
+        <cell name="A1" value="=(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;)" type="general">
+        </cell>
         <cell name="A11" value="8" type="general">
         </cell>
-        <cell name="A10" value="7" type="general">
-        </cell>
-        <cell name="A9" value="6" type="general">
-        </cell>
-        <cell name="A8" value="5" type="general">
-        </cell>
-        <cell name="A7" value="4" type="general">
+        <cell name="B11" value="=$A$1[A11 % 7]" type="general">
         </cell>
         <cell name="A6" value="3" type="general">
         </cell>
+        <cell name="B6" value="=$A$1[A6]" type="general">
+        </cell>
         <cell name="A5" value="2" type="general">
+        </cell>
+        <cell name="B5" value="=$A$1[A5]" type="general">
+        </cell>
+        <cell name="A10" value="7" type="general">
+        </cell>
+        <cell name="B10" value="=$A$1[A10 % 7]" type="general">
+        </cell>
+        <cell name="A9" value="6" type="general">
+        </cell>
+        <cell name="B9" value="=$A$1[A9]" type="general">
         </cell>
         <cell name="A4" value="1" type="general">
         </cell>
@@ -127,19 +137,9 @@ for i in range(steps):
         </cell>
         <cell name="B4" value="=$A$1[A4]" type="general">
         </cell>
-        <cell name="B5" value="=$A$1[A5]" type="general">
+        <cell name="A8" value="5" type="general">
         </cell>
-        <cell name="B6" value="=$A$1[A6]" type="general">
-        </cell>
-        <cell name="B7" value="=$A$1[A7]" type="general">
-        </cell>
-        <cell name="B8" value="=$A$1[A8]" type="general">
-        </cell>
-        <cell name="B9" value="=$A$1[A9]" type="general">
-        </cell>
-        <cell name="B10" value="=$A$1[A10 % 7]" type="general">
-        </cell>
-        <cell name="B11" value="=$A$1[A11 % 7]" type="general">
+        <cell name="A7" value="4" type="general">
         </cell>
     </worksheet>
     <worksheet name="complex" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
@@ -151,6 +151,7 @@ for i in range(steps):
             <traitentry col="5" row="1" value="True" />
         </trait>
         <trait name="ColWidth">
+            <traitentry col="5" row="0" value="19" />
             <traitentry col="6" row="0" value="19" />
             <traitentry col="7" row="0" value="19" />
             <traitentry col="8" row="0" value="19" />
@@ -177,89 +178,171 @@ for i in range(steps):
             <traitentry col="29" row="0" value="19" />
             <traitentry col="30" row="0" value="19" />
             <traitentry col="31" row="0" value="19" />
-            <traitentry col="5" row="0" value="19" />
-        </trait>
-        <trait name="DecimalPlaces">
-            <traitentry col="4" row="0" value="3" />
-            <traitentry col="3" row="0" value="3" />
-            <traitentry col="2" row="0" value="3" />
-            <traitentry col="1" row="0" value="3" />
-            <traitentry col="5" row="1" value="3" />
         </trait>
         <trait name="StripZeros">
-            <traitentry col="4" row="0" value="False" />
-            <traitentry col="3" row="0" value="False" />
-            <traitentry col="2" row="0" value="False" />
             <traitentry col="1" row="0" value="False" />
+            <traitentry col="2" row="0" value="False" />
+            <traitentry col="3" row="0" value="False" />
+            <traitentry col="4" row="0" value="False" />
             <traitentry col="5" row="1" value="False" />
+        </trait>
+        <trait name="DecimalPlaces">
+            <traitentry col="1" row="0" value="3" />
+            <traitentry col="2" row="0" value="3" />
+            <traitentry col="3" row="0" value="3" />
+            <traitentry col="4" row="0" value="3" />
+            <traitentry col="5" row="1" value="3" />
         </trait>
         <cell name="A1" value="0&lt;=n&lt;4" type="general">
         </cell>
         <cell name="B1" value="j^n" type="general">
         </cell>
-        <cell name="C1" value="real" type="general">
-        </cell>
-        <cell name="D1" value="imag" type="general">
-        </cell>
-        <cell name="R13" value="--" type="general">
-        </cell>
-        <cell name="AC13" value="+1" type="general">
-        </cell>
-        <cell name="Q12" value=" |" type="general">
-        </cell>
-        <cell name="Q14" value=" |" type="general">
-        </cell>
-        <cell name="P13" value="--" type="general">
+        <cell name="E13" value="-j" type="general">
         </cell>
         <cell name="Q25" value="-j" type="general">
         </cell>
-        <cell name="E13" value="-j" type="general">
+        <cell name="AC13" value="+1" type="general">
+        </cell>
+        <cell name="D1" value="imag" type="general">
+        </cell>
+        <cell name="P13" value="--" type="general">
+        </cell>
+        <cell name="Q14" value=" |" type="general">
+        </cell>
+        <cell name="C1" value="real" type="general">
+        </cell>
+        <cell name="R13" value="--" type="general">
         </cell>
         <cell name="Q1" value="+j" type="general">
         </cell>
+        <cell name="Q12" value=" |" type="general">
+        </cell>
     </worksheet>
     <worksheet name="user class" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
-        <trait name="Bold">
-            <traitentry col="2" row="4" value="True" />
-            <traitentry col="4" row="4" value="True" />
-            <traitentry col="2" row="13" value="True" />
+        <trait name="FontSize">
+            <traitentry col="1" row="1" value="12.0" />
+            <traitentry col="1" row="2" value="12.0" />
+            <traitentry col="1" row="3" value="12.0" />
+            <traitentry col="1" row="4" value="12.0" />
+            <traitentry col="1" row="5" value="12.0" />
+            <traitentry col="1" row="6" value="12.0" />
+            <traitentry col="1" row="7" value="12.0" />
+            <traitentry col="1" row="8" value="12.0" />
+            <traitentry col="1" row="9" value="12.0" />
+            <traitentry col="1" row="10" value="12.0" />
+            <traitentry col="1" row="11" value="12.0" />
+            <traitentry col="1" row="12" value="12.0" />
+            <traitentry col="1" row="13" value="12.0" />
+            <traitentry col="1" row="14" value="12.0" />
+            <traitentry col="1" row="15" value="12.0" />
+            <traitentry col="2" row="1" value="12.0" />
+            <traitentry col="2" row="2" value="12.0" />
+            <traitentry col="2" row="3" value="12.0" />
+            <traitentry col="2" row="4" value="12.0" />
+            <traitentry col="2" row="5" value="12.0" />
+            <traitentry col="2" row="6" value="12.0" />
+            <traitentry col="2" row="7" value="12.0" />
+            <traitentry col="2" row="8" value="12.0" />
+            <traitentry col="2" row="9" value="12.0" />
+            <traitentry col="2" row="10" value="12.0" />
+            <traitentry col="2" row="11" value="12.0" />
+            <traitentry col="2" row="12" value="12.0" />
+            <traitentry col="2" row="13" value="12.0" />
+            <traitentry col="2" row="14" value="12.0" />
+            <traitentry col="2" row="15" value="12.0" />
+            <traitentry col="3" row="1" value="12.0" />
+            <traitentry col="3" row="2" value="12.0" />
+            <traitentry col="3" row="3" value="12.0" />
+            <traitentry col="3" row="4" value="12.0" />
+            <traitentry col="3" row="5" value="12.0" />
+            <traitentry col="3" row="6" value="12.0" />
+            <traitentry col="3" row="7" value="12.0" />
+            <traitentry col="3" row="8" value="12.0" />
+            <traitentry col="3" row="9" value="12.0" />
+            <traitentry col="3" row="10" value="12.0" />
+            <traitentry col="3" row="11" value="12.0" />
+            <traitentry col="3" row="12" value="12.0" />
+            <traitentry col="3" row="13" value="12.0" />
+            <traitentry col="3" row="14" value="12.0" />
+            <traitentry col="3" row="15" value="12.0" />
+            <traitentry col="4" row="1" value="12.0" />
+            <traitentry col="4" row="2" value="12.0" />
+            <traitentry col="4" row="3" value="12.0" />
+            <traitentry col="4" row="4" value="12.0" />
+            <traitentry col="4" row="5" value="12.0" />
+            <traitentry col="4" row="6" value="12.0" />
+            <traitentry col="4" row="7" value="12.0" />
+            <traitentry col="4" row="8" value="12.0" />
+            <traitentry col="4" row="9" value="12.0" />
+            <traitentry col="4" row="10" value="12.0" />
+            <traitentry col="4" row="11" value="12.0" />
+            <traitentry col="4" row="12" value="12.0" />
+            <traitentry col="4" row="13" value="12.0" />
+            <traitentry col="4" row="14" value="12.0" />
+            <traitentry col="4" row="15" value="12.0" />
+            <traitentry col="5" row="1" value="12.0" />
+            <traitentry col="5" row="2" value="12.0" />
+            <traitentry col="5" row="3" value="12.0" />
+            <traitentry col="5" row="4" value="12.0" />
+            <traitentry col="5" row="5" value="12.0" />
+            <traitentry col="5" row="6" value="12.0" />
+            <traitentry col="5" row="7" value="12.0" />
+            <traitentry col="5" row="8" value="12.0" />
+            <traitentry col="5" row="9" value="12.0" />
+            <traitentry col="5" row="10" value="12.0" />
+            <traitentry col="5" row="11" value="12.0" />
+            <traitentry col="5" row="12" value="12.0" />
+            <traitentry col="5" row="13" value="12.0" />
+            <traitentry col="5" row="14" value="12.0" />
+            <traitentry col="5" row="15" value="12.0" />
+            <traitentry col="6" row="1" value="12.0" />
+            <traitentry col="6" row="2" value="12.0" />
+            <traitentry col="6" row="3" value="12.0" />
+            <traitentry col="6" row="4" value="12.0" />
+            <traitentry col="6" row="5" value="12.0" />
+            <traitentry col="6" row="6" value="12.0" />
+            <traitentry col="6" row="7" value="12.0" />
+            <traitentry col="6" row="8" value="12.0" />
+            <traitentry col="6" row="9" value="12.0" />
+            <traitentry col="6" row="10" value="12.0" />
+            <traitentry col="6" row="11" value="12.0" />
+            <traitentry col="6" row="12" value="12.0" />
+            <traitentry col="6" row="13" value="12.0" />
+            <traitentry col="6" row="14" value="12.0" />
+            <traitentry col="6" row="15" value="12.0" />
+        </trait>
+        <trait name="RowHeight">
+            <traitentry col="0" row="2" value="19" />
+            <traitentry col="0" row="6" value="22" />
+            <traitentry col="0" row="7" value="22" />
+            <traitentry col="0" row="8" value="22" />
+            <traitentry col="0" row="9" value="22" />
+            <traitentry col="0" row="10" value="27" />
+            <traitentry col="0" row="11" value="23" />
+        </trait>
+        <trait name="ColWidth">
+            <traitentry col="2" row="0" value="78" />
+            <traitentry col="4" row="0" value="74" />
         </trait>
         <trait name="BorderTop">
-            <traitentry col="2" row="4" value="True" />
-            <traitentry col="4" row="4" value="True" />
-            <traitentry col="2" row="13" value="True" />
+            <traitentry col="2" row="9" value="True" />
+            <traitentry col="4" row="9" value="True" />
         </trait>
-        <cell name="B2" value="=Mag(10, 1)" type="general">
-        </cell>
-        <cell name="B3" value="=Mag(20, 3)" type="general">
-        </cell>
-        <cell name="B4" value="=B2+B3" type="general">
-        </cell>
-        <cell name="C3" value="+" type="general">
-        </cell>
-        <cell name="D2" value="=Mag(10, 1)" type="general">
-        </cell>
-        <cell name="D3" value="=Mag(20, 3)" type="general">
-        </cell>
-        <cell name="D4" value="=D2*D3" type="general">
-        </cell>
-        <cell name="E3" value="*" type="general">
-        </cell>
         <cell name="B7" value="=Mag(10, 1)" type="general">
         </cell>
-        <cell name="B8" value="=Mag(10, 2)" type="general">
+        <cell name="B8" value="=Mag(20, 3)" type="general">
         </cell>
-        <cell name="B9" value="=Mag(10, 0.5)" type="general">
+        <cell name="E8" value="*" type="general">
         </cell>
-        <cell name="B10" value="=Mag(10, 3)" type="general">
+        <cell name="D8" value="=Mag(20, 3)" type="general">
         </cell>
-        <cell name="B11" value="=Mag(10, 2.5)" type="general">
+        <cell name="B9" value="=B7+B8" type="general">
         </cell>
-        <cell name="B12" value="=Mag(10, 1)" type="general">
+        <cell name="C8" value="+" type="general">
         </cell>
-        <cell name="B13" value="=SUM(B7:B12)" type="general">
+        <cell name="D7" value="=Mag(10, 1)" type="general">
         </cell>
-        <cell name="C12" value="+" type="general">
+        <cell name="D9" value="=D7*D8" type="general">
         </cell>
     </worksheet>
     <postFormulaeUserCode><![CDATA[

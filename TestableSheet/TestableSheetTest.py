@@ -1,6 +1,6 @@
 import unittest
 
-from TestableSheet.TestableSheet import Spreadsheet
+from runworkbook import RunWorkbook
 
 from System.Drawing import Color
 
