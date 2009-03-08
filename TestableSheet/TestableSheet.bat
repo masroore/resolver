@@ -1,2 +1,2 @@
-ipy TestableSheetTest.py
+rpy TestableSheetTest.py
 pause

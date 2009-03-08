@@ -21,15 +21,26 @@ sys.path.extend((topLevel, bin))
 clr.AddReference('TopLevel')
 import LoadAssemblies
 LoadAssemblies.binDir = bin
-
 import LoadRequiredAssemblies
 
+# Needed to configure caches
 from MarketData import Bloomberg, Thomson
+
 from Library.Workbook import Workbook
 from Library.ContextDependent import MakeContextDependentFunctions
 
 _workbook = Workbook()
 
-ContextDependentFunctions = MakeContextDependentFunctions(__file__, _workbook, sys)
+# delayed import to ensure correct version is used instead of picking up
+# from IRONPYTHONPATH
+import os
+
+# Create the RunWorkbook function
+ContextDependentFunctions = MakeContextDependentFunctions(os.path.abspath(__file__), _workbook, sys)
 RunWorkbook = ContextDependentFunctions.RunWorkbook
+
+
+
+#workbook = RunWorkbook("Samples\\Fibonacci.rsl")
+
 
