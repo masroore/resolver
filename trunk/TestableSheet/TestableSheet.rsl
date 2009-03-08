@@ -1,5 +1,5 @@
 <!--
-Copyright (c) 2008, Michael Foord
+Copyright (c) 2009, Michael Foord
 
 All rights reserved.
 
@@ -30,12 +30,12 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
-<document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.762278978389" splitterOrientation="Horizontal" suspendRecalculations="False" license="BSD Revised" copyrightOwner="Michael Foord">
+<document currentResultWorksheet="Data" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.762278978389" splitterOrientation="Horizontal" suspendRecalculations="False" license="BSD Revised" copyrightOwner="Michael Foord" resolverVersion="1.4" resolverBuild="4021" documentVersion="9">
     <foldState license="True" imports="True" worksheetCreation="False" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
     <preConstantsUserCode><![CDATA[
 ]]></preConstantsUserCode>
     <preFormulaeUserCode><![CDATA[
-sheet = workbook['Sheet1']
+sheet = workbook['Data']
 
 # Next let's put nice borders down all the entries automatically
 for row in range(4, sheet.MaxRow+1):
@@ -59,218 +59,210 @@ for row in range(4, sheet.MaxRow+1):
 
 
 ]]></preFormulaeUserCode>
-    <names />
+    <names>
+        <name name="balance" value="Data!$C$24" />
+        <name name="income" value="Data!$C$4:$C$12" />
+        <name name="outgoings" value="Data!$G$4:$G$20" />
+        <name name="totalincome" value="Data!$C$22" />
+        <name name="totaloutgoings" value="Data!$C$23" />
+    </names>
     <viewStates>
-        <viewState worksheet="Sheet1">
-            <currentCell col="1" row="1" />
-            <scrollPos col="1" row="1" />
-            <virtualGridSize width="18" height="40" />
-        </viewState>
-        <viewState worksheet="Sheet2">
-            <currentCell col="1" row="1" />
-            <scrollPos col="1" row="1" />
-            <virtualGridSize width="100" height="100" />
-        </viewState>
-        <viewState worksheet="Sheet3">
-            <currentCell col="1" row="1" />
-            <scrollPos col="1" row="1" />
-            <virtualGridSize width="100" height="100" />
+        <viewState worksheet="Data">
+            <currentCell col="3" row="24" />
+            <scrollPos col="1" row="13" />
+            <virtualGridSize width="18" height="42" />
         </viewState>
     </viewStates>
-    <worksheet name="Sheet1" value="" showGrid="False" showBounds="True" headerWidth="-1" headerHeight="-1">
+    <worksheet name="Data" value="" showGrid="False" showBounds="True" headerWidth="-1" headerHeight="-1">
         <trait name="ColWidth">
             <traitentry col="1" row="0" value="155" />
-            <traitentry col="5" row="0" value="173" />
             <traitentry col="9" row="0" value="74" />
+            <traitentry col="5" row="0" value="173" />
         </trait>
-        <cell name="E5" value="Present for Mrs" type="general">
-        </cell>
-        <cell name="G4" value="98.5" type="general">
-        </cell>
-        <cell name="F4" value="05/15/2007" type="date">
-        </cell>
-        <cell name="E4" value="Chocolate" type="general">
-        </cell>
-        <cell name="G2" value="Amount" type="general">
-        </cell>
-        <cell name="F2" value="Date" type="general">
-        </cell>
-        <cell name="E2" value="Reason" type="general">
-        </cell>
-        <cell name="E1" value="Outgoings" type="general">
-        </cell>
-        <cell name="C10" value="450" type="general">
-        </cell>
-        <cell name="C9" value="225.51" type="general">
-        </cell>
-        <cell name="C8" value="851.42" type="general">
-        </cell>
-        <cell name="C6" value="1800.27" type="general">
-        </cell>
-        <cell name="C5" value="480" type="general">
-        </cell>
-        <cell name="C4" value="1240.06" type="general">
-        </cell>
-        <cell name="C2" value="Amount" type="general">
-        </cell>
-        <cell name="B10" value="06/07/2007" type="date">
-        </cell>
-        <cell name="B9" value="06/06/2007" type="date">
-        </cell>
-        <cell name="B8" value="06/04/2007" type="date">
-        </cell>
-        <cell name="B6" value="06/01/2007" type="date">
-        </cell>
-        <cell name="B5" value="05/29/2007" type="date">
-        </cell>
-        <cell name="B4" value="05/27/2007" type="date">
-        </cell>
-        <cell name="B2" value="Date" type="general">
-        </cell>
-        <cell name="A10" value="Business May" type="general">
-        </cell>
-        <cell name="A9" value="????" type="general">
-        </cell>
-        <cell name="A8" value="Wife&apos;s Wages May" type="general">
-        </cell>
-        <cell name="A6" value="My Wages May" type="general">
-        </cell>
-        <cell name="A5" value="Jerry Paid Back Loan" type="general">
-        </cell>
-        <cell name="A4" value="Winnings from Horses" type="general">
-        </cell>
-        <cell name="A2" value="Reason" type="general">
-        </cell>
-        <cell name="A1" value="Income" type="general">
-        </cell>
-        <cell name="A7" value="Cashback on Phone" type="general">
-        </cell>
-        <cell name="B7" value="06/03/2007" type="date">
-        </cell>
-        <cell name="C7" value="45" type="general">
-        </cell>
-        <cell name="F5" value="05/15/2007" type="date">
-        </cell>
-        <cell name="G5" value="41.23" type="general">
-        </cell>
-        <cell name="E6" value="????" type="general">
-        </cell>
-        <cell name="F6" value="05/18/2007" type="date">
-        </cell>
-        <cell name="G6" value="112.45" type="general">
+        <cell name="C22" value="=SUM(C1:C21)" type="general">
         </cell>
         <cell name="E7" value="Cash " type="general">
         </cell>
         <cell name="F7" value="05/25/2007" type="date">
         </cell>
-        <cell name="G7" value="120.00" type="general">
+        <cell name="G6" value="112.45" type="general">
         </cell>
-        <cell name="E8" value="Rent" type="general">
+        <cell name="A5" value="Jerry Paid Back Loan" type="general">
         </cell>
-        <cell name="F8" value="06/01/2007" type="date">
+        <cell name="B5" value="05/29/2007" type="date">
         </cell>
-        <cell name="G8" value="450" type="general">
-        </cell>
-        <cell name="E9" value="Tescos" type="general">
-        </cell>
-        <cell name="F9" value="06/02/2007" type="date">
-        </cell>
-        <cell name="G9" value="27.32" type="general">
-        </cell>
-        <cell name="E10" value="????" type="general">
-        </cell>
-        <cell name="F10" value="06/02/2007" type="date">
-        </cell>
-        <cell name="G10" value="12.45" type="general">
-        </cell>
-        <cell name="E11" value="Cash " type="general">
-        </cell>
-        <cell name="F11" value="06/04/2007" type="date">
-        </cell>
-        <cell name="G11" value="40.00" type="general">
-        </cell>
-        <cell name="E12" value="Council Tax" type="general">
-        </cell>
-        <cell name="F12" value="06/04/2007" type="date">
-        </cell>
-        <cell name="G12" value="85" type="general">
-        </cell>
-        <cell name="E13" value="Savings" type="general">
-        </cell>
-        <cell name="F13" value="06/05/2007" type="date">
-        </cell>
-        <cell name="G13" value="400" type="general">
-        </cell>
-        <cell name="E14" value="Phone Bill" type="general">
-        </cell>
-        <cell name="F14" value="06/07/2007" type="date">
-        </cell>
-        <cell name="G14" value="27.51" type="general">
-        </cell>
-        <cell name="F15" value="06/09/2007" type="date">
-        </cell>
-        <cell name="E18" value="Tescos" type="general">
-        </cell>
-        <cell name="E17" value="Cash" type="general">
-        </cell>
-        <cell name="E16" value="????" type="general">
-        </cell>
-        <cell name="E15" value="Power Bill" type="general">
-        </cell>
-        <cell name="C12" value="412.09" type="general">
-        </cell>
-        <cell name="C11" value="35" type="general">
-        </cell>
-        <cell name="B12" value="06/15/2007" type="date">
-        </cell>
-        <cell name="B11" value="06/08/2007" type="date">
-        </cell>
-        <cell name="A12" value="Royalties" type="general">
-        </cell>
-        <cell name="A11" value="Sale of Camera" type="general">
-        </cell>
-        <cell name="F16" value="06/10/2007" type="date">
-        </cell>
-        <cell name="F17" value="06/10/2007" type="date">
-        </cell>
-        <cell name="F18" value="06/10/2007" type="date">
-        </cell>
-        <cell name="G15" value="81.00" type="general">
-        </cell>
-        <cell name="G16" value="24.32" type="general">
-        </cell>
-        <cell name="G17" value="30" type="general">
-        </cell>
-        <cell name="G18" value="49.51" type="general">
-        </cell>
-        <cell name="A22" value="Total Income:" type="general">
+        <cell name="C4" value="1240.06" type="general">
         </cell>
         <cell name="E19" value="House Repairs" type="general">
         </cell>
         <cell name="F19" value="06/11/2007" type="date">
         </cell>
-        <cell name="G19" value="2940.06" type="general">
+        <cell name="G18" value="49.51" type="general">
         </cell>
-        <cell name="E20" value="Car Repairs" type="general">
+        <cell name="A2" value="Reason" type="general">
         </cell>
-        <cell name="F20" value="06/12/2007" type="date">
+        <cell name="B2" value="Date" type="general">
         </cell>
-        <cell name="G20" value="1001.37" type="general">
+        <cell name="E1" value="Outgoings" type="general">
         </cell>
-        <cell name="C22" value="=SUM(C1:C21)" type="general">
+        <cell name="E12" value="Council Tax" type="general">
         </cell>
-        <cell name="A23" value="Total Outgoings:" type="general">
+        <cell name="F12" value="06/04/2007" type="date">
         </cell>
-        <cell name="C23" value="=SUM(G2:G21)" type="general">
+        <cell name="G13" value="400" type="general">
         </cell>
-        <cell name="C24" value="=C22-C23" type="general">
+        <cell name="C2" value="Amount" type="general">
+        </cell>
+        <cell name="E13" value="Savings" type="general">
+        </cell>
+        <cell name="F13" value="06/05/2007" type="date">
+        </cell>
+        <cell name="G12" value="85" type="general">
+        </cell>
+        <cell name="E10" value="????" type="general">
+        </cell>
+        <cell name="F10" value="06/02/2007" type="date">
+        </cell>
+        <cell name="G11" value="40.00" type="general">
+        </cell>
+        <cell name="E14" value="Phone Bill" type="general">
+        </cell>
+        <cell name="A8" value="Wife&apos;s Wages May" type="general">
+        </cell>
+        <cell name="F14" value="06/07/2007" type="date">
+        </cell>
+        <cell name="B8" value="06/04/2007" type="date">
+        </cell>
+        <cell name="G15" value="81.00" type="general">
+        </cell>
+        <cell name="C9" value="225.51" type="general">
+        </cell>
+        <cell name="A12" value="Royalties" type="general">
+        </cell>
+        <cell name="B12" value="06/15/2007" type="date">
+        </cell>
+        <cell name="E11" value="Cash " type="general">
+        </cell>
+        <cell name="F11" value="06/04/2007" type="date">
+        </cell>
+        <cell name="G10" value="12.45" type="general">
+        </cell>
+        <cell name="A9" value="????" type="general">
+        </cell>
+        <cell name="B9" value="06/06/2007" type="date">
+        </cell>
+        <cell name="C8" value="851.42" type="general">
         </cell>
         <cell name="A24" value="Balance:" type="general">
         </cell>
-    </worksheet>
-    <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
-    </worksheet>
-    <worksheet name="Sheet3" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <cell name="E4" value="Chocolate" type="general">
+        </cell>
+        <cell name="F4" value="05/15/2007" type="date">
+        </cell>
+        <cell name="G5" value="41.23" type="general">
+        </cell>
+        <cell name="A6" value="My Wages May" type="general">
+        </cell>
+        <cell name="B6" value="06/01/2007" type="date">
+        </cell>
+        <cell name="C7" value="45" type="general">
+        </cell>
+        <cell name="E5" value="Present for Mrs" type="general">
+        </cell>
+        <cell name="F5" value="05/15/2007" type="date">
+        </cell>
+        <cell name="E16" value="????" type="general">
+        </cell>
+        <cell name="G4" value="98.5" type="general">
+        </cell>
+        <cell name="F16" value="06/10/2007" type="date">
+        </cell>
+        <cell name="G17" value="30" type="general">
+        </cell>
+        <cell name="A7" value="Cashback on Phone" type="general">
+        </cell>
+        <cell name="B7" value="06/03/2007" type="date">
+        </cell>
+        <cell name="C6" value="1800.27" type="general">
+        </cell>
+        <cell name="E2" value="Reason" type="general">
+        </cell>
+        <cell name="F2" value="Date" type="general">
+        </cell>
+        <cell name="E17" value="Cash" type="general">
+        </cell>
+        <cell name="F17" value="06/10/2007" type="date">
+        </cell>
+        <cell name="G16" value="24.32" type="general">
+        </cell>
+        <cell name="G2" value="Amount" type="general">
+        </cell>
+        <cell name="A1" value="Income" type="general">
+        </cell>
+        <cell name="E18" value="Tescos" type="general">
+        </cell>
+        <cell name="F18" value="06/10/2007" type="date">
+        </cell>
+        <cell name="G19" value="2940.06" type="general">
+        </cell>
+        <cell name="E15" value="Power Bill" type="general">
+        </cell>
+        <cell name="F15" value="06/09/2007" type="date">
+        </cell>
+        <cell name="G14" value="27.51" type="general">
+        </cell>
+        <cell name="C12" value="412.09" type="general">
+        </cell>
+        <cell name="E8" value="Rent" type="general">
+        </cell>
+        <cell name="F8" value="06/01/2007" type="date">
+        </cell>
+        <cell name="G9" value="27.32" type="general">
+        </cell>
+        <cell name="A10" value="Business May" type="general">
+        </cell>
+        <cell name="B10" value="06/07/2007" type="date">
+        </cell>
+        <cell name="C11" value="35" type="general">
+        </cell>
+        <cell name="C24" value="=C22-C23" type="general">
+        </cell>
+        <cell name="E9" value="Tescos" type="general">
+        </cell>
+        <cell name="F9" value="06/02/2007" type="date">
+        </cell>
+        <cell name="E20" value="Car Repairs" type="general">
+        </cell>
+        <cell name="G8" value="450" type="general">
+        </cell>
+        <cell name="F20" value="06/12/2007" type="date">
+        </cell>
+        <cell name="A11" value="Sale of Camera" type="general">
+        </cell>
+        <cell name="B11" value="06/08/2007" type="date">
+        </cell>
+        <cell name="A22" value="Total Income:" type="general">
+        </cell>
+        <cell name="C10" value="450" type="general">
+        </cell>
+        <cell name="C23" value="=SUM(G2:G21)" type="general">
+        </cell>
+        <cell name="E6" value="????" type="general">
+        </cell>
+        <cell name="F6" value="05/18/2007" type="date">
+        </cell>
+        <cell name="G7" value="120.00" type="general">
+        </cell>
+        <cell name="A4" value="Winnings from Horses" type="general">
+        </cell>
+        <cell name="B4" value="05/27/2007" type="date">
+        </cell>
+        <cell name="C5" value="480" type="general">
+        </cell>
+        <cell name="G20" value="1001.37" type="general">
+        </cell>
+        <cell name="A23" value="Total Outgoings:" type="general">
+        </cell>
     </worksheet>
     <postFormulaeUserCode><![CDATA[
 if sheet.C24 < 0:
