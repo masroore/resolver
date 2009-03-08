@@ -68,37 +68,42 @@ class TestableSheetTest(unittest.TestCase):
         self.assertEquals(workbook.totaloutgoings, 10, "Total Outgoings calculated incorrectly")
 
     
-    def DONTtestBalance(self):
-        Constants = {
-            'Sheet1': {
-                (3, 4): 200,
-                (7, 4): 100
-            }
-        }
-        workbook = Spreadsheet()
-        workbook.recalculate(Constants=Constants)
-        self.assertEquals(workbook['Sheet1'].C24, 100, "Balance calculated incorrectly")
+    def testBalance(self):
+        temp = Worksheet("Temporary Sheet")
+        income = CellRange(temp.Cells.A1, temp.Cells.A17)
+        outgoings = CellRange(temp.Cells.B1, temp.Cells.B17)
+        for i, val in enumerate((2, 4, 6, 8)):
+            income[1, i+1] = val
+        for i, val in enumerate((1, 2, 3, 4)):
+            outgoings[1, i+1] = val
+            
+        workbook = RunWorkbook(spreadsheet_path, income=income, outgoings=outgoings)
+        
+        self.assertEquals(workbook.balance, 10, "Balance calculated incorrectly")
 
     
-    def DONTtestBalanceBackColor(self):
-        PositiveBalance = {
-            'Sheet1': {
-                (3, 4): 100,
-                (7, 4): 99
-            }
-        }
-        workbook = Spreadsheet()
-        workbook.recalculate(Constants=PositiveBalance)
-        self.assertNotEquals(workbook['Sheet1'].Cells.C24.BackColor, Color.Red, "Incorrect BackColor for positive balance")
+    def testBalanceBackColor(self):
+        temp = Worksheet("Temporary Sheet")
+        income = CellRange(temp.Cells.A1, temp.Cells.A17)
+        outgoings = CellRange(temp.Cells.B1, temp.Cells.B17)
+        for i, val in enumerate((2, 4, 6, 8)):
+            income[1, i+1] = val
+        for i, val in enumerate((1, 2, 3, 4)):
+            outgoings[1, i+1] = val
+            
+        workbook = RunWorkbook(spreadsheet_path, income=income, outgoings=outgoings)
+        self.assertNotEquals(workbook['Data'].Cells.C24.BackColor, Color.Red, "Incorrect BackColor for positive balance")
         
-        NegativeBalance = {
-            'Sheet1': {
-                (3, 4): 99,
-                (7, 4): 100
-            }
-        }
-        workbook.recalculate(Constants=NegativeBalance)
-        self.assertEquals(workbook['Sheet1'].Cells.C24.BackColor, Color.Red, "Incorrect BackColor for negative balance")
+        temp = Worksheet("Temporary Sheet")
+        income = CellRange(temp.Cells.A1, temp.Cells.A17)
+        outgoings = CellRange(temp.Cells.B1, temp.Cells.B17)
+        for i, val in enumerate((1, 2, 3, 4)):
+            income[1, i+1] = val
+        for i, val in enumerate((2, 4, 6, 8)):
+            outgoings[1, i+1] = val
+            
+        workbook = RunWorkbook(spreadsheet_path, income=income, outgoings=outgoings)
+        self.assertEquals(workbook['Data'].Cells.C24.BackColor, Color.Red, "Incorrect BackColor for negative balance")
         
 
 
