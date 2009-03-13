@@ -21,21 +21,9 @@ spreadsheet_path = Path.Combine(this_dir, 'TestableSheet.rsl')
 
 
 class TestableSheetTest(unittest.TestCase):
-    
-    def assertEquals(self, actual, expected, message=''):
-        message += ':\nactual = "%s"\nexpected = "%s"\n' % (actual, expected)
-        unittest.TestCase.assertEquals(self, actual, expected, message)
-        
-    def assertTrue(self, arg, message=''):
-        unittest.TestCase.assertEquals(self, arg, True, message)
-        
-    def assertFalse(self, arg, message=''):
-        unittest.TestCase.assertEquals(self, arg, False, message)
-        
-    ##
 
     def testWorksheets(self):
-        workbook = RunWorkbook(spreadsheet_path)
+        workbook = RunWorkbook(spreadsheet_path, useCache=True)
         
         worksheets = [sheet.Name for sheet in workbook]
         self.assertEquals(worksheets, ['Data'],
@@ -43,7 +31,7 @@ class TestableSheetTest(unittest.TestCase):
     
     
     def testBasicSpreadsheetConfiguration(self):
-        workbook = RunWorkbook(spreadsheet_path)
+        workbook = RunWorkbook(spreadsheet_path, useCache=True)
         self.assertTrue(workbook['Data'].ShowBounds, "Data.ShowBounds is not set to True")
         self.assertFalse(workbook['Data'].ShowGrid, "Data.ShowGrid is not set to False")
         
@@ -54,7 +42,7 @@ class TestableSheetTest(unittest.TestCase):
         for i, val in enumerate((1, 2, 3, 4)):
             cellrange[1, i+1] = val
         
-        workbook = RunWorkbook(spreadsheet_path, income=cellrange)
+        workbook = RunWorkbook(spreadsheet_path, income=cellrange, useCache=True)
         self.assertEquals(workbook.totalincome, 10, "Total Income calculated incorrectly")
 
     
@@ -64,7 +52,7 @@ class TestableSheetTest(unittest.TestCase):
         for i, val in enumerate((1, 2, 3, 4)):
             cellrange[1, i+1] = val
             
-        workbook = RunWorkbook(spreadsheet_path, outgoings=cellrange)
+        workbook = RunWorkbook(spreadsheet_path, outgoings=cellrange, useCache=True)
         self.assertEquals(workbook.totaloutgoings, 10, "Total Outgoings calculated incorrectly")
 
     
@@ -77,7 +65,7 @@ class TestableSheetTest(unittest.TestCase):
         for i, val in enumerate((1, 2, 3, 4)):
             outgoings[1, i+1] = val
             
-        workbook = RunWorkbook(spreadsheet_path, income=income, outgoings=outgoings)
+        workbook = RunWorkbook(spreadsheet_path, income=income, outgoings=outgoings, useCache=True)
         
         self.assertEquals(workbook.balance, 10, "Balance calculated incorrectly")
 
@@ -91,7 +79,7 @@ class TestableSheetTest(unittest.TestCase):
         for i, val in enumerate((1, 2, 3, 4)):
             outgoings[1, i+1] = val
             
-        workbook = RunWorkbook(spreadsheet_path, income=income, outgoings=outgoings)
+        workbook = RunWorkbook(spreadsheet_path, income=income, outgoings=outgoings, useCache=True)
         self.assertNotEquals(workbook['Data'].Cells.C24.BackColor, Color.Red, "Incorrect BackColor for positive balance")
         
         temp = Worksheet("Temporary Sheet")
@@ -102,7 +90,7 @@ class TestableSheetTest(unittest.TestCase):
         for i, val in enumerate((2, 4, 6, 8)):
             outgoings[1, i+1] = val
             
-        workbook = RunWorkbook(spreadsheet_path, income=income, outgoings=outgoings)
+        workbook = RunWorkbook(spreadsheet_path, income=income, outgoings=outgoings, useCache=True)
         self.assertEquals(workbook['Data'].Cells.C24.BackColor, Color.Red, "Incorrect BackColor for negative balance")
         
 
