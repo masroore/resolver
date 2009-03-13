@@ -1,0 +1,77 @@
+<!--
+This spreadsheet is copyright 2009, all rights reserved.
+-->
+<document currentResultWorksheet="Import" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.75" splitterOrientation="Horizontal" suspendRecalculations="False" license="Closed source/proprietary" copyrightOwner="" resolverVersion="1.4" resolverBuild="4136" documentVersion="9">
+    <foldState license="True" imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
+    <preConstantsUserCode><![CDATA[import clr
+clr.AddReferenceByName("LumenWorks.Framework.IO")
+clr.AddReference('System.Windows.Forms')
+from LumenWorks.Framework.IO.Csv import CsvReader
+from System.Windows.Forms import (
+    OpenFileDialog, DialogResult, MessageBox,
+    MessageBoxButtons, MessageBoxIcon
+)
+from System.IO import StreamReader
+
+def readCSV(filename):
+    sheet = workbook['Data']
+    reader = StreamReader(filename)
+
+    csvReader = CsvReader(reader, False)
+    csvReader.SkipEmptyLines = False
+
+    rowOffset = 0
+    while csvReader.ReadNextRecord():
+        colCount = csvReader.FieldCount
+        for colOffset in range(colCount):
+            field = csvReader[colOffset]
+            sheet.Cells[colOffset+1, rowOffset+1].Formula = field
+        rowOffset += 1
+
+def importCSV():
+    dialog = OpenFileDialog()
+    dialog.Title = "Select file to import"
+    dialog.Filter = 'CSV Files(*.CSV)|*.CSV|All files (*.*)|*.*'
+    if dialog.ShowDialog() == DialogResult.OK:
+        try:
+            readCSV(dialog.FileName)
+        except Exception, e:
+            MessageBox.Show(
+                'Error importing file: Error was %s' % (e,),
+                "Error importing file",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                )
+ 
+
+workbook['Import'].C4 = Button(Text="Import CSV")
+workbook['Import'].C4.Click += importCSV
+
+    
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[
+]]></preFormulaeUserCode>
+    <names />
+    <viewStates>
+        <viewState worksheet="Data">
+            <currentCell col="1" row="1" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="24" height="30" />
+        </viewState>
+        <viewState worksheet="Import">
+            <currentCell col="5" row="11" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="24" height="30" />
+        </viewState>
+    </viewStates>
+    <worksheet name="Data" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+    </worksheet>
+    <worksheet name="Import" value="" showGrid="False" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <trait name="ColWidth">
+            <traitentry col="2" row="0" value="49" />
+            <traitentry col="3" row="0" value="77" />
+        </trait>
+    </worksheet>
+    <postFormulaeUserCode><![CDATA[
+]]></postFormulaeUserCode>
+</document>
