@@ -1,5 +1,5 @@
 <!--
-Copyright (c) 2008, Michael Foord
+Copyright (c) 2009, Michael Foord
 
 All rights reserved.
 
@@ -30,8 +30,8 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
-<document currentResultWorksheet="Totals" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.75" splitterOrientation="Horizontal" suspendRecalculations="False" license="BSD Revised" copyrightOwner="Michael Foord">
-    <foldState license="True" imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="False" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
+<document currentResultWorksheet="Totals" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.716981132075" splitterOrientation="Horizontal" suspendRecalculations="False" license="BSD Revised" copyrightOwner="Michael Foord" resolverVersion="1.4" resolverBuild="4021" documentVersion="9">
+    <foldState license="True" imports="True" worksheetCreation="False" preConstantsUserCode="False" constants="False" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
     <preConstantsUserCode><![CDATA[
 workbook.AddWorksheet('Transactions')
 workbook.AddWorksheet('Current Prices')
@@ -42,61 +42,24 @@ totals = workbook['Totals']
     <names />
     <viewStates>
         <viewState worksheet="Totals">
-            <currentCell col="9" row="5" />
+            <currentCell col="11" row="3" />
             <scrollPos col="1" row="1" />
-            <virtualGridSize width="58" height="74" />
-        </viewState>
-        <viewState worksheet="Transactions">
-            <currentCell col="1" row="1" />
-            <scrollPos col="1" row="1" />
-            <virtualGridSize width="100" height="100" />
+            <virtualGridSize width="30" height="32" />
         </viewState>
         <viewState worksheet="Current Prices">
             <currentCell col="1" row="1" />
             <scrollPos col="1" row="1" />
             <virtualGridSize width="100" height="100" />
         </viewState>
+        <viewState worksheet="Transactions">
+            <currentCell col="1" row="1" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="100" height="100" />
+        </viewState>
     </viewStates>
-    <worksheet name="Totals" value="" showGrid="False" showBounds="True" headerWidth="-1" headerHeight="-1">
-        <trait name="BackColor">
-            <traitentry col="1" row="4" value="named color: CornflowerBlue" />
-            <traitentry col="1" row="6" value="named color: CornflowerBlue" />
-            <traitentry col="1" row="8" value="named color: CornflowerBlue" />
-            <traitentry col="1" row="10" value="named color: CornflowerBlue" />
-            <traitentry col="1" row="12" value="named color: CornflowerBlue" />
-            <traitentry col="2" row="4" value="named color: CornflowerBlue" />
-            <traitentry col="2" row="6" value="named color: CornflowerBlue" />
-            <traitentry col="2" row="8" value="named color: CornflowerBlue" />
-            <traitentry col="2" row="10" value="named color: CornflowerBlue" />
-            <traitentry col="2" row="12" value="named color: CornflowerBlue" />
-            <traitentry col="3" row="4" value="named color: CornflowerBlue" />
-            <traitentry col="3" row="6" value="named color: CornflowerBlue" />
-            <traitentry col="3" row="8" value="named color: CornflowerBlue" />
-            <traitentry col="3" row="10" value="named color: CornflowerBlue" />
-            <traitentry col="3" row="12" value="named color: CornflowerBlue" />
-            <traitentry col="4" row="4" value="named color: CornflowerBlue" />
-            <traitentry col="4" row="6" value="named color: CornflowerBlue" />
-            <traitentry col="4" row="8" value="named color: CornflowerBlue" />
-            <traitentry col="4" row="10" value="named color: CornflowerBlue" />
-            <traitentry col="4" row="12" value="named color: CornflowerBlue" />
-            <traitentry col="5" row="4" value="named color: CornflowerBlue" />
-            <traitentry col="5" row="6" value="named color: CornflowerBlue" />
-            <traitentry col="5" row="8" value="named color: CornflowerBlue" />
-            <traitentry col="5" row="10" value="named color: CornflowerBlue" />
-            <traitentry col="5" row="12" value="named color: CornflowerBlue" />
-            <traitentry col="6" row="4" value="named color: CornflowerBlue" />
-            <traitentry col="6" row="6" value="named color: CornflowerBlue" />
-            <traitentry col="6" row="8" value="named color: CornflowerBlue" />
-            <traitentry col="6" row="10" value="named color: CornflowerBlue" />
-            <traitentry col="6" row="12" value="named color: CornflowerBlue" />
-        </trait>
-        <trait name="Bold">
-            <traitentry col="0" row="15" value="True" />
-            <traitentry col="1" row="1" value="True" />
-            <traitentry col="8" row="3" value="True" />
-            <traitentry col="8" row="4" value="True" />
-            <traitentry col="8" row="5" value="True" />
-            <traitentry col="8" row="6" value="True" />
+    <worksheet name="Totals" value="" showGrid="False" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <trait name="FontSize">
+            <traitentry col="1" row="1" value="14.0" />
         </trait>
         <trait name="BorderBottom">
             <traitentry col="1" row="13" value="True" />
@@ -104,6 +67,74 @@ totals = workbook['Totals']
             <traitentry col="3" row="13" value="True" />
             <traitentry col="4" row="13" value="True" />
             <traitentry col="5" row="13" value="True" />
+            <traitentry col="6" row="13" value="True" />
+        </trait>
+        <trait name="BorderTop">
+            <traitentry col="1" row="3" value="True" />
+            <traitentry col="1" row="4" value="True" />
+            <traitentry col="1" row="5" value="True" />
+            <traitentry col="1" row="6" value="True" />
+            <traitentry col="1" row="7" value="True" />
+            <traitentry col="1" row="8" value="True" />
+            <traitentry col="1" row="9" value="True" />
+            <traitentry col="1" row="10" value="True" />
+            <traitentry col="1" row="11" value="True" />
+            <traitentry col="1" row="12" value="True" />
+            <traitentry col="1" row="13" value="True" />
+            <traitentry col="2" row="3" value="True" />
+            <traitentry col="2" row="4" value="True" />
+            <traitentry col="2" row="5" value="True" />
+            <traitentry col="2" row="6" value="True" />
+            <traitentry col="2" row="7" value="True" />
+            <traitentry col="2" row="8" value="True" />
+            <traitentry col="2" row="9" value="True" />
+            <traitentry col="2" row="10" value="True" />
+            <traitentry col="2" row="11" value="True" />
+            <traitentry col="2" row="12" value="True" />
+            <traitentry col="2" row="13" value="True" />
+            <traitentry col="3" row="3" value="True" />
+            <traitentry col="3" row="4" value="True" />
+            <traitentry col="3" row="5" value="True" />
+            <traitentry col="3" row="6" value="True" />
+            <traitentry col="3" row="7" value="True" />
+            <traitentry col="3" row="8" value="True" />
+            <traitentry col="3" row="9" value="True" />
+            <traitentry col="3" row="10" value="True" />
+            <traitentry col="3" row="11" value="True" />
+            <traitentry col="3" row="12" value="True" />
+            <traitentry col="3" row="13" value="True" />
+            <traitentry col="4" row="3" value="True" />
+            <traitentry col="4" row="4" value="True" />
+            <traitentry col="4" row="5" value="True" />
+            <traitentry col="4" row="6" value="True" />
+            <traitentry col="4" row="7" value="True" />
+            <traitentry col="4" row="8" value="True" />
+            <traitentry col="4" row="9" value="True" />
+            <traitentry col="4" row="10" value="True" />
+            <traitentry col="4" row="11" value="True" />
+            <traitentry col="4" row="12" value="True" />
+            <traitentry col="4" row="13" value="True" />
+            <traitentry col="5" row="3" value="True" />
+            <traitentry col="5" row="4" value="True" />
+            <traitentry col="5" row="5" value="True" />
+            <traitentry col="5" row="6" value="True" />
+            <traitentry col="5" row="7" value="True" />
+            <traitentry col="5" row="8" value="True" />
+            <traitentry col="5" row="9" value="True" />
+            <traitentry col="5" row="10" value="True" />
+            <traitentry col="5" row="11" value="True" />
+            <traitentry col="5" row="12" value="True" />
+            <traitentry col="5" row="13" value="True" />
+            <traitentry col="6" row="3" value="True" />
+            <traitentry col="6" row="4" value="True" />
+            <traitentry col="6" row="5" value="True" />
+            <traitentry col="6" row="6" value="True" />
+            <traitentry col="6" row="7" value="True" />
+            <traitentry col="6" row="8" value="True" />
+            <traitentry col="6" row="9" value="True" />
+            <traitentry col="6" row="10" value="True" />
+            <traitentry col="6" row="11" value="True" />
+            <traitentry col="6" row="12" value="True" />
             <traitentry col="6" row="13" value="True" />
         </trait>
         <trait name="BorderLeft">
@@ -191,229 +222,198 @@ totals = workbook['Totals']
             <traitentry col="8" row="5" value="True" />
             <traitentry col="8" row="6" value="True" />
         </trait>
-        <trait name="BorderTop">
-            <traitentry col="1" row="3" value="True" />
-            <traitentry col="1" row="4" value="True" />
-            <traitentry col="1" row="5" value="True" />
-            <traitentry col="1" row="6" value="True" />
-            <traitentry col="1" row="7" value="True" />
-            <traitentry col="1" row="8" value="True" />
-            <traitentry col="1" row="9" value="True" />
-            <traitentry col="1" row="10" value="True" />
-            <traitentry col="1" row="11" value="True" />
-            <traitentry col="1" row="12" value="True" />
-            <traitentry col="1" row="13" value="True" />
-            <traitentry col="2" row="3" value="True" />
-            <traitentry col="2" row="4" value="True" />
-            <traitentry col="2" row="5" value="True" />
-            <traitentry col="2" row="6" value="True" />
-            <traitentry col="2" row="7" value="True" />
-            <traitentry col="2" row="8" value="True" />
-            <traitentry col="2" row="9" value="True" />
-            <traitentry col="2" row="10" value="True" />
-            <traitentry col="2" row="11" value="True" />
-            <traitentry col="2" row="12" value="True" />
-            <traitentry col="2" row="13" value="True" />
-            <traitentry col="3" row="3" value="True" />
-            <traitentry col="3" row="4" value="True" />
-            <traitentry col="3" row="5" value="True" />
-            <traitentry col="3" row="6" value="True" />
-            <traitentry col="3" row="7" value="True" />
-            <traitentry col="3" row="8" value="True" />
-            <traitentry col="3" row="9" value="True" />
-            <traitentry col="3" row="10" value="True" />
-            <traitentry col="3" row="11" value="True" />
-            <traitentry col="3" row="12" value="True" />
-            <traitentry col="3" row="13" value="True" />
-            <traitentry col="4" row="3" value="True" />
-            <traitentry col="4" row="4" value="True" />
-            <traitentry col="4" row="5" value="True" />
-            <traitentry col="4" row="6" value="True" />
-            <traitentry col="4" row="7" value="True" />
-            <traitentry col="4" row="8" value="True" />
-            <traitentry col="4" row="9" value="True" />
-            <traitentry col="4" row="10" value="True" />
-            <traitentry col="4" row="11" value="True" />
-            <traitentry col="4" row="12" value="True" />
-            <traitentry col="4" row="13" value="True" />
-            <traitentry col="5" row="3" value="True" />
-            <traitentry col="5" row="4" value="True" />
-            <traitentry col="5" row="5" value="True" />
-            <traitentry col="5" row="6" value="True" />
-            <traitentry col="5" row="7" value="True" />
-            <traitentry col="5" row="8" value="True" />
-            <traitentry col="5" row="9" value="True" />
-            <traitentry col="5" row="10" value="True" />
-            <traitentry col="5" row="11" value="True" />
-            <traitentry col="5" row="12" value="True" />
-            <traitentry col="5" row="13" value="True" />
-            <traitentry col="6" row="3" value="True" />
-            <traitentry col="6" row="4" value="True" />
-            <traitentry col="6" row="5" value="True" />
-            <traitentry col="6" row="6" value="True" />
-            <traitentry col="6" row="7" value="True" />
-            <traitentry col="6" row="8" value="True" />
-            <traitentry col="6" row="9" value="True" />
-            <traitentry col="6" row="10" value="True" />
-            <traitentry col="6" row="11" value="True" />
-            <traitentry col="6" row="12" value="True" />
-            <traitentry col="6" row="13" value="True" />
-        </trait>
-        <trait name="FontSize">
-            <traitentry col="1" row="1" value="14.0" />
-        </trait>
         <trait name="RowHeight">
             <traitentry col="0" row="1" value="40" />
         </trait>
-        <cell name="A3" value="Reference" type="general">
-        </cell>
-        <cell name="A4" value="0001" type="general">
-        </cell>
-        <cell name="A5" value="0002" type="general">
-        </cell>
-        <cell name="A6" value="0003" type="general">
-        </cell>
-        <cell name="A7" value="0004" type="general">
-        </cell>
-        <cell name="A8" value="0005" type="general">
-        </cell>
-        <cell name="A9" value="0006" type="general">
-        </cell>
-        <cell name="A10" value="0007" type="general">
-        </cell>
-        <cell name="A11" value="0008" type="general">
-        </cell>
-        <cell name="A12" value="0009" type="general">
-        </cell>
-        <cell name="A13" value="0010" type="general">
-        </cell>
-        <cell name="B3" value="Customer" type="general">
-        </cell>
-        <cell name="B4" value="A37" type="general">
-        </cell>
-        <cell name="B5" value="G45" type="general">
-        </cell>
-        <cell name="B6" value="D98" type="general">
-        </cell>
-        <cell name="B7" value="A01" type="general">
-        </cell>
-        <cell name="B8" value="C12" type="general">
-        </cell>
-        <cell name="B9" value="X14" type="general">
-        </cell>
-        <cell name="B10" value="O39" type="general">
-        </cell>
-        <cell name="B11" value="A37" type="general">
-        </cell>
-        <cell name="B12" value="C12" type="general">
-        </cell>
-        <cell name="B13" value="O39" type="general">
-        </cell>
-        <cell name="C3" value="Symbol" type="general">
-        </cell>
-        <cell name="C4" value="MSFT" type="general">
-        </cell>
-        <cell name="C5" value="GOOG" type="general">
-        </cell>
-        <cell name="C6" value="BSY" type="general">
-        </cell>
-        <cell name="C7" value="ETI" type="general">
-        </cell>
-        <cell name="C8" value="HNS" type="general">
-        </cell>
-        <cell name="C9" value="GOOG" type="general">
-        </cell>
-        <cell name="C10" value="HNS" type="general">
-        </cell>
-        <cell name="C11" value="BSY" type="general">
-        </cell>
-        <cell name="C12" value="MSFT" type="general">
-        </cell>
-        <cell name="C13" value="MSFT" type="general">
-        </cell>
-        <cell name="D3" value="Number" type="general">
-        </cell>
-        <cell name="D4" value="237" type="general">
-        </cell>
-        <cell name="D5" value="1250" type="general">
-        </cell>
-        <cell name="D6" value="658" type="general">
-        </cell>
-        <cell name="D7" value="998" type="general">
-        </cell>
-        <cell name="D8" value="117" type="general">
-        </cell>
-        <cell name="D9" value="4" type="general">
-        </cell>
-        <cell name="D10" value="1740" type="general">
-        </cell>
-        <cell name="D11" value="345" type="general">
-        </cell>
-        <cell name="D12" value="2501" type="general">
-        </cell>
-        <cell name="D13" value="1799" type="general">
-        </cell>
-        <cell name="E3" value="Price" type="general">
-        </cell>
-        <cell name="E4" value="48.10" type="general">
-        </cell>
-        <cell name="E5" value="123.50" type="general">
-        </cell>
-        <cell name="E6" value="79.5" type="general">
-        </cell>
+        <trait name="BackColor">
+            <traitentry col="1" row="8" value="named color: CornflowerBlue" />
+            <traitentry col="1" row="10" value="named color: CornflowerBlue" />
+            <traitentry col="1" row="4" value="named color: CornflowerBlue" />
+            <traitentry col="1" row="12" value="named color: CornflowerBlue" />
+            <traitentry col="1" row="6" value="named color: CornflowerBlue" />
+            <traitentry col="2" row="8" value="named color: CornflowerBlue" />
+            <traitentry col="2" row="10" value="named color: CornflowerBlue" />
+            <traitentry col="2" row="4" value="named color: CornflowerBlue" />
+            <traitentry col="2" row="12" value="named color: CornflowerBlue" />
+            <traitentry col="2" row="6" value="named color: CornflowerBlue" />
+            <traitentry col="3" row="8" value="named color: CornflowerBlue" />
+            <traitentry col="3" row="10" value="named color: CornflowerBlue" />
+            <traitentry col="3" row="4" value="named color: CornflowerBlue" />
+            <traitentry col="3" row="12" value="named color: CornflowerBlue" />
+            <traitentry col="3" row="6" value="named color: CornflowerBlue" />
+            <traitentry col="4" row="8" value="named color: CornflowerBlue" />
+            <traitentry col="4" row="10" value="named color: CornflowerBlue" />
+            <traitentry col="4" row="4" value="named color: CornflowerBlue" />
+            <traitentry col="4" row="12" value="named color: CornflowerBlue" />
+            <traitentry col="4" row="6" value="named color: CornflowerBlue" />
+            <traitentry col="5" row="8" value="named color: CornflowerBlue" />
+            <traitentry col="5" row="10" value="named color: CornflowerBlue" />
+            <traitentry col="5" row="4" value="named color: CornflowerBlue" />
+            <traitentry col="5" row="12" value="named color: CornflowerBlue" />
+            <traitentry col="5" row="6" value="named color: CornflowerBlue" />
+            <traitentry col="6" row="8" value="named color: CornflowerBlue" />
+            <traitentry col="6" row="10" value="named color: CornflowerBlue" />
+            <traitentry col="6" row="4" value="named color: CornflowerBlue" />
+            <traitentry col="6" row="12" value="named color: CornflowerBlue" />
+            <traitentry col="6" row="6" value="named color: CornflowerBlue" />
+        </trait>
+        <trait name="Bold">
+            <traitentry col="0" row="15" value="True" />
+            <traitentry col="1" row="1" value="True" />
+            <traitentry col="8" row="3" value="True" />
+            <traitentry col="8" row="4" value="True" />
+            <traitentry col="8" row="5" value="True" />
+            <traitentry col="8" row="6" value="True" />
+        </trait>
         <cell name="E7" value="86.12" type="general">
-        </cell>
-        <cell name="E8" value="0.56" type="general">
-        </cell>
-        <cell name="E9" value="156.20" type="general">
-        </cell>
-        <cell name="E10" value="0.80" type="general">
-        </cell>
-        <cell name="E11" value="82.45" type="general">
-        </cell>
-        <cell name="E12" value="43.00" type="general">
-        </cell>
-        <cell name="E13" value="42.99" type="general">
-        </cell>
-        <cell name="F3" value="Direction" type="general">
-        </cell>
-        <cell name="F4" value="Buy" type="general">
-        </cell>
-        <cell name="F5" value="Sell" type="general">
-        </cell>
-        <cell name="F6" value="Sell" type="general">
         </cell>
         <cell name="F7" value="Buy" type="general">
         </cell>
-        <cell name="F8" value="Sell" type="general">
+        <cell name="A5" value="0002" type="general">
         </cell>
-        <cell name="F9" value="Buy" type="general">
+        <cell name="B5" value="G45" type="general">
         </cell>
-        <cell name="F10" value="Buy" type="general">
-        </cell>
-        <cell name="F11" value="Buy" type="general">
-        </cell>
-        <cell name="F12" value="Sell" type="general">
-        </cell>
-        <cell name="F13" value="Sell" type="general">
-        </cell>
-        <cell name="A1" value="Resolver One - Rapid Application Development with a Familiar Interface" type="general">
-        </cell>
-        <cell name="H3" value="Trans:" type="general">
-        </cell>
-        <cell name="I3" value="=len(list(transactions.Rows))" type="general">
-        </cell>
-        <cell name="H4" value="Buy:" type="general">
+        <cell name="C4" value="MSFT" type="general">
         </cell>
         <cell name="H5" value="Sell:" type="general">
         </cell>
-        <cell name="H6" value="Balance:" type="general">
+        <cell name="I6" value="=I5 - I4" type="general">
+        </cell>
+        <cell name="D7" value="998" type="general">
+        </cell>
+        <cell name="C3" value="Symbol" type="general">
+        </cell>
+        <cell name="H4" value="Buy:" type="general">
+        </cell>
+        <cell name="D6" value="658" type="general">
+        </cell>
+        <cell name="D11" value="345" type="general">
+        </cell>
+        <cell name="E12" value="43.00" type="general">
+        </cell>
+        <cell name="F12" value="Sell" type="general">
+        </cell>
+        <cell name="A3" value="Reference" type="general">
+        </cell>
+        <cell name="B3" value="Customer" type="general">
+        </cell>
+        <cell name="D10" value="1740" type="general">
+        </cell>
+        <cell name="E13" value="42.99" type="general">
+        </cell>
+        <cell name="F13" value="Sell" type="general">
+        </cell>
+        <cell name="D13" value="1799" type="general">
+        </cell>
+        <cell name="E10" value="0.80" type="general">
+        </cell>
+        <cell name="F10" value="Buy" type="general">
+        </cell>
+        <cell name="D9" value="4" type="general">
+        </cell>
+        <cell name="A8" value="0005" type="general">
+        </cell>
+        <cell name="B8" value="C12" type="general">
+        </cell>
+        <cell name="C9" value="GOOG" type="general">
+        </cell>
+        <cell name="A12" value="0009" type="general">
+        </cell>
+        <cell name="B12" value="C12" type="general">
+        </cell>
+        <cell name="C13" value="MSFT" type="general">
+        </cell>
+        <cell name="D12" value="2501" type="general">
+        </cell>
+        <cell name="E11" value="82.45" type="general">
+        </cell>
+        <cell name="F11" value="Buy" type="general">
+        </cell>
+        <cell name="A9" value="0006" type="general">
+        </cell>
+        <cell name="B9" value="X14" type="general">
+        </cell>
+        <cell name="C8" value="HNS" type="general">
+        </cell>
+        <cell name="D3" value="Number" type="general">
+        </cell>
+        <cell name="E4" value="48.10" type="general">
+        </cell>
+        <cell name="F4" value="Buy" type="general">
+        </cell>
+        <cell name="A6" value="0003" type="general">
+        </cell>
+        <cell name="B6" value="D98" type="general">
+        </cell>
+        <cell name="C7" value="ETI" type="general">
+        </cell>
+        <cell name="I3" value="=len(list(transactions.Rows))" type="general">
+        </cell>
+        <cell name="E5" value="123.50" type="general">
+        </cell>
+        <cell name="F5" value="Sell" type="general">
+        </cell>
+        <cell name="A7" value="0004" type="general">
+        </cell>
+        <cell name="B7" value="A01" type="general">
+        </cell>
+        <cell name="C6" value="BSY" type="general">
         </cell>
         <cell name="I4" value="=SUM(row[4] * row[5] for row in transactions.Rows if row[6] == &apos;Buy&apos;)" type="general">
         </cell>
+        <cell name="D5" value="1250" type="general">
+        </cell>
+        <cell name="H6" value="Balance:" type="general">
+        </cell>
         <cell name="I5" value="=SUM(row[4] * row[5] for row in transactions.Rows if row[6] == &apos;Sell&apos;)" type="general">
         </cell>
-        <cell name="I6" value="=I5 - I4" type="general">
+        <cell name="D4" value="237" type="general">
+        </cell>
+        <cell name="E3" value="Price" type="general">
+        </cell>
+        <cell name="F3" value="Direction" type="general">
+        </cell>
+        <cell name="A1" value="Resolver One - Rapid Application Development with a Familiar Interface" type="general">
+        </cell>
+        <cell name="D8" value="117" type="general">
+        </cell>
+        <cell name="A13" value="0010" type="general">
+        </cell>
+        <cell name="B13" value="O39" type="general">
+        </cell>
+        <cell name="C12" value="MSFT" type="general">
+        </cell>
+        <cell name="E8" value="0.56" type="general">
+        </cell>
+        <cell name="F8" value="Sell" type="general">
+        </cell>
+        <cell name="A10" value="0007" type="general">
+        </cell>
+        <cell name="B10" value="O39" type="general">
+        </cell>
+        <cell name="C11" value="BSY" type="general">
+        </cell>
+        <cell name="E9" value="156.20" type="general">
+        </cell>
+        <cell name="F9" value="Buy" type="general">
+        </cell>
+        <cell name="A11" value="0008" type="general">
+        </cell>
+        <cell name="B11" value="A37" type="general">
+        </cell>
+        <cell name="C10" value="HNS" type="general">
+        </cell>
+        <cell name="H3" value="Trans:" type="general">
+        </cell>
+        <cell name="E6" value="79.5" type="general">
+        </cell>
+        <cell name="F6" value="Sell" type="general">
+        </cell>
+        <cell name="A4" value="0001" type="general">
+        </cell>
+        <cell name="B4" value="A37" type="general">
+        </cell>
+        <cell name="C5" value="GOOG" type="general">
         </cell>
     </worksheet>
     <postFormulaeUserCode><![CDATA[
